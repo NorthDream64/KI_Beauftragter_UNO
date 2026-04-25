@@ -5,7 +5,7 @@
 
 ## Szenario
 
-Das Bauplanungsbüro Dr. Sika mit 15 Mitarbeitenden setzt ein KI-System ein, das Nachträge automatisch gegen den Originalvertrag und die gültigen Baugesetze (VOB/B, BGB) prüft. Das System liefert eine Einschätzung, ob ein Nachtrag durch den bestehenden Vertrag abgedeckt ist oder eine Zusatzbeauftragung des Auftraggebers erfordert.
+Das Bauplanungsbüro Dr. Seika mit 15 Mitarbeitenden setzt ein KI-System ein, das Nachträge automatisch gegen den Originalvertrag und die gültigen Baugesetze (VOB/B, BGB) prüft. Das System liefert eine Einschätzung, ob ein Nachtrag durch den bestehenden Vertrag abgedeckt ist oder eine Zusatzbeauftragung des Auftraggebers erfordert.
 
 Das Büro hat das System von einem externen Anbieter zugekauft und betreibt es unverändert. Ein Projektleiter prüft jede KI-Empfehlung vor der Entscheidung.
 
