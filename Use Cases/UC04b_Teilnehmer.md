@@ -1,5 +1,5 @@
 # UC-04b: M365 Governance & Purview-Aktivierung
-> KI-Beauftragter · Modul 764 · TÜV Rheinland · Woche 1–2
+> alfatraining · Projektaufgabe: KI-Beauftragter
 
 ---
 
