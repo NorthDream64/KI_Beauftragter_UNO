@@ -5,7 +5,7 @@
 
 ## Szenario
 
-Das Bauplanungsbüro aus UC-01a erweitert sein KI-System: Es soll nun Lieferantenanfragen (Materialverfügbarkeit, Liefertermine) und Personalplanung (Skill-Abgleich, Verfügbarkeit von Mitarbeitenden) unterstützen. Bei der Personalplanung werden Qualifikationen, Verfügbarkeiten und Weiterbildungshistorien verarbeitet.
+Das Bauplanungsbüro Dr. Seika erweitert sein KI-System: Es soll nun Lieferantenanfragen (Materialverfügbarkeit, Liefertermine) und Personalplanung (Skill-Abgleich, Verfügbarkeit von Mitarbeitenden) unterstützen. Bei der Personalplanung werden Qualifikationen, Verfügbarkeiten und Weiterbildungshistorien verarbeitet.
 
 Das Büro bleibt Betreiber — das System wurde nicht verändert.
 
