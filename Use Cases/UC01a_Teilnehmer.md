@@ -1,5 +1,5 @@
 # UC-01a: Nachtragsprüfung im Bauplanungsbüro
-> KI-Beauftragter · Modul 764 · TÜV Rheinland · Woche 1–2
+> KI-Beauftragter · Woche 1–2
 
 ---
 
