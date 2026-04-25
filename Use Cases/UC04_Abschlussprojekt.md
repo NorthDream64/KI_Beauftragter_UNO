@@ -1,5 +1,5 @@
-# UC-03 Abschlussarbeit — Steckbrief eines KI-Projekts
-> KI-Beauftragter · Modul 764 · TÜV Rheinland · Woche 4
+# Solidfinanz
+> alfatraining · Projektaufgabe: KI-Beauftragter
 > Format: Einzelarbeit oder 2er-Gruppe · Präsentation 10 Min. + 5 Min. Fragen
 
 ---
