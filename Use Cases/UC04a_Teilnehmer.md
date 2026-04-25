@@ -1,5 +1,5 @@
 # UC-04a: Schatten-KI-Inventur bei der SolidFinanz AG
-> KI-Beauftragter · Modul 764 · TÜV Rheinland · Woche 1–2
+>alfatraining · Projektaufgabe: KI-Beauftragter
 
 ---
 
