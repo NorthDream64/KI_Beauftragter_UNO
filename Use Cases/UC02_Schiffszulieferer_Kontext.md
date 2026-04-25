@@ -1,5 +1,5 @@
 # UC-02 Unternehmensakte — Schiffszulieferer WellSeal GmbH
-> alfatraining · KI-Beauftragter
+> KI-Beauftragter
 > Referenzdokument für Use Case UC-02 und das Longitudinal Assessment  
 > ⚠️ Fiktives Unternehmen — alle Namen und Details sind für Schulungszwecke erstellt
 
