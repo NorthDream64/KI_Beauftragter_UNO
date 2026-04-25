@@ -1,5 +1,5 @@
 # UC-04d: SWOT + Risikomanagement + Zeithorizont — Dozenten-Hinweise
-> KI-Beauftragter · Modul 764 · TÜV Rheinland · Woche 2–3
+> alfatraining · Projektaufgabe: KI-Beauftragter
 > ⚠️ Nicht für Teilnehmende
 
 ---
