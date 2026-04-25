@@ -1,5 +1,5 @@
 # UC-01c: Preiskalkulation (Rollenwechsel) — Dozenten-Hinweise
-> KI-Beauftragter · Modul 764 · TÜV Rheinland · Woche 3–4  
+> KI-Beauftragter · Woche 3–4  
 > ⚠️ Nicht für Teilnehmende
 
 ---
