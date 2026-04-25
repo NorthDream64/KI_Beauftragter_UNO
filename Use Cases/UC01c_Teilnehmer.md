@@ -5,7 +5,7 @@
 
 ## Szenario
 
-Das Bauplanungsbüro möchte das zugekaufte KI-System erweitern: Mit eigenen Projektdaten und Expertenschätzungen soll das Modell automatisierte Preisvorschläge für Nachträge liefern. Geplant ist ein Fine-Tuning des Modells mit internen Kalkulationsdaten aus abgeschlossenen Projekten.
+Das Bauplanungsbüro Dr. Seika möchte das zugekaufte KI-System erweitern: Mit eigenen Projektdaten und Expertenschätzungen soll das Modell automatisierte Preisvorschläge für Nachträge liefern. Geplant ist ein Fine-Tuning des Modells mit internen Kalkulationsdaten aus abgeschlossenen Projekten.
 
 Das System erhält damit eine neue Funktion — es prüft nicht mehr nur Verträge, sondern kalkuliert Preise.
 
