@@ -169,7 +169,7 @@ body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--paper);
 </div>
 
 <div id="content"></div>
-<div class="footer">alfatraining · KI-Beauftragte:r · Dashboard v3.1 · Daten werden lokal im Browser gespeichert</div>
+<div class="footer">alfatraining · KI-Beauftragte:r · Dashboard v4.0 · Daten werden lokal im Browser gespeichert</div>
 
 <script>
 // ═══════════════════════════════════════════════════════════════
@@ -179,44 +179,48 @@ const WEEKS = [
 {
   num:1, title:"Grundlagen: Rolle, Kommunikation, Recht", cls:"w1", tag:"Grundlagen",
   days:[
-  { id:"T01", dow:"Mo", title:"Rolle des KI-Beauftragten", sub:"Aufgaben, Verantwortlichkeiten, Abgrenzung",
-    defUC:["uc1"], defNotes:"Selbsteinschätzungs-Quiz (Day 0) verfügbar",
-    lernziel:"„Du kannst die Kernaufgaben des KI-Beauftragten benennen, zur Datenschutz- und Compliance-Funktion abgrenzen und erklären, welche organisatorischen Einbindungsmodelle die KI-VO nahelegt.”",
+  { id:"T01", dow:"Mo", title:"Rolle des KI-Beauftragten", sub:"Kernaufgaben, Abgrenzung, Einbindungsmodelle",
+    defUC:["uc1"], defNotes:"Use Case UC-01 Dr. Seika · Selbsteinschätzungs-Quiz (Day 0) verfügbar",
+    lernziel:"Du kannst die Kernaufgaben des KI-Beauftragten benennen, die Rolle gegenüber DSB, CISO und IT abgrenzen und erklären, welche organisatorischen Einbindungsmodelle sich aus der Praxis und aus ISO/IEC 42001 Kap. 5.3 ergeben.",
     phases:[
-      {n:"1",name:"Orientierung",time:"08:30–08:45",content:"Begrüßung, Kursüberblick, Tagesstruktur",tools:["alfaview","Folie"]},
-      {n:"2",name:"Use Case",time:"08:45–09:00",content:"Szenario: Mittelständisches Unternehmen führt KI-gestütztes HR-Screening ein — wer trägt Verantwortung?",tools:["Folie"]},
-      {n:"3",name:"Brainstorming",time:"09:00–09:45",content:"„Welche Rollen kennt ihr im KI-Governance-Umfeld?” — Ergebnisse und offene Fragen sammeln",tools:[{t:"Miro",c:"tool"},{t:"GitHub Discussions",c:"tool"}]},
-      {n:"4",name:"Theorieblock",time:"10:15–12:35",content:"Einführung KI-Beauftragter · Aufgaben & Verantwortlichkeiten · Abgrenzung zu DSB, CISO, Qualitätsbeauftragtem · Einbindungsmodelle · KI-VO Art. 4 (Kompetenzpflicht)",tools:["Rohrlich Kap. 8","KI-VO Art. 4"]},
-      {n:"5",name:"Lernkontrolle",time:"13:15–13:45",content:"Quiz Block 1 — Rolle & Compliance (Anfänger + Fortgeschrittene)",tools:[{t:"Quiz-App",c:"quiz"},{t:"Google Sheets",c:"tool"}]},
-      {n:"6",name:"Praktische Übung",time:"13:45–15:35",content:"Gruppenarbeit: Organigramm-Übung — wo im Unternehmen ist der KI-Beauftragte angesiedelt? Ergebnispräsentation (3 Min. je Gruppe)",tools:[{t:"Miro",c:"tool"}]}
+      {n:"O",name:"Orientierung",time:"08:30–10:00",content:"Vorstellungsrunde · Erwartungsabfrage · Kursüberblick · Materialien & Tools · Technik-Einführung (alfaview, GitHub, Claude Artifacts)",tools:["alfaview",{t:"GitHub",c:"tool"},"Claude Artifacts"]},
+      {n:"—",name:"Pause",time:"10:00–10:15",content:"",tools:[]},
+      {n:"T",name:"Theorieblock",time:"10:15–12:15",content:"Use Case Dr. Seika · Art. 4 KI-VO (Kompetenzpflicht) · Vier Kernaufgaben · Abgrenzung zu DSB/CISO/IT · Einbindungsmodelle · Three-Lines-of-Defense · ISO/IEC 42001 Kap. 5.3",tools:["KI-VO Art. 4","ISO/IEC 42001","Rohrlich S. 25–26, 165, 171–172"]},
+      {n:"—",name:"Mittagspause",time:"12:15–13:15",content:"",tools:[]},
+      {n:"GA",name:"Gruppenarbeit",time:"13:15–14:45",content:"100-Tage-Plan Erstversion · Organigramm · Wunschprofil — 30 Min. Gruppenarbeit + 60 Min. Präsentation & Diskussion",tools:[{t:"Miro",c:"tool"},{t:"Google Docs",c:"tool"}]},
+      {n:"Q",name:"Quiz Tag 1",time:"14:50–15:35",content:"Lernkontrolle auf GitHub Pages · 5 Fragen · sofortige Auswertung",tools:[{t:"Quiz-App",c:"quiz"},{t:"Google Sheets",c:"tool"}]}
     ],
-    sources:['<a href="https://artificialintelligenceact.eu/article/4/" target="_blank">KI-VO Art. 4</a>','<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689" target="_blank">EUR-Lex 2024/1689</a>','Rohrlich – KI und Recht, S. 171']
+    sources:['<a href="https://artificialintelligenceact.eu/article/4/" target="_blank">KI-VO Art. 4</a>','<a href="https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=OJ:L_202401689" target="_blank">EUR-Lex 2024/1689 (DE)</a>','ISO/IEC 42001:2023 Kap. 5.3','Rohrlich – KI und Recht, Kap. 5.1.5 (S. 171–172)']
   },
-  { id:"T02", dow:"Di", title:"Professionelle KI-Kommunikation", sub:"Prompting, Strategien, Prompt-Bibliothek",
-    defUC:["uc1"], defNotes:"",
-    lernziel:"„Du kannst effektive Prompts strukturieren, die wichtigsten Prompting-Techniken (Few-Shot, Chain-of-Thought) erläutern und die datenschutzrechtlichen Grenzen beim Einsatz externer KI-Tools beschreiben.”",
+  { id:"T02", dow:"Di", title:"Professionelle KI-Kommunikation", sub:"Prompting, Sicherheit, Prompt-Bibliothek",
+    defUC:["uc1"], defNotes:"Use Case UC-01a Dr. Seika · Zwei Rollen: Lena (Anwenderin) + Marco (KI-BA)",
+    lernziel:"Du kannst effektive Prompts nach dem RCKF-Schema aufbauen, die wichtigsten Prompting-Techniken (Zero-Shot, Few-Shot, Chain-of-Thought) situationsgerecht einsetzen, die datenschutzrechtlichen Grenzen beim Einsatz externer KI-Tools benennen und — je nach Rolle — entweder besser prompten oder eine unternehmensweite Prompt-Bibliothek konzipieren.",
     phases:[
-      {n:"1",name:"Orientierung",time:"08:30–08:45",content:"Tagesüberblick, Lernziele",tools:["Folie"]},
-      {n:"2",name:"Use Case",time:"08:45–09:00",content:"Szenario: HR-Managerin will ChatGPT für Stellenausschreibungen nutzen — was muss sie beachten?",tools:["Folie"]},
-      {n:"3",name:"Brainstorming",time:"09:00–09:45",content:"„Welche KI-Tools nutzt ihr bereits — und wie?” Live-Prompt-Demo: schlechter vs. guter Prompt",tools:[{t:"Miro",c:"tool"},"ChatGPT Business"]},
-      {n:"4",name:"Theorieblock",time:"10:15–12:35",content:"Grundlagen Prompting · Strategien (Zero/Few-Shot, Chain-of-Thought) · Schlüsselkomponenten · Halluzinationen & Grenzen · Datenschutz beim Prompting (DSGVO Art. 28) · Aufbau Prompt-Bibliothek",tools:["Dyck/Spann S. 8–12","DSGVO Art. 28"]},
-      {n:"5",name:"Lernkontrolle",time:"13:15–13:45",content:"Quiz Block 2 — Prompting & KI-Grenzen",tools:[{t:"Quiz-App",c:"quiz"},{t:"Google Sheets",c:"tool"}]},
-      {n:"6",name:"Praktische Übung",time:"13:45–15:35",content:"Gruppenarbeit: Prompt-Optimierung in 3 Runden — Ausgangs-Prompt verbessern, Ergebnis vergleichen. Beginn der gemeinsamen Prompt-Bibliothek.",tools:["ChatGPT Business",{t:"Google Docs",c:"tool"}]}
+      {n:"B1",name:"Block 1",time:"08:30–10:00",content:"Was ist ein LLM wirklich? · Halluzinationen · Grenzen",tools:["Folie","Dyck/Spann S. 8–12"]},
+      {n:"—",name:"Pause",time:"10:00–10:15",content:"",tools:[]},
+      {n:"B2",name:"Block 2",time:"10:15–11:45",content:"RCKF-Schema · Prompting-Techniken · Datenschutz (DSGVO Art. 28) · Letales Trifekta · Prompt Injection",tools:["DSGVO Art. 28","OWASP LLM Top 10"]},
+      {n:"—",name:"Pause",time:"11:45–11:50",content:"Aufgabe für GA 1 vorstellen",tools:[]},
+      {n:"GA1",name:"Gruppenarbeit 1",time:"11:50–12:35",content:"Prompt-Optimierung — 15 Min. individuell · 30 Min. Diskussion in Gruppen",tools:["ChatGPT Business",{t:"Google Docs",c:"tool"}]},
+      {n:"—",name:"Mittagspause",time:"12:35–13:15",content:"",tools:[]},
+      {n:"GA2",name:"Gruppenarbeit 2",time:"13:15–14:45",content:"Prompt-Bibliothek als KI-Beauftragter — Konzeption für Dr. Seika",tools:[{t:"Miro",c:"tool"},{t:"Google Docs",c:"tool"}]},
+      {n:"Q",name:"Quiz Tag 2",time:"14:50–15:35",content:"Lernkontrolle auf GitHub Pages · 5 Fragen · sofortige Auswertung",tools:[{t:"Quiz-App",c:"quiz"},{t:"Google Sheets",c:"tool"}]}
     ],
-    sources:['Dyck/Spann – KI in der Führung, S. 8–12','<a href="https://dsgvo-gesetz.de/art-28-dsgvo/" target="_blank">DSGVO Art. 28</a>']
+    sources:['Dyck/Spann – KI in der Führung, S. 8–12','<a href="https://dsgvo-gesetz.de/art-28-dsgvo/" target="_blank">DSGVO Art. 28</a>','<a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank">OWASP LLM Top 10</a>','<a href="https://learnprompting.org/" target="_blank">learnprompting.org</a>']
   },
-  { id:"T03", dow:"Mi", title:"Rechtliche Grundlagen I", sub:"DSGVO, AI Act, Produkthaftung — Überblick",
-    defUC:["uc2"], defNotes:"",
-    lernziel:"„Du kannst die vier relevanten Rechtsgebiete (DSGVO, KI-VO, Produkthaftung, Urheberrecht) dem jeweiligen Regelungsbereich zuordnen und an einem Unternehmensbeispiel erläutern, welches Gesetz greift.”",
+  { id:"T03", dow:"Mi", title:"Rechtliche Grundlagen I", sub:"DSGVO im KI-Kontext · Urheberrecht · Beschäftigtendaten",
+    defUC:["uc1"], defNotes:"Use Case UC-01b Dr. Seika · Personalplanung · Mitarbeiterdaten",
+    lernziel:"Du kannst die Struktur der DSGVO erklären, die wichtigsten Artikel im Beschäftigungskontext anwenden, den Unterschied zwischen DSGVO-Pflichten und Betriebsrats-Mitbestimmung benennen, die urheberrechtlichen Grundregeln für KI-generierte Inhalte erläutern und einschätzen, wann ein KI-Beauftragter Rechtsberatung einzuholen hat.",
     phases:[
-      {n:"1",name:"Orientierung",time:"08:30–08:45",content:"Tagesüberblick, Rechtsrahmen im Überblick",tools:["Folie"]},
-      {n:"2",name:"Use Case",time:"08:45–09:00",content:"Szenario: E-Commerce-Unternehmen nutzt KI-Preisalgorithmus — DSGVO, KI-VO oder beides?",tools:["Folie"]},
-      {n:"3",name:"Brainstorming",time:"09:00–09:45",content:"„Welche Gesetze habt ihr schon im Zusammenhang mit KI gehört?” — Rechtsnormen auf Miro-Board sammeln und clustern",tools:[{t:"Miro",c:"tool"}]},
-      {n:"4",name:"Theorieblock",time:"10:15–12:35",content:"DSGVO Grundprinzipien (Art. 5) · KI-VO Überblick & Zeitplan · Produkthaftung & KI-Haftungsrichtlinie · Urheberrecht bei KI-generierten Inhalten · Zusammenspiel der Normen · Vertiefung: DSGVO als prinzipienbasiertes vs. KI-VO als risikobasiertes Produktrecht",tools:["Rohrlich Kap. 2–4","KI-VO Art. 1–3"]},
-      {n:"5",name:"Lernkontrolle",time:"13:15–13:45",content:"Quiz Block 3 — Rechtliche Grundlagen",tools:[{t:"Quiz-App",c:"quiz"},{t:"Google Sheets",c:"tool"}]},
-      {n:"6",name:"Praktische Übung",time:"13:45–15:35",content:"Fallarbeit: Gruppenweise Prüfung — welches Gesetz gilt für drei vorgegebene KI-Szenarien? Ergebnisvergleich im Plenum.",tools:[{t:"Google Docs",c:"tool"}]}
+      {n:"B1",name:"Block 1",time:"08:30–10:00",content:"Einstieg: Warum hat Italien ChatGPT gesperrt? · UC-01b vorstellen · DSGVO-Aufbau",tools:["Folie","Garante-Fall 2023"]},
+      {n:"—",name:"Pause",time:"10:00–10:15",content:"",tools:[]},
+      {n:"B2",name:"Block 2",time:"10:15–11:45",content:"DSGVO im KI-Kontext: Art. 6 (Rechtsgrundlage) · § 26 BDSG · § 87 BetrVG · Art. 22 (autom. Einzelentscheidung) · Art. 35 (DSFA) · Art. 28 (AVV)",tools:["DSGVO","BDSG","BetrVG"]},
+      {n:"—",name:"Pause",time:"11:45–11:50",content:"",tools:[]},
+      {n:"B3",name:"Block 3",time:"11:50–12:35",content:"Urheberrecht: Getty vs. Stable Diffusion · § 44b UrhG (Text- und Datamining) · Dreistufenmodell Rechtsberatung",tools:["UrhG § 44b"]},
+      {n:"—",name:"Mittagspause",time:"12:35–13:15",content:"",tools:[]},
+      {n:"GA",name:"Gruppenarbeit",time:"13:15–14:45",content:"DSGVO-Fallanalyse: drei Situationen aus Dr. Seika Personalplanung — 30 Min. Gruppenarbeit · 60 Min. Diskussion",tools:[{t:"Google Docs",c:"tool"}]},
+      {n:"Q",name:"Quiz · Offene Fragen",time:"14:50–15:35",content:"5 Fragen auf GitHub Pages · sofortige Auswertung",tools:[{t:"Quiz-App",c:"quiz"},{t:"Google Sheets",c:"tool"}]}
     ],
-    sources:['<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689" target="_blank">EUR-Lex 2024/1689</a>','<a href="https://dsgvo-gesetz.de/art-5-dsgvo/" target="_blank">DSGVO Art. 5</a>','Rohrlich – KI und Recht, S. 34–88']
+    sources:['<a href="https://dsgvo-gesetz.de/art-6-dsgvo/" target="_blank">DSGVO Art. 6</a>','<a href="https://dejure.org/gesetze/BDSG/26.html" target="_blank">§ 26 BDSG</a>','<a href="https://dejure.org/gesetze/BetrVG/87.html" target="_blank">§ 87 BetrVG</a>','<a href="https://dsgvo-gesetz.de/art-22-dsgvo/" target="_blank">DSGVO Art. 22</a>','<a href="https://dejure.org/gesetze/UrhG/44b.html" target="_blank">§ 44b UrhG</a>','Rohrlich – KI und Recht, S. 73–95']
   },
   { id:"T04", dow:"Do", title:"Rechtliche Grundlagen II", sub:"Pflichten für Anbieter, Betreiber, Einführer, Händler",
     defUC:["uc2"], defNotes:"",
@@ -437,7 +441,7 @@ const WEEKS = [
 
 // ═══════════════ STATE ═══════════════
 let state = {};
-const STORAGE_KEY = 'ki_dashboard_v3';
+const STORAGE_KEY = 'ki_dashboard_v4';
 
 function loadState() {
   try {
