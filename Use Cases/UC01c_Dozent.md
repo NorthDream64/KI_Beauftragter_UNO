@@ -34,7 +34,7 @@
 
 **Kontraststrategie:** UC-01a (Betreiber, klar) → UC-01c (Anbieter, klar) — gleiches Büro, gleiches Ausgangssystem, dramatisch unterschiedliche Compliance-Last. Das macht Art. 25 erfahrbar.
 
-**Verbindung zu Air Canada:** Wenn ein Käufer von „Seika BauPrice" einen falschen Preis erhält und den Schaden bei Dr. Seika geltend macht — wer haftet? Genau die Air-Canada-Logik. Dr. Seika kann sich nicht damit herausreden, dass „die KI" das gesagt habe.
+**Verbindung zu Air Canada:** Wenn ein Käufer von „Akies" einen falschen Preis erhält und den Schaden bei Dr. Seika geltend macht — wer haftet? Genau die Air-Canada-Logik. Dr. Seika kann sich nicht damit herausreden, dass „die KI" das gesagt habe.
 
 ---
 
