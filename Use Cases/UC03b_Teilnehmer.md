@@ -1,5 +1,5 @@
 # UC-03b: Patienten-Onboarding-App mit Lerneffekt
-> KI-Beauftragter · Modul 764 · TÜV Rheinland · Woche 1–2
+> Fallstudie KI-Beauftragter
 
 ---
 
