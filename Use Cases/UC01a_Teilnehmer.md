@@ -1,5 +1,5 @@
 # UC-01a: Nachtragsprüfung im Bauplanungsbüro
-> KI-Beauftragter · Woche 1–2
+> Fallstudie KI-Beauftragter
 
 ---
 
