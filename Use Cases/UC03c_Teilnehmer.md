@@ -1,5 +1,5 @@
 # UC-03c: Administrative Automatisierung mit EPA
-> KI-Beauftragter · Modul 764 · TÜV Rheinland · Woche 2–3
+> Fallstudie KI-Beauftragter
 
 ---
 
