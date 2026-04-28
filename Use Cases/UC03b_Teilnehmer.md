@@ -9,7 +9,7 @@ Das Krankenhaus entwickelt eine App für Patienten und Angehörige, die häufig 
 
 **Der Lernmechanismus:** Patienten und Angehörige können Antworten mit 👍 oder 👎 bewerten. Das System lernt aus diesen Bewertungen und verbessert künftige Antworten. Damit verwandelt sich der Bot von einem statischen Informationssystem in ein **lernendes KI-System**.
 
-Das Krankenhaus entwickelt die App mit einem externen Dienstleister. Die App wird unter dem Namen des Krankenhauses veröffentlicht.
+Das Krankenhaus entwickelt die App mit einem externen Dienstleister. Die App wird unter dem Namen des Krankenhauses veröffentlicht. Allerdings hat ein vergleichbares früheres Onboarding-System in einem ähnlichen Krankenhaus eine falsche Information zur Medikamenten-Vorbereitung gegeben. Die Klinikleitung ist hier besonders sensibilisiert.
 
 **Empirischer Hintergrund:** Eine Studie von Microsoft AI (*Nature Health*, April 2026) analysierte über 500.000 Gesundheitsanfragen an Microsoft Copilot. Zentrale Befunde: Fast jedes fünfte Gespräch betrifft persönliche Symptombewertung oder Erkrankungen. Jede siebte persönliche Gesundheitsanfrage wird nicht für den Nutzer selbst gestellt, sondern für eine andere Person — Kinder, ältere Eltern, Partner. Persönliche Anfragen häufen sich abends und nachts, wenn klassische Gesundheitsversorgung am wenigsten erreichbar ist. Die App würde also eine Nachfrage bedienen, die real existiert — und zu Tageszeiten, die für ein Krankenhaus schwer abzudecken sind.
 
