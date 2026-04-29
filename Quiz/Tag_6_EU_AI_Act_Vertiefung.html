@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lernkontrolle · Tag 6 · EU AI Act Vertiefung II</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1a1a18;--paper:#f5f2ec;--card:#fff;--rule:#d5d0c5;--muted:#888880;
+  --accent:#2a4a8a;--accent-soft:#e8edf7;
+  --role-a:#2a5c3f;--role-a-soft:#e8f2ec;
+  --role-b:#7a3a2a;--role-b-soft:#f5ece8;
+  --level-1:#5a3a7a;--level-1-soft:#f0eaf7;
+  --level-2:#0a5a7a;--level-2-soft:#e0eff7;
+  --correct:#2a7a50;--correct-bg:#eaf5ee;--correct-border:#a0d8b8;
+  --wrong:#9a2a2a;--wrong-bg:#faeaea;--wrong-border:#d8a0a0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:15px;}
+a{color:var(--accent);}
+
+/* HEADER */
+.site-header{border-bottom:2px solid var(--ink);padding:1.8rem 2rem 1.4rem;max-width:820px;margin:0 auto;}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.site-header h1{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.15;margin-bottom:.4rem;}
+.header-meta{font-size:12px;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;}
+.header-meta span::before{content:"· ";}
+.header-meta span:first-child::before{content:"";}
+
+/* MAIN */
+.main{max-width:820px;margin:0 auto;padding:1.8rem 2rem 4rem;}
+
+/* SETUP */
+.setup-card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:2rem;max-width:540px;margin:0 auto;}
+.setup-card h2{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1.2rem;}
+.field-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.35rem;}
+.setup-input{width:100%;border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;font-family:'DM Sans',sans-serif;font-size:14px;background:var(--paper);outline:none;color:var(--ink);transition:border-color .15s;}
+.setup-input:focus{border-color:var(--ink);}
+.setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+@media(max-width:480px){.setup-grid{grid-template-columns:1fr;}}
+.role-btns,.level-btns{display:flex;gap:.5rem;}
+.sel-btn{flex:1;padding:.55rem .6rem;border:1px solid var(--rule);border-radius:8px;background:none;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;text-align:center;transition:all .15s;color:var(--ink);}
+.sel-btn.active-a{background:var(--role-a-soft);border-color:var(--role-a);color:var(--role-a);font-weight:500;}
+.sel-btn.active-b{background:var(--role-b-soft);border-color:var(--role-b);color:var(--role-b);font-weight:500;}
+.sel-btn.active-1{background:var(--level-1-soft);border-color:var(--level-1);color:var(--level-1);font-weight:500;}
+.sel-btn.active-2{background:var(--level-2-soft);border-color:var(--level-2);color:var(--level-2);font-weight:500;}
+.hint-text{font-size:12px;color:var(--muted);margin-top:.3rem;display:block;}
+.btn-start{width:100%;padding:.75rem;background:var(--ink);color:#fff;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;margin-top:1rem;transition:background .15s;}
+.btn-start:hover{background:#333;}
+.btn-start:disabled{background:#aaa;cursor:not-allowed;}
+
+/* QUIZ HEADER STRIP */
+.quiz-header-strip{display:flex;gap:.6rem;align-items:center;margin-bottom:1.4rem;flex-wrap:wrap;}
+.strip-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;}
+.strip-role-a{background:var(--role-a-soft);color:var(--role-a);}
+.strip-role-b{background:var(--role-b-soft);color:var(--role-b);}
+.strip-level-1{background:var(--level-1-soft);color:var(--level-1);}
+.strip-level-2{background:var(--level-2-soft);color:var(--level-2);}
+.strip-name{font-size:13px;color:var(--muted);margin-left:auto;}
+
+/* PROGRESS */
+.progress-bar{height:3px;background:var(--rule);border-radius:2px;margin-bottom:1.2rem;}
+.progress-fill{height:100%;background:var(--ink);border-radius:2px;transition:width .3s;}
+.progress-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:.5rem;}
+
+/* SCENARIO */
+.scenario-box{background:var(--accent-soft);border:1px solid #c0d0e8;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:.9rem 1.1rem;margin-bottom:1.2rem;}
+.scenario-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;}
+.scenario-text{font-size:13px;color:var(--ink);line-height:1.6;}
+
+/* QUESTION CARD */
+.q-card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:1.5rem;margin-bottom:1rem;}
+.q-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.q-text{font-size:15px;font-weight:500;line-height:1.55;margin-bottom:.5rem;}
+.q-hint{font-size:12px;color:var(--muted);margin-bottom:.9rem;font-style:italic;}
+
+/* OPTIONS */
+.opt-list{display:flex;flex-direction:column;gap:.5rem;}
+.opt{display:flex;align-items:flex-start;gap:.7rem;padding:.75rem 1rem;border:1px solid var(--rule);border-radius:8px;cursor:pointer;background:#fdfdfb;transition:all .12s;-webkit-user-select:none;user-select:none;}
+.opt:hover:not(.disabled){border-color:#888;background:#f5f2ec;}
+.opt.selected{background:var(--accent-soft);border-color:#8090b8;}
+.opt.disabled{cursor:default;}
+.opt.correct-sel{background:var(--correct-bg);border-color:var(--correct-border);}
+.opt.wrong-sel{background:var(--wrong-bg);border-color:var(--wrong-border);}
+.opt.missed{background:var(--wrong-bg);border-color:var(--wrong-border);}
+.opt-cb{width:18px;height:18px;min-width:18px;border:1.5px solid #bbb;border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .12s;}
+.opt-cb.chk{background:var(--ink);border-color:var(--ink);}
+.opt-cb.chk::after{content:'';display:block;width:8px;height:8px;background:#fff;border-radius:2px;}
+.opt.correct-sel .opt-cb{background:var(--correct);border-color:var(--correct);}
+.opt.correct-sel .opt-cb::after{content:'✓';color:#fff;font-size:11px;background:none;width:auto;height:auto;}
+.opt.wrong-sel .opt-cb{background:var(--wrong);border-color:var(--wrong);}
+.opt.wrong-sel .opt-cb::after{content:'✗';color:#fff;font-size:11px;background:none;width:auto;height:auto;}
+.opt.missed .opt-cb{background:var(--wrong);border-color:var(--wrong);}
+.opt.missed .opt-cb::after{content:'→';color:#fff;font-size:11px;background:none;width:auto;height:auto;}
+.opt-letter{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);min-width:16px;flex-shrink:0;margin-top:2px;}
+.opt-text{font-size:14px;line-height:1.5;}
+
+/* FEEDBACK */
+.feedback{border-radius:8px;padding:.9rem 1.1rem;margin-top:.9rem;}
+.feedback.fb-ok{background:var(--correct-bg);border:1px solid var(--correct-border);}
+.feedback.fb-wrong{background:var(--wrong-bg);border:1px solid var(--wrong-border);}
+.fb-title{font-weight:500;font-size:14px;margin-bottom:.4rem;}
+.fb-ok .fb-title{color:var(--correct);}
+.fb-wrong .fb-title{color:var(--wrong);}
+.fb-text{font-size:13px;line-height:1.65;color:#444;margin-bottom:.5rem;}
+.fb-source{font-size:12px;color:var(--muted);border-top:1px solid var(--rule);padding-top:.5rem;}
+
+/* NAV */
+.nav-row{display:flex;align-items:center;gap:.6rem;margin-top:1rem;}
+.btn{display:inline-flex;align-items:center;padding:.55rem 1.2rem;border:1px solid var(--rule);border-radius:8px;background:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;color:var(--ink);transition:all .15s;}
+.btn:hover{background:var(--paper);border-color:#888;}
+.btn:disabled{opacity:.3;cursor:not-allowed;}
+.btn-primary{background:var(--ink);color:#fff;border-color:var(--ink);}
+.btn-primary:hover{background:#333;}
+.btn-full{width:100%;justify-content:center;padding:.7rem;font-size:15px;margin-top:1rem;}
+.btn-submit{background:#2a5c3f;color:#fff;border-color:#2a5c3f;}
+.btn-submit:hover{background:#1e4530;}
+
+/* RESULTS */
+.result-block{max-width:600px;margin:0 auto;text-align:center;}
+.result-grade{font-family:'Playfair Display',serif;font-size:4.5rem;line-height:1;margin-bottom:.3rem;}
+.result-label{font-size:1.1rem;font-weight:500;margin-bottom:.3rem;}
+.result-sub{font-size:13px;color:var(--muted);margin-bottom:1.5rem;}
+.stats-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.stat{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:.9rem 1.2rem;text-align:center;min-width:90px;}
+.stat-n{font-size:1.8rem;font-weight:500;}
+.stat-l{font-size:11px;color:var(--muted);margin-top:2px;}
+.comp-title{font-size:13px;font-weight:500;text-align:left;margin-bottom:.8rem;}
+.comp-row{margin-bottom:.7rem;text-align:left;}
+.comp-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:3px;}
+.comp-track{height:4px;background:var(--rule);border-radius:2px;}
+.comp-fill{height:100%;border-radius:2px;}
+.fill-ok{background:var(--correct);}
+.fill-wrong{background:var(--wrong);}
+.sheets-note{font-size:12px;color:var(--correct);background:var(--correct-bg);border:1px solid var(--correct-border);border-radius:8px;padding:.5rem .9rem;margin-top:1rem;display:inline-block;}
+.submit-status{display:none;font-size:12px;margin-top:.5rem;padding:.4rem .8rem;border-radius:6px;}
+.submit-status.sending{display:block;background:#fffbe8;color:#806a00;border:1px solid #d0c060;}
+.submit-status.success{display:block;background:var(--correct-bg);color:var(--correct);border:1px solid var(--correct-border);}
+.submit-status.error{display:block;background:var(--wrong-bg);color:var(--wrong);border:1px solid var(--wrong-border);}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="eyebrow">TÜV Rheinland · Modul 764 · Tag 6</div>
+  <h1>Lernkontrolle<br>Risikomanagement I</h1>
+  <div class="header-meta">
+    <span>5 Fragen je Rolle &amp; Stufe</span>
+    <span>Eine oder mehrere Antworten können richtig sein</span>
+    <span>Use Case: Krankenhaus-KI-Diagnoseunterstützung</span>
+  </div>
+</header>
+
+<main class="main">
+
+<!-- ── SETUP ── -->
+<div id="setup-section">
+  <div class="setup-card">
+    <h2>Bitte wähle deine Rolle und Schwierigkeitsstufe</h2>
+
+    <div style="margin-bottom:1rem;">
+      <span class="field-label">Dein Name (oder Teilnehmer-Nummer)</span>
+      <input type="text" id="participant-name" class="setup-input" placeholder="z. B. Teilnehmer-07 oder Vorname">
+    </div>
+
+    <div class="setup-grid">
+      <div>
+        <span class="field-label">Rolle</span>
+        <div class="role-btns">
+          <button class="sel-btn" id="btn-role-a" onclick="selectRole('a')">KI-Beauftragter</button>
+          <button class="sel-btn" id="btn-role-b" onclick="selectRole('b')">CISO</button>
+        </div>
+        <span class="hint-text">Wähle deine Rolle im Unternehmen</span>
+      </div>
+      <div>
+        <span class="field-label">Schwierigkeitsstufe</span>
+        <div class="level-btns">
+          <button class="sel-btn" id="btn-level-1" onclick="selectLevel('1')">Anfänger</button>
+          <button class="sel-btn" id="btn-level-2" onclick="selectLevel('2')">Fortgeschrittene</button>
+        </div>
+        <span class="hint-text">Anfänger = Definitionen · Fortgeschr. = Szenarien</span>
+      </div>
+    </div>
+
+    <button class="btn-start" id="btn-start" onclick="startQuiz()" disabled>Quiz starten →</button>
+  </div>
+</div>
+
+<!-- ── QUIZ ── -->
+<div id="quiz-section" style="display:none">
+  <div class="quiz-header-strip" id="quiz-header-strip"></div>
+  <div class="progress-label" id="progress-label"></div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+
+  <div class="scenario-box">
+    <div class="scenario-label">Fallbeispiel · Gilt für alle Fragen</div>
+    <div class="scenario-text" id="scenario-text"></div>
+  </div>
+
+  <div id="questions-container"></div>
+
+  <div class="nav-row" style="margin-top:1.5rem">
+    <button class="btn btn-submit btn-full" id="btn-submit" onclick="submitQuiz()" disabled>Auswertung anzeigen →</button>
+  </div>
+  <div class="submit-status" id="submit-status"></div>
+</div>
+
+<!-- ── RESULTS ── -->
+<div id="results-section" style="display:none">
+  <div class="result-block">
+    <div class="result-grade" id="result-grade"></div>
+    <div class="result-label" id="result-label"></div>
+    <div class="result-sub" id="result-sub"></div>
+    <div class="stats-row" id="stats-row"></div>
+    <div class="comp-title">Kompetenzprofil</div>
+    <div id="comp-bars"></div>
+    <div id="sheets-note"></div>
+    <div style="margin-top:.8rem;display:flex;justify-content:center;">
+      <button class="btn" onclick="location.reload()">Neu starten</button>
+    </div>
+    </div>
+
+  <!-- REVIEW -->
+  <hr style="border:none;border-top:1px solid var(--rule);margin:2rem 0">
+  <h2 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:1rem">Detailauswertung</h2>
+  <div id="review-container"></div>
+</div>
+
+</main>
+
+<script>
+/* ═══════ CONFIG ═══════════════════════════════════════════════ */
+var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTfP8ygOun58rmvY9hQXFmPEgVyxppQGEPYjar1e78N6uanaGHuzBNOyU5P4kgvmz7/exec';
+
+/* ═══════ SZENARIEN ════════════════════════════════════════════ */
+var SCENARIOS = {
+  a: 'Im Krankenhaus St. Ulrich (NRW) laufen zwei KI-Initiativen parallel: UC-03b ist eine Patienten-Onboarding-App mit Lernmechanismus aus Nutzerbewertungen (begrenztes Risiko, Art. 50 Transparenzpflicht). UC-03c/d ist ein KI-System zur radiologischen Bildauswertung (Hochrisiko nach Anhang III) mit Wartungsvertrag eines externen Anbieters. Als KI-Beauftragter koordinieren Sie für beide Systeme die Konformität, Dokumentation, Transparenz, das Post-Market-Monitoring und die Meldepflichten.',
+  b: 'Sie sind CISO des Krankenhauses St. Ulrich. Sie verantworten Logging, technisches Monitoring und Vorfallsmanagement für beide KI-Systeme. UC-03b zeigte vor einigen Wochen einen Vorfall mit einer Falschauskunft zur Medikamenten-Vorbereitung. UC-03c/d zeigt seit einigen Monaten eine Bestätigungsschleife (Confirmation Loop) — die KI bestätigt zunehmend ihre eigenen früheren Befunde. Beide Phänomene stehen jetzt auf Ihrem Tisch.'
+};
+
+/* ═══════ FRAGENBANK ═══════════════════════════════════════════ */
+var QBANK = {
+
+/* ── KI-Beauftragter · Anfänger ─────────────────────────────── */
+/* Verteilung: 1×1 richtig · 2×2 richtig · 2×3 richtig */
+a1: [
+  {
+    q: 'Was prüft die Konformitätsbewertung nach Art. 43 EU AI Act bei einem Hochrisiko-KI-System?',
+    opts: [
+      'Ob das System die Anforderungen aus Kapitel III, Abschnitt 2 EU AI Act erfüllt (Risikomanagement, Datenqualität, Dokumentation, Transparenz, Aufsicht, Genauigkeit, Cybersicherheit)',
+      'Ob das System die wirtschaftlichste verfügbare Lösung ist',
+      'Ob das System ethisch wünschenswert ist',
+      'Ob die Mitarbeitenden bereit sind, mit dem System zu arbeiten'
+    ],
+    correct: [0],
+    exp: 'Die Konformitätsbewertung nach Art. 43 prüft die Einhaltung der Anforderungen aus Kapitel III Abschnitt 2 — also der technischen und organisatorischen Mindeststandards für Hochrisiko-KI. Dazu gehören Risikomanagement, Datenqualität, technische Dokumentation, Aufzeichnungspflichten, Transparenz, menschliche Aufsicht, Genauigkeit und Cybersicherheit. Wirtschaftlichkeit, ethische Wünschbarkeit oder Akzeptanz im Team sind keine Prüfgegenstände der Konformitätsbewertung — sie können in anderen Prozessen relevant sein, sind aber nicht Teil der Bewertung nach Art. 43.',
+    src: 'EU AI Act Art. 43', url: 'https://artificialintelligenceact.eu/article/43/'
+  },
+  {
+    q: 'Welche Aussagen zur CE-Kennzeichnung bei Hochrisiko-KI-Systemen sind richtig?',
+    opts: [
+      'Die CE-Kennzeichnung wird vom Anbieter angebracht, nachdem die Konformitätsbewertung erfolgreich abgeschlossen ist',
+      'Die CE-Kennzeichnung garantiert dem Betreiber, dass keine eigenen Pflichten mehr bestehen',
+      'Die CE-Kennzeichnung signalisiert die Konformität mit den Anforderungen des EU AI Act',
+      'Der Betreiber kann die CE-Kennzeichnung selbst anbringen, wenn er das System ausreichend getestet hat'
+    ],
+    correct: [0,2],
+    exp: 'Die CE-Kennzeichnung ist Aufgabe des Anbieters und signalisiert die Konformität mit den EU-Anforderungen — sie ist das Ergebnis der erfolgreich abgeschlossenen Konformitätsbewertung. Der Betreiber bringt die CE-Kennzeichnung niemals selbst an. Sie entbindet den Betreiber auch nicht von eigenen Pflichten — Art. 26 Betreiberpflichten greifen unabhängig davon. Die Aussage „CE-Kennzeichnung entbindet den Betreiber" ist falsch und gefährlich, weil sie den Eindruck erweckt, dass nach der Beschaffung keine Sorgfaltspflichten mehr bestehen.',
+    src: 'EU AI Act Art. 16, 26, 49', url: 'https://artificialintelligenceact.eu/article/49/'
+  },
+  {
+    q: 'Was ist die technische Dokumentation nach Anhang IV EU AI Act?',
+    opts: [
+      'Eine umfassende Beschreibung des KI-Systems mit Zweck, Architektur, Trainingsdaten, Leistungsmetriken und Risikobewertung',
+      'Eine kurze Bedienungsanleitung für die Endnutzer',
+      'Die Grundlage für die Konformitätsbewertung — sie muss vor Inverkehrbringen erstellt sein',
+      'Sie muss nur einmalig vor Inverkehrbringen erstellt werden — Aktualisierungen sind im EU AI Act nicht vorgesehen'
+    ],
+    correct: [0,2],
+    exp: 'Die technische Dokumentation nach Anhang IV ist eine umfassende, strukturierte Beschreibung des Systems: Zweck, Architektur, Trainingsdaten, Leistungsmetriken, Risikobewertung, Konformitätserklärung. Sie ist Grundlage der Konformitätsbewertung und muss vor Inverkehrbringen vorliegen — und kontinuierlich aktualisiert werden, solange das System auf dem Markt ist. Eine schlichte Bedienungsanleitung für Endnutzer ist nicht gemeint — diese fällt unter Art. 13 Transparenz für Betreiber, ist aber nicht die Anhang-IV-Dokumentation.',
+    src: 'EU AI Act Art. 11 · Anhang IV', url: 'https://artificialintelligenceact.eu/article/11/'
+  },
+  {
+    q: 'Welche Aussagen zur Transparenzpflicht nach Art. 50 EU AI Act sind richtig?',
+    opts: [
+      'Nutzer müssen erkennen können, dass sie mit einem KI-System interagieren (z.B. bei Chatbots)',
+      'KI-generierte Inhalte (Texte, Bilder, Audio, Video) müssen als solche kennzeichenbar sein',
+      'Die Transparenzpflicht gilt nur für Hochrisiko-KI-Systeme',
+      'Die Transparenzpflicht trifft sowohl Anbieter als auch Betreiber, je nach Anwendungsfall'
+    ],
+    correct: [0,1,3],
+    exp: 'Art. 50 EU AI Act trägt die Transparenz für KI-Interaktionen: Nutzer müssen wissen, wenn sie mit einer KI sprechen, KI-generierte Inhalte müssen als solche erkennbar sein. Diese Pflicht gilt unabhängig von der Risikoklasse — sie trifft auch begrenzte-Risiko-Systeme wie Chatbots oder Deepfake-Generatoren. Anbieter und Betreiber tragen je nach Konstellation Mitwirkungspflichten. Die Aussage „nur für Hochrisiko" ist falsch — Hochrisiko-Systeme haben weitergehende Anforderungen, aber Art. 50 ist eine eigenständige, breitere Pflicht.',
+    src: 'EU AI Act Art. 50', url: 'https://artificialintelligenceact.eu/article/50/'
+  },
+  {
+    q: 'Welche Pflichten hat ein Anbieter eines Hochrisiko-KI-Systems im Bereich Post-Market-Monitoring nach Art. 72 EU AI Act?',
+    opts: [
+      'Ein systematisches Überwachungssystem für die Leistung und Risiken des Systems im laufenden Betrieb einrichten',
+      'Daten zur Systemleistung und zu festgestellten Risiken sammeln und auswerten',
+      'Die Ergebnisse mit den Aufsichtsbehörden bei Anfrage teilen können',
+      'Den Quellcode jährlich öffentlich auditieren lassen'
+    ],
+    correct: [0,1,2],
+    exp: 'Post-Market-Monitoring nach Art. 72 verpflichtet den Anbieter zu einem systematischen, dokumentierten Überwachungssystem: Leistung beobachten, Risiken erkennen, Daten sammeln und auswerten, mit Behörden zusammenarbeiten. Der Aufwand ist proportional zur Risikoklasse. Eine jährliche Quellcode-Veröffentlichung gibt es nicht — sie würde Geschäftsgeheimnisse gefährden und ist kein Bestandteil des EU AI Act.',
+    src: 'EU AI Act Art. 72', url: 'https://artificialintelligenceact.eu/article/72/'
+  }
+],
+
+/* ── KI-Beauftragter · Fortgeschrittene ─────────────────────── */
+/* Verteilung: 1×1 richtig · 2×2 richtig · 2×3 richtig */
+a2: [
+  {
+    q: 'UC-03c/d zeigt seit einigen Monaten eine Bestätigungsschleife (Confirmation Loop): das System bestätigt zunehmend seine eigenen früheren Befunde. Was ergibt sich aus Art. 72 Post-Market-Monitoring?',
+    opts: [
+      'Das Verhalten muss systematisch dokumentiert und analysiert werden — eine Bestätigungsschleife ist ein klassischer Post-Market-Befund',
+      'Die Bestätigungsschleife ist nur ein Verdacht — bis zur Klärung muss nichts unternommen werden',
+      'Der externe Anbieter muss erst nach abschließender Bestätigung des Bias informiert werden — vorher würde man ihn unnötig beunruhigen',
+      'Die Auswertung muss erst dann in die Anhang-IV-Dokumentation einfließen, wenn ein bestätigter Vorfall vorliegt'
+    ],
+    correct: [0],
+    exp: 'Eine Bestätigungsschleife ist ein typisches Post-Market-Phänomen: das Modell bestätigt sich selbst, weil neue Daten in der Praxis durch alte Modellausgaben mitgeprägt sind. Art. 72 verlangt systematische Überwachung — der Anbieter muss informiert werden (er ist für das Modell verantwortlich), die Befunde müssen dokumentiert und in die fortlaufende Anhang-IV-Aktualisierung einfließen. „Bis zur Klärung nichts tun" widerspricht der Logik des Post-Market-Monitorings — gerade die systematische Beobachtung soll Verdachtsmomente verifizieren oder entkräften, nicht ignorieren.',
+    src: 'EU AI Act Art. 11, 72', url: 'https://artificialintelligenceact.eu/article/72/'
+  },
+  {
+    q: 'UC-03b hatte vor einigen Wochen einen Vorfall: eine Patientin erhielt eine falsche Auskunft zur Medikamenten-Vorbereitung. Es entstand kein Schaden. Welche Konsequenzen hat das nach Art. 73 EU AI Act?',
+    opts: [
+      'Da kein Schaden entstand, besteht keine Meldepflicht',
+      'Die Meldepflicht greift schon, wenn der Vorfall zu einem schwerwiegenden Schaden hätte führen können — auch ohne tatsächlichen Schaden',
+      'Der Vorfall muss systematisch erfasst und ausgewertet werden, unabhängig von einer formellen Meldepflicht',
+      'Die Meldepflicht entfällt rückwirkend, sobald die internen Korrekturmaßnahmen abgeschlossen sind'
+    ],
+    correct: [1,2],
+    exp: 'Art. 73 EU AI Act ist hier präzise: die Meldepflicht knüpft nicht am tatsächlichen Schaden an, sondern am Schadenspotenzial. Wenn ein Vorfall zu einem schwerwiegenden Schaden hätte führen können, ist eine Meldung an die zuständige Marktaufsichtsbehörde erforderlich — auch dann, wenn glücklicherweise nichts passiert ist. Eine Falschauskunft zur Medikamenten-Vorbereitung erfüllt diese Schwelle. Unabhängig davon muss der Vorfall ohnehin systematisch erfasst werden — das ist Teil des Post-Market-Monitorings nach Art. 72. Die Aussage „kein Schaden = keine Meldepflicht" ist falsch und gefährlich.',
+    src: 'EU AI Act Art. 73', url: 'https://artificialintelligenceact.eu/article/73/'
+  },
+  {
+    q: 'Wann gilt eine Veränderung an einem Hochrisiko-KI-System als „wesentlich" und löst eine erneute Konformitätsbewertung aus?',
+    opts: [
+      'Wenn die Veränderung Auswirkungen auf die Konformität mit den Anforderungen aus Kapitel III Abschnitt 2 haben kann',
+      'Wenn die Trainingsdaten substanziell erweitert oder ersetzt werden',
+      'Bei jeder Software-Aktualisierung — unabhängig vom Inhalt',
+      'Wenn der Zweck oder die Leistungsmerkmale des Systems verändert werden'
+    ],
+    correct: [0,3],
+    exp: 'Eine wesentliche Veränderung liegt vor, wenn sie die Konformität mit den EU AI Act-Anforderungen beeinflussen kann (Art. 43) — typischerweise bei Änderung des Zwecks, der Leistungsmerkmale oder der zentralen Architektur. Eine reine Erweiterung der Trainingsdaten ist nicht automatisch wesentlich — entscheidend ist, ob sich das Verhalten oder die Risiken substanziell verändern. Routine-Software-Updates ohne funktionale Veränderung lösen keine erneute Konformitätsbewertung aus. Diese Abgrenzung ist in der Praxis kritisch — sie entscheidet, ob aufwendige Bewertungsprozesse erneut durchlaufen werden müssen oder nicht.',
+    src: 'EU AI Act Art. 43', url: 'https://artificialintelligenceact.eu/article/43/'
+  },
+  {
+    q: 'Welche Logging-Pflichten hat das Krankenhaus als Betreiber eines Hochrisiko-KI-Systems nach Art. 12 EU AI Act?',
+    opts: [
+      'Automatische Aufzeichnung von Ereignissen über die Lebensdauer des Systems',
+      'Die Logs müssen nachvollziehbar und für die Marktaufsicht zugänglich sein',
+      'Logging ist nur bei tatsächlichen Vorfällen erforderlich — im Normalbetrieb nicht',
+      'Die Aufbewahrungsdauer richtet sich nach Zweck und Risikoklasse des Systems'
+    ],
+    correct: [0,1,3],
+    exp: 'Art. 12 verlangt automatische, kontinuierliche Aufzeichnung über die Lebensdauer des Systems — nicht erst bei Vorfällen. Die Logs müssen so aufbewahrt werden, dass sie für die Marktaufsicht und für die eigene Vorfallsanalyse zugänglich sind. Logging dient gerade dazu, Vorfälle nachträglich rekonstruieren zu können — wenn erst bei Vorfällen geloggt würde, ginge die Beweisführung verloren. Die Aufbewahrungsdauer richtet sich nach Zweck und Risikoklasse.',
+    src: 'EU AI Act Art. 12', url: 'https://artificialintelligenceact.eu/article/12/'
+  },
+  {
+    q: 'Welche Zusammenarbeit zwischen Krankenhaus und externem Anbieter ist bei UC-03c/d zwingend erforderlich?',
+    opts: [
+      'Wartungsvertrag mit klarer Regelung zu Modell-Updates, Bias-Monitoring und Vorfallsmeldung',
+      'Schnittstelle für die Übergabe von Post-Market-Daten vom Betreiber an den Anbieter',
+      'Eine Trennung der Verantwortlichkeiten: Anbieter haftet allein für alles, Betreiber muss nur das System betreiben',
+      'Eskalationswege für sicherheitsrelevante Befunde mit klar definierten Reaktionszeiten'
+    ],
+    correct: [0,1,3],
+    exp: 'Das Zusammenspiel zwischen Krankenhaus (Betreiber) und externem Anbieter muss vertraglich klar geregelt sein: Wartungsvertrag mit Update-Regelungen, Eskalationswegen für Bias-Monitoring und Vorfallsmeldungen. Eine Datenschnittstelle für Post-Market-Daten ist praktisch unerlässlich, damit der Anbieter seine Art. 72-Pflichten überhaupt erfüllen kann. Die Aussage „Anbieter haftet allein" ist falsch — Anbieter und Betreiber haben unterschiedliche, parallel bestehende Pflichten (Art. 16 vs. Art. 26). Eine vertragliche Risikoverlagerung kann diese Pflichten nicht aufheben.',
+    src: 'EU AI Act Art. 16, 26, 72', url: 'https://artificialintelligenceact.eu/article/72/'
+  }
+],
+
+/* ── CISO · Anfänger ────────────────────────────────────────── */
+/* Verteilung: 1×1 richtig · 2×2 richtig · 2×3 richtig */
+b1: [
+  {
+    q: 'Was muss nach Art. 12 EU AI Act im Logging eines Hochrisiko-KI-Systems aufgezeichnet werden?',
+    opts: [
+      'Eingaben, Ausgaben, Zeitstempel, beteiligte Personen — soweit für Nachvollziehbarkeit relevant',
+      'Eine Komplettkopie aller Patientenakten bei jeder Inferenz',
+      'Ereignisse, die für die Identifizierung von Risiken im Betrieb erforderlich sind',
+      'Sämtliche Klartextkommunikation des Personals während der Systemnutzung — auch private Gespräche im Behandlungsraum'
+    ],
+    correct: [0,2],
+    exp: 'Art. 12 fordert eine Aufzeichnung, die Nachvollziehbarkeit, Risikoerkennung und nachträgliche Analyse ermöglicht: Eingaben, Ausgaben, Zeitstempel, beteiligte Personen — soweit jeweils relevant. Es geht nicht darum, ganze Patientenakten zu spiegeln (das wäre datenschutzrechtlich unzulässig und unverhältnismäßig), sondern um eine zielgerichtete Aufzeichnung. Die konkrete Ausgestaltung richtet sich nach Risiko und Anwendungsfall. Datenschutzrechtliche Vorgaben (DSGVO Art. 5 Datenminimierung) müssen parallel beachtet werden.',
+    src: 'EU AI Act Art. 12 · DSGVO Art. 5', url: 'https://artificialintelligenceact.eu/article/12/'
+  },
+  {
+    q: 'Was ist ein „schwerwiegender Vorfall" im Sinne des Art. 73 EU AI Act?',
+    opts: [
+      'Ein Ereignis, das zum Tod oder zu schwerer Gesundheitsschädigung einer Person führt oder hätte führen können',
+      'Eine schwere Beeinträchtigung kritischer Infrastruktur',
+      'Ein Verstoß gegen Grundrechte mit erheblicher Tragweite',
+      'Jeder Vorfall, der einen Mitarbeiter verärgert hat'
+    ],
+    correct: [0,1,2],
+    exp: 'Art. 73 EU AI Act definiert schwerwiegende Vorfälle anhand ihrer Folgen oder potenziellen Folgen: Tod oder schwere Gesundheitsschädigung, Beeinträchtigung kritischer Infrastruktur, schwerwiegende Grundrechtsverletzung. Entscheidend ist auch das „hätte führen können" — also das Schadenspotenzial. Mitarbeiterunzufriedenheit ist kein meldepflichtiger Vorfall — sie kann zwar relevant sein, fällt aber nicht unter Art. 73. Wichtig für die Praxis: Der CISO sollte intern eine breite Erfassung führen und dann separat entscheiden, was extern gemeldet werden muss.',
+    src: 'EU AI Act Art. 73', url: 'https://artificialintelligenceact.eu/article/73/'
+  },
+  {
+    q: 'Wann muss ein schwerwiegender Vorfall gemeldet werden?',
+    opts: [
+      'Spätestens 15 Tage nach Kenntnisnahme — bei Tod sogar deutlich kürzer',
+      'Erst nach interner Komplettaufklärung — Eile ist nicht geboten',
+      'Bei Tod einer Person: spätestens 10 Tage nach Kenntnisnahme',
+      'Die Meldepflicht hat keine festen Fristen — der Betreiber entscheidet, wann er meldet'
+    ],
+    correct: [0,2],
+    exp: 'Art. 73 sieht abgestufte Fristen vor: Standardfrist 15 Tage nach Kenntnisnahme, bei Tod oder weitreichendem Verstoß deutlich kürzer (10 Tage), bei drohenden Großschadensereignissen sogar 2 Tage. Die Aussage „erst nach Komplettaufklärung melden" widerspricht der Norm — die Meldung kann auf vorläufiger Basis erfolgen und nachträglich ergänzt werden. Verzögerung kann selbst zur Pflichtverletzung werden. Praktisch heißt das: bei Verdacht früh melden, dann nachsteuern.',
+    src: 'EU AI Act Art. 73', url: 'https://artificialintelligenceact.eu/article/73/'
+  },
+  {
+    q: 'Im UC-03b-Vorfall mit der Falschauskunft zur Medikamenten-Vorbereitung — wie hätten Sie als CISO operativ reagieren sollen?',
+    opts: [
+      'Sofortige Sicherung aller Logs zum Vorfall — Beweisführung schützen',
+      'Den KI-Beauftragten unverzüglich einbeziehen — gemeinsame Bewertung der Meldepflicht',
+      'Die App still abschalten und niemanden informieren, um Reputationsschaden zu vermeiden',
+      'Den externen Anbieter parallel informieren — er muss seine Art. 72-Pflichten erfüllen können'
+    ],
+    correct: [0,1,3],
+    exp: 'Sofortige Logsicherung schützt Beweise und ermöglicht spätere Analyse. Der KI-Beauftragte muss eingebunden werden — die Meldepflicht-Bewertung darf nicht allein beim CISO liegen. Der externe Anbieter braucht den Vorfallsbericht für sein Post-Market-Monitoring. Stilles Abschalten ohne Information widerspricht den Pflichten aus Art. 72/73 — und außerdem den Pflichten aus Klinik-Compliance und Patientensicherheit. „Reputation schützen durch Vertuschen" ist nicht nur regulatorisch falsch, sondern auch praktisch riskant: spätere Aufdeckung wird teurer als frühe Transparenz.',
+    src: 'EU AI Act Art. 12, 72, 73', url: 'https://artificialintelligenceact.eu/article/73/'
+  },
+  {
+    q: 'Welche Aussage zur Verantwortungsteilung CISO ↔ KI-Beauftragter trifft am besten?',
+    opts: [
+      'Der CISO verantwortet das technische Logging, Monitoring und Vorfallsmanagement — der KI-Beauftragte koordiniert die Compliance-Bewertung und Meldungsentscheidungen',
+      'Der CISO entscheidet allein über alle Meldepflichten — der KI-Beauftragte ist nur Berater',
+      'Der KI-Beauftragte ist allein verantwortlich — der CISO arbeitet zu',
+      'Beide Rollen sind identisch und können in Personalunion besetzt werden'
+    ],
+    correct: [0],
+    exp: 'CISO und KI-Beauftragter haben komplementäre Rollen: der CISO trägt die operative Verantwortung für Technik, Logging, Monitoring und Vorfallsmanagement — der KI-Beauftragte koordiniert die regulatorische Bewertung, Compliance-Entscheidungen und Meldepflichten. Keiner entscheidet „allein" — die Stärke liegt in der Zusammenarbeit. Eine Personalunion mag in sehr kleinen Organisationen vorkommen, ist aber in einem Krankenhaus mit zwei laufenden KI-Initiativen weder sinnvoll noch praktikabel — die Aufgabenfülle und die unterschiedlichen Kompetenzprofile sprechen klar dagegen.',
+    src: 'EU AI Act Art. 4, 26 · Governance-Praxis', url: 'https://artificialintelligenceact.eu/article/26/'
+  }
+],
+
+/* ── CISO · Fortgeschrittene ────────────────────────────────── */
+/* Verteilung: 1×1 richtig · 2×2 richtig · 2×3 richtig */
+b2: [
+  {
+    q: 'UC-03c/d zeigt eine Bestätigungsschleife. Wie gehen Sie als CISO operativ vor?',
+    opts: [
+      'Logging-Daten der letzten 6 Monate auswerten — Driftmuster und Verzerrungstrends identifizieren',
+      'Den externen Anbieter aktivieren — Wartungsvertrag prüfen, Eskalationsweg nutzen',
+      'Den KI-Beauftragten erst einbeziehen, wenn die technische Analyse abgeschlossen ist',
+      'Sofort öffentlich machen, um die Transparenz gegenüber Patienten zu sichern'
+    ],
+    correct: [0,1],
+    exp: 'Zwei zentrale Schritte für CISO-Verantwortung: Datenanalyse zur Driftbestätigung, Aktivierung des Anbieters über den Wartungsvertrag, Einbindung des KI-Beauftragten zur Meldepflicht-Bewertung. Sofortige Veröffentlichung wäre nicht im Interesse aller Beteiligten — der Vorfall muss erst geklärt sein, bevor öffentlich kommuniziert wird. Patiententransparenz ist wichtig, läuft aber über strukturierte Wege (z.B. Aufklärung über die KI-Nutzung im Aufnahmeprozess), nicht über öffentliche Akutmeldungen. Diese Reihenfolge ist auch von Art. 73 selbst angelegt: erst klären, dann melden — innerhalb der Frist.',
+    src: 'EU AI Act Art. 12, 72, 73', url: 'https://artificialintelligenceact.eu/article/73/'
+  },
+  {
+    q: 'Der externe Anbieter spielt für UC-03c/d ein Modell-Update ein, das nach Aussage des Anbieters „nur ein Routine-Update" ist. Was prüfen Sie als CISO?',
+    opts: [
+      'Ob das Update als wesentliche Veränderung im Sinne von Art. 43 zu bewerten ist',
+      'Ob das Update Auswirkungen auf Genauigkeit, Bias oder bekannte Risiken hat',
+      'Ob das Krankenhaus selbst eine neue Konformitätsbewertung durchführen muss — diese ist immer Aufgabe des Betreibers',
+      'Routine-Updates müssen vom Betreiber nicht weiter geprüft werden — dafür gibt es den Wartungsvertrag'
+    ],
+    correct: [0,1],
+    exp: 'Zwei zentrale Prüfpunkte: erstens die Wesentlichkeitsprüfung nach Art. 43 — die Bewertung „Routine" beim Anbieter entbindet den Betreiber nicht von eigener Prüfung. Zweitens die fachliche Auswirkung auf Genauigkeit, Bias und Risiken — gerade bei laufendem Verdacht auf Bestätigungsschleife hochrelevant. Drittens die Aktualität der Anhang-IV-Dokumentation — Updates müssen sich dort niederschlagen. Die Aussage „der Wartungsvertrag erledigt das" verkennt die Pflichtenteilung: der Betreiber bleibt nach Art. 26 in der Verantwortung, unabhängig vom Wartungsvertrag.',
+    src: 'EU AI Act Art. 11, 26, 43', url: 'https://artificialintelligenceact.eu/article/43/'
+  },
+  {
+    q: 'An wen richtet sich die Meldung schwerwiegender Vorfälle nach Art. 73 EU AI Act in Deutschland?',
+    opts: [
+      'An die zuständige Marktaufsichtsbehörde',
+      'Eine Meldung kann frei an jede Aufsichtsbehörde adressiert werden — die Behörden leiten intern weiter',
+      'Direkt an die EU-Kommission',
+      'Bei einem Medizinprodukt würde der Krankenhaus-Betreiber die Meldung nach Art. 73 EU AI Act komplett dem BfArM überlassen — der EU AI Act greift dort nicht'
+    ],
+    correct: [0],
+    exp: 'Die Meldung richtet sich an die zuständige Marktaufsichtsbehörde — in Deutschland ist die Bundesnetzagentur als nationale Koordinierungsstelle vorgesehen, sektorale Behörden behalten ihre Zuständigkeiten in ihrem Bereich (z.B. BaFin im Finanzsektor, BfArM bei Medizinprodukten). Eine direkte Meldung an die EU-Kommission ist nicht der reguläre Weg — die nationale Behörde leitet bei Bedarf weiter und stimmt sich auf EU-Ebene ab. Die genaue Zuständigkeit richtet sich nach dem konkreten Anwendungsbereich des KI-Systems.',
+    src: 'EU AI Act Art. 70, 73', url: 'https://artificialintelligenceact.eu/article/73/'
+  },
+  {
+    q: 'Wie verteilen sich Logging- und Monitoring-Pflichten zwischen Anbieter und Betreiber?',
+    opts: [
+      'Der Anbieter trägt das Post-Market-Monitoring nach Art. 72 — er beobachtet das System auf der Markt-Ebene',
+      'Der Betreiber trägt die Logging-Pflichten nach Art. 12 für den eigenen Einsatz',
+      'Die Pflichten sind komplett identisch — beide tun dasselbe',
+      'Logging-Daten des Betreibers fließen typischerweise in das Post-Market-Monitoring des Anbieters ein'
+    ],
+    correct: [0,1,3],
+    exp: 'Anbieter und Betreiber haben unterschiedliche, aber miteinander verzahnte Pflichten: der Anbieter führt Post-Market-Monitoring auf der Marktebene (Art. 72) — er beobachtet das System über alle Einsätze hinweg. Der Betreiber führt Logging im eigenen Einsatz (Art. 12) — was passiert hier konkret. Die Datenflüsse zwischen beiden sind in der Praxis essenziell — der Anbieter braucht Betreiber-Daten, um sein Marktmonitoring zu betreiben. Die Aussage „identisch" verkennt die unterschiedlichen Perspektiven und Pflichten. Vertraglich muss der Datenfluss geregelt sein.',
+    src: 'EU AI Act Art. 12, 72', url: 'https://artificialintelligenceact.eu/article/72/'
+  },
+  {
+    q: 'Welche Vorbereitung sollten Sie als CISO treffen, um auf Audits und Anfragen der Marktaufsichtsbehörde reagieren zu können?',
+    opts: [
+      'Ein zugriffsbereites Logging-Archiv mit den Aufzeichnungen nach Art. 12',
+      'Eine aktuelle Anhang-IV-Dokumentation in Zusammenarbeit mit dem Anbieter',
+      'Eine dokumentierte Vorfallsliste mit allen erfassten Ereignissen — auch denen unterhalb der Meldeschwelle',
+      'Auditbereitschaft ist nicht Aufgabe des CISO — die Marktaufsicht wendet sich ausschließlich an den Anbieter'
+    ],
+    correct: [0,1,2],
+    exp: 'Auditbereitschaft erfordert drei Säulen: ein zugriffsbereites Logging-Archiv (Art. 12), die aktuelle Anhang-IV-Dokumentation (in Zusammenarbeit mit dem Anbieter — der Betreiber führt zwar nicht die Doku selbst, muss aber Zugriff haben), und eine vollständige interne Vorfallsliste — auch die Ereignisse unterhalb der externen Meldeschwelle, weil die Behörde nach Trends fragen kann. Diese Vorbereitung ist nicht nur regulatorische Pflicht, sondern auch operativer Schutz: wer im Audit suchen muss, hat verloren.',
+    src: 'EU AI Act Art. 12, 11, 73', url: 'https://artificialintelligenceact.eu/article/12/'
+  }
+]
+}; /* Ende QBANK */
+
+/* ═══════ STATE ════════════════════════════════════════════════ */
+var S = { role:null, level:null, name:'', questions:[], selections:[], submitted:false };
+
+/* ═══════ SETUP ════════════════════════════════════════════════ */
+function selectRole(r) {
+  S.role = r;
+  document.getElementById('btn-role-a').className='sel-btn'+(r==='a'?' active-a':'');
+  document.getElementById('btn-role-b').className='sel-btn'+(r==='b'?' active-b':'');
+  checkReady();
+}
+function selectLevel(l) {
+  S.level = l;
+  document.getElementById('btn-level-1').className='sel-btn'+(l==='1'?' active-1':'');
+  document.getElementById('btn-level-2').className='sel-btn'+(l==='2'?' active-2':'');
+  checkReady();
+}
+function checkReady() {
+  document.getElementById('btn-start').disabled = !(S.role && S.level);
+}
+
+function startQuiz() {
+  S.name = document.getElementById('participant-name').value.trim() || 'Anonym';
+  var key = S.role + S.level;
+  S.questions = QBANK[key].map(function(q,i){
+    /* Shuffle options, remap correct[] */
+    var n=q.opts.length, idx=[];
+    for(var k=0;k<n;k++) idx.push(k);
+    for(var j=n-1;j>0;j--){ var r=Math.floor(Math.random()*(j+1)),t=idx[j];idx[j]=idx[r];idx[r]=t; }
+    return {
+      q:q.q,
+      opts:idx.map(function(i){return q.opts[i];}),
+      correct:q.correct.map(function(c){return idx.indexOf(c);}),
+      exp:q.exp, src:q.src, url:q.url
+    };
+  });
+  S.selections = S.questions.map(function(){return [];});
+  S.submitted = false;
+
+  document.getElementById('setup-section').style.display='none';
+  document.getElementById('quiz-section').style.display='block';
+
+  /* Header strip */
+  var rLabel = S.role==='a'?'KI-Beauftragter':'CISO';
+  var lLabel = S.level==='1'?'Anfänger':'Fortgeschrittene';
+  var rClass = S.role==='a'?'strip-role-a':'strip-role-b';
+  var lClass = S.level==='1'?'strip-level-1':'strip-level-2';
+  document.getElementById('quiz-header-strip').innerHTML =
+    '<span class="strip-tag '+rClass+'">'+rLabel+'</span>'
+    +'<span class="strip-tag '+lClass+'">'+lLabel+'</span>'
+    +'<span class="strip-name">'+S.name+'</span>';
+
+  document.getElementById('scenario-text').textContent = SCENARIOS[S.role];
+  renderQuestions();
+}
+
+/* ═══════ RENDER QUESTIONS ═════════════════════════════════════ */
+function renderQuestions() {
+  var container = document.getElementById('questions-container');
+  container.innerHTML = '';
+  var total = S.questions.length;
+
+  S.questions.forEach(function(q, qi) {
+    var card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = 'qcard-'+qi;
+
+    var numEl = document.createElement('div');
+    numEl.className = 'q-num';
+    numEl.textContent = 'Frage '+(qi+1)+' von '+total;
+    card.appendChild(numEl);
+
+    var qEl = document.createElement('div');
+    qEl.className = 'q-text';
+    qEl.textContent = q.q;
+    card.appendChild(qEl);
+
+    var hEl = document.createElement('div');
+    hEl.className = 'q-hint';
+    hEl.textContent = 'Eine oder mehrere Antworten können richtig sein.';
+    card.appendChild(hEl);
+
+    var optList = document.createElement('div');
+    optList.className = 'opt-list';
+    var letters = ['A','B','C','D'];
+
+    q.opts.forEach(function(opt, oi) {
+      var row = document.createElement('div');
+      row.className = 'opt';
+      row.id = 'opt-'+qi+'-'+oi;
+      row.onclick = (function(qIdx,oIdx){ return function(){ toggleOpt(qIdx,oIdx); }; })(qi,oi);
+
+      var cb = document.createElement('div');
+      cb.className = 'opt-cb';
+      cb.id = 'cb-'+qi+'-'+oi;
+      row.appendChild(cb);
+
+      var letter = document.createElement('div');
+      letter.className = 'opt-letter';
+      letter.textContent = letters[oi]+'.';
+      row.appendChild(letter);
+
+      var text = document.createElement('div');
+      text.className = 'opt-text';
+      text.textContent = opt;
+      row.appendChild(text);
+
+      optList.appendChild(row);
+    });
+
+    card.appendChild(optList);
+
+    /* Feedback placeholder */
+    var fb = document.createElement('div');
+    fb.id = 'fb-'+qi;
+    card.appendChild(fb);
+
+    container.appendChild(card);
+  });
+
+  updateProgress();
+}
+
+function toggleOpt(qi, oi) {
+  if (S.submitted) return;
+  var sel = S.selections[qi];
+  var pos = sel.indexOf(oi);
+  if (pos >= 0) sel.splice(pos,1); else sel.push(oi);
+
+  /* Update visual */
+  var cb = document.getElementById('cb-'+qi+'-'+oi);
+  var row = document.getElementById('opt-'+qi+'-'+oi);
+  var isSel = sel.indexOf(oi) >= 0;
+  cb.className = 'opt-cb'+(isSel?' chk':'');
+  row.className = 'opt'+(isSel?' selected':'');
+
+  checkSubmitReady();
+  updateProgress();
+}
+
+function checkSubmitReady() {
+  var answered = S.selections.filter(function(s){return s.length>0;}).length;
+  document.getElementById('btn-submit').disabled = (answered < S.questions.length);
+}
+
+function updateProgress() {
+  var answered = S.selections.filter(function(s){return s.length>0;}).length;
+  var pct = Math.round(answered/S.questions.length*100);
+  document.getElementById('progress-fill').style.width = pct+'%';
+  document.getElementById('progress-label').textContent = answered+' von '+S.questions.length+' Fragen beantwortet';
+}
+
+/* ═══════ SUBMIT ════════════════════════════════════════════════ */
+function submitQuiz() {
+  S.submitted = true;
+  document.getElementById('btn-submit').disabled = true;
+
+  var correct=0, wrong=0;
+
+  S.questions.forEach(function(q, qi) {
+    var sel = S.selections[qi].slice().sort().join(',');
+    var cor = q.correct.slice().sort().join(',');
+    var isFull = sel===cor;
+
+    if (isFull) correct++; else wrong++;
+
+    /* Update option visuals */
+    q.opts.forEach(function(opt,oi){
+      var row = document.getElementById('opt-'+qi+'-'+oi);
+      var cb  = document.getElementById('cb-'+qi+'-'+oi);
+      var isSel = S.selections[qi].indexOf(oi)>=0;
+      var isCorr = q.correct.indexOf(oi)>=0;
+      row.className = 'opt disabled'+(isSel&&isCorr?' correct-sel':isSel&&!isCorr?' wrong-sel':!isSel&&isCorr?' missed':'');
+      cb.className = 'opt-cb'+(isSel?' chk':'');
+    });
+
+    /* Inline feedback */
+    var fbEl = document.getElementById('fb-'+qi);
+    var fbType = isFull?'fb-ok':'fb-wrong';
+    var fbTitle = isFull?'Richtig — alle Antworten korrekt.':'Falsch — nicht alle richtigen Antworten gewählt oder falsche angekreuzt.';
+    fbEl.innerHTML = '<div class="feedback '+fbType+'"><div class="fb-title">'+fbTitle+'</div><div class="fb-text">'+q.exp+'</div><div class="fb-source">Quelle: <a href="'+q.url+'" target="_blank">'+q.src+'</a></div></div>';
+  });
+
+  showResults(correct, wrong);
+  sendToSheets(correct, wrong);
+}
+
+/* ═══════ RESULTS ═══════════════════════════════════════════════ */
+function showResults(correct, wrong) {
+  var total = S.questions.length;
+  var pct = Math.round(correct/total*100);
+  var grade, label, sub;
+  if (pct>=80){grade='A';label='Sehr gut!';sub='Prüfungsreife für dieses Thema nachgewiesen.';}
+  else if(pct>=60){grade='B';label='Gut';sub='Solide Basis — Quellenlinks gezielt nutzen.';}
+  else if(pct>=40){grade='C';label='Ausbaufähig';sub='Grundlagen vorhanden — Theorieblock nochmals lesen.';}
+  else {grade='D';label='Weiter üben';sub='Lücken mit den verlinkten Quellen schließen.';}
+
+  document.getElementById('result-grade').textContent=grade;
+  document.getElementById('result-label').textContent=label;
+  document.getElementById('result-sub').textContent=sub;
+
+  document.getElementById('stats-row').innerHTML=
+    '<div class="stat"><div class="stat-n" style="color:var(--correct)">'+correct+'</div><div class="stat-l">Richtig</div></div>'
+    +'<div class="stat"><div class="stat-n" style="color:var(--wrong)">'+wrong+'</div><div class="stat-l">Falsch</div></div>'
+    +'<div class="stat"><div class="stat-n">'+pct+'%</div><div class="stat-l">Ergebnis</div></div>';
+
+  /* Comp bars — binary */
+  var topics = S.questions.map(function(q,i){
+    var sel=S.selections[i], cor=q.correct;
+    var isFull=sel.slice().sort().join(',')===cor.slice().sort().join(',');
+    return {label:'Frage '+(i+1), pct:isFull?100:0, cls:isFull?'fill-ok':'fill-wrong'};
+  });
+  document.getElementById('comp-bars').innerHTML=topics.map(function(t){
+    return '<div class="comp-row"><div class="comp-labels"><span>'+t.label+'</span>'
+      +'<span style="color:'+(t.pct===100?'var(--correct)':'var(--wrong)')+';">'+(t.pct===100?'✓ Richtig':'✗ Falsch')+'</span></div>'
+      +'<div class="comp-track"><div class="comp-fill '+t.cls+'" style="width:'+t.pct+'%"></div></div></div>';
+  }).join('');
+
+  /* Detail review */
+  renderReview();
+
+  document.getElementById('quiz-section').style.display='none';
+  document.getElementById('results-section').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ═══════ DETAIL REVIEW ══════════════════════════════════════════ */
+function renderReview() {
+  var letters = ['A','B','C','D'];
+  var container = document.getElementById('review-container');
+  container.innerHTML = '';
+
+  S.questions.forEach(function(q, qi) {
+    var sel = S.selections[qi].slice().sort().join(',');
+    var cor = q.correct.slice().sort().join(',');
+    var isFull = sel===cor;
+
+    var card = document.createElement('div');
+    card.className = 'q-card';
+    card.style.marginBottom = '.8rem';
+
+    /* Question header */
+    var header = document.createElement('div');
+    header.style.cssText = 'display:flex;gap:.6rem;align-items:baseline;margin-bottom:.5rem;';
+    var numEl = document.createElement('div');
+    numEl.className = 'q-num';
+    numEl.textContent = 'Frage '+(qi+1);
+    var badge = document.createElement('span');
+    badge.style.cssText = 'font-size:12px;font-weight:500;padding:2px 10px;border-radius:100px;'
+      +(isFull?'background:var(--correct-bg);color:var(--correct);':'background:var(--wrong-bg);color:var(--wrong);');
+    badge.textContent = isFull?'✓ Richtig':'✗ Falsch';
+    header.appendChild(numEl);
+    header.appendChild(badge);
+    card.appendChild(header);
+
+    var qEl = document.createElement('div');
+    qEl.className = 'q-text';
+    qEl.style.marginBottom = '.7rem';
+    qEl.textContent = q.q;
+    card.appendChild(qEl);
+
+    /* Options with reveal */
+    var optList = document.createElement('div');
+    optList.className = 'opt-list';
+    q.opts.forEach(function(opt, oi) {
+      var isSel  = S.selections[qi].indexOf(oi)>=0;
+      var isCorr = q.correct.indexOf(oi)>=0;
+      var row = document.createElement('div');
+      var cls = 'opt disabled';
+      if      (isSel&&isCorr)  cls+=' correct-sel';
+      else if (isSel&&!isCorr) cls+=' wrong-sel';
+      else if (!isSel&&isCorr) cls+=' missed';
+      row.className = cls;
+
+      var cb = document.createElement('div');
+      cb.className = 'opt-cb'+(isSel?' chk':'');
+      row.appendChild(cb);
+
+      var letter = document.createElement('div');
+      letter.className = 'opt-letter';
+      letter.textContent = letters[oi]+'.';
+      row.appendChild(letter);
+
+      var text = document.createElement('div');
+      text.className = 'opt-text';
+      text.textContent = opt;
+      row.appendChild(text);
+
+      optList.appendChild(row);
+    });
+    card.appendChild(optList);
+
+    /* Explanation */
+    var fbType = isFull?'fb-ok':'fb-wrong';
+    var fbTitle = isFull?'Richtig.':'Falsch.';
+    var fb = document.createElement('div');
+    fb.innerHTML = '<div class="feedback '+fbType+'" style="margin-top:.7rem">'
+      +'<div class="fb-title">'+fbTitle+'</div>'
+      +'<div class="fb-text">'+q.exp+'</div>'
+      +'<div class="fb-source">Quelle: <a href="'+q.url+'" target="_blank">'+q.src+'</a></div>'
+      +'</div>';
+    card.appendChild(fb);
+    container.appendChild(card);
+  });
+}
+
+/* ═══════ GOOGLE SHEETS ═════════════════════════════════════════ */
+function sendToSheets(correct, wrong) {
+  if (!APPS_SCRIPT_URL) return;
+  var TAG_NR = 6;
+  var THEMA  = 'EU AI Act Vertiefung II';
+  var letters = ['A','B','C','D'];
+  var role  = S.role === 'a' ? 'KI-Beauftragter' : 'CISO';
+  var stufe = S.level === '1' ? 'Anfänger' : 'Fortgeschrittene';
+
+  var status = document.getElementById('submit-status');
+  status.className = 'submit-status sending';
+  status.style.display = 'block';
+  status.textContent = 'Ergebnis wird übermittelt...';
+
+  var toSend = [];
+  S.questions.forEach(function(q, i) {
+    var selIndices  = S.selections[i].slice().sort();
+    var corrIndices = q.correct.slice().sort();
+    var isFull      = selIndices.join(',') === corrIndices.join(',');
+    var gewaehlt    = selIndices.map(function(idx) { return letters[idx]; }).join(',') || '-';
+    var korrekt     = corrIndices.map(function(idx) { return letters[idx]; }).join(',');
+    var ergebnis    = isFull ? 'RICHTIG' : 'FALSCH';
+
+    toSend.push(
+      APPS_SCRIPT_URL
+      + '?tab='        + encodeURIComponent('quiz')
+      + '&teilnehmer=' + encodeURIComponent(S.name)
+      + '&tag='        + TAG_NR
+      + '&thema='      + encodeURIComponent(THEMA)
+      + '&stufe='      + encodeURIComponent(stufe + ' · ' + role)
+      + '&frage_nr='   + (i + 1)
+      + '&frage_text=' + encodeURIComponent(q.q.substring(0, 80))
+      + '&gewaehlt='   + encodeURIComponent(gewaehlt)
+      + '&korrekt='    + encodeURIComponent(korrekt)
+      + '&ergebnis='   + encodeURIComponent(ergebnis)
+    );
+  });
+
+  var idx = 0;
+  function sendNext() {
+    if (idx >= toSend.length) {
+      status.className = 'submit-status success';
+      status.textContent = '✓ ' + toSend.length + ' Antworten übermittelt ('
+        + new Date().toLocaleTimeString('de-DE') + ')';
+      return;
+    }
+    fetch(toSend[idx], { mode: 'no-cors' })
+      .catch(function() {})
+      .then(function() { idx++; setTimeout(sendNext, 400); });
+  }
+  sendNext();
+}
+
+/* ═══════ CLIPBOARD BACKUP ══════════════════════════════════════ */
+</script>
+</body>
+</html>
