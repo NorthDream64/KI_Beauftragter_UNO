@@ -5,9 +5,9 @@
 
 ## Szenario
 
-Das Krankenhaus St. Ulrich führt seit sechs Monaten ein KI-System zur automatisierten Auswertung von CT- und Röntgenbildern ein. Der Pilot in der Radiologie läuft, der komplette Roll-Out über alle in Frage kommenden Abteilungen ist für das nächste Quartal geplant. Das System erkennt Muster, identifiziert Auffälligkeiten und priorisiert Behandlungspfade für das medizinische Personal.
+Das Krankenhaus St. Ulrich führt seit sechs Monaten ein KI-System zur automatisierten Auswertung von CT- und Röntgenbildern ein. Der Pilot in der Radiologie läuft, der komplette Roll-Out über alle in Frage kommenden Abteilungen ist für das nächste Quartal geplant. Das System erkennt Muster, identifiziert Auffälligkeiten und priorisiert Behandlungspfade für das medizinische Personal. Es gibt eine Schnittstelle zu einer in Indien von einem dortigen Dienstleister gehosteten Datenbank mit über 10 Mio. anonymisierten CTs, insbesondere aus dem Gebiet der Onkologie.
 
-Ein Radiologe soll jede Ausgabe des Systems prüfen und bestätigen. In der Pilotphase zeigt sich: Bei hoher Arbeitsbelastung neigen einige Ärzte dazu, Routinebefunde nur kurz zu überfliegen. Die Trefferquote des Systems ist hoch — das verstärkt die Tendenz.
+Ein Radiologe soll jede Ausgabe des Systems prüfen und bestätigen. In der Pilotphase zeigt sich: Bei hoher Arbeitsbelastung neigen einige Ärzte dazu, Routinebefunde nur kurz zu überfliegen. Die Trefferquote des Systems ist hoch — das verstärkt die Tendenz, die Aussagen der KI nicht zu hinterfragen.
 
 Das System wurde von einem externen Softwarehaus entwickelt. Das Krankenhaus ist Betreiber. Es wurde ein Wartungsvertrag abgeschlossen — der Anbieter ist verpflichtet, das Modell aktuell zu halten. Der Anbieter ist nach ISO 13485 zertifiziert (Medizinprodukte-QMS) und hat die Konformitätsbewertung nach AI Act Anhang VI durchgeführt. CE-Kennzeichnung liegt vor. Eine ISO-42001-Zertifizierung ist nicht angestrebt — der Anbieter argumentiert, dass 13485 plus AI Act-Konformität ausreicht.
 
