@@ -1,8 +1,6 @@
-# Projektakte WellSeal · Wissensmanagement-RAG
-## Use Case 02 für die Tage 12–17
-
-> **alfatraining · KI-Beauftragte:r**
->
+# UC-02: Qualitätssicherung | Datenmanagement | Change Management
+> KI-Beauftragter · KI-Manager
+> 
 > ⚠️ Fiktives Unternehmen — alle Namen und Details sind für Schulungszwecke erstellt.
 
 ---
