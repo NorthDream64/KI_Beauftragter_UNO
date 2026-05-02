@@ -1,5 +1,5 @@
-# UC-01b: Lieferanten- und Personalplanung
-> KI-Beauftragter · Woche 2–3
+# UC-01b: Rechtliche Grundlagen & EU AI Act
+> KI-Beauftragter · KI-Manager
 
 ---
 
