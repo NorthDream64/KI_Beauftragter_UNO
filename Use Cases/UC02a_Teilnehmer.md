@@ -5,7 +5,8 @@
 
 ## Szenario
 
-Die WellSeal GmbH, ein Bremer Schiffszulieferer mit 500 Mitarbeitenden, möchte Microsoft 365 Copilot einführen. Ziel: Das implizite Wissen erfahrener Ingenieure (Reparaturerfahrungen, technische Diagnosen) soll strukturiert erfasst werden. Gleichzeitig soll ein mehrsprachiger Onboarding-Bot für neue Mitarbeitende entstehen.
+Die WellSeal GmbH, ein Bremer Schiffszulieferer mit 500 Mitarbeitenden, hat vor drei Monaten hat M365 Copilot eingeführt — knapp, aber erfolgreich. Der Seniorchef Hoffmann war erst skeptisch, hat sich überzeugen lassen."
+„Parallel diskutiert das Team ein Kompetenzzentrum für die internationalen Agenten. Diskutiert — nicht entschieden."möchte Microsoft 365 Copilot einführen. Ziel: Das implizite Wissen erfahrener Ingenieure (Reparaturerfahrungen, technische Diagnosen) soll strukturiert erfasst werden. Gleichzeitig soll ein mehrsprachiger Onboarding-Bot für neue Mitarbeitende entstehen.
 
 M365 (Teams, SharePoint) ist bereits im Einsatz. Der neue Geschäftsführer erwartet schnelle Ergebnisse. CISO, Datenschutzbeauftragter und IT-Leiter sind skeptisch.
 
