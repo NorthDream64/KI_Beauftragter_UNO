@@ -1,6 +1,5 @@
-# UC-03d: Diagnoseunterstützung (CT / Röntgen / Behandlungspfade)
-> Fallstudie KI-Beauftragter
-
+# UC-03d: Management Systeme & Risikomanagement
+> KI-Beauftragter · KI-Manager
 ---
 
 ## Szenario
