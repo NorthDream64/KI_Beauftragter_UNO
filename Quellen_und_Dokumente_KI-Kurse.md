@@ -1,5 +1,5 @@
-# Quellenregister — KI-Beauftragter (Modul 764)
-> TÜV Rheinland · Stand: April 2026  
+# Quellenregister — KI-Beauftragter | KI-Manager
+>   
 > Format pro Eintrag: `URL | Anzeigename | Typ | Schlagwörter`  
 > ⚠️ Hinweis für Claude: URLs aus dieser Datei können nicht direkt per `web_fetch` abgerufen werden. Bitte URL im Chat eingeben oder `web_search` verwenden.
 
