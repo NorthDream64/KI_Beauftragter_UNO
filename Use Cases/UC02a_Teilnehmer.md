@@ -9,6 +9,12 @@ Die WellSeal GmbH, ein Bremer Schiffszulieferer mit 500 Mitarbeitenden, möchte 
 
 M365 (Teams, SharePoint) ist bereits im Einsatz. Der neue Geschäftsführer erwartet schnelle Ergebnisse. CISO, Datenschutzbeauftragter und IT-Leiter sind skeptisch.
 
+WellSeal hat 17 selbständige Vertriebsagenten in Nordamerika, Japan, China und Südkorea. Diese Agenten führen vor Ort Reparaturen durch und brauchen bei komplexen Fällen technische Unterstützung aus der Zentrale Bremen.
+
+Der neue Geschäftsführer möchte ein KI-gestütztes Kompetenzzentrum einrichten: Ein RAG-System soll auf interne Reparaturhistorien und technische Dokumentation zugreifen und die Agenten bei Diagnosen unterstützen.
+
+Die Agenten sind keine Mitarbeitenden — sie sind rechtlich selbständige Geschäftspartner.
+
 Du bist der neu eingestellte KI-Beauftragte. Was sind deine ersten Schritte?
 
 ---
