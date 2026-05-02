@@ -11,6 +11,12 @@ Der CISO Tobias Kern ergänzt: *"Ich sehe Traffic zu OpenAI, Grammarly, DeepL, N
 
 Ihre erste Aufgabe: Eine Inventur der im Unternehmen genutzten KI-Tools erstellen — auch der nicht genehmigten.
 
+Die akuten Probleme (Schatten-KI, Purview, Richtlinie) sind adressiert. Jetzt fragt Dr. Hofer: *"Was kommt als Nächstes? Welche KI-Chancen haben wir — und welche Risiken müssen wir systematisch managen?"*
+
+Und dann, in einem Nebensatz: *"Unser Vorstand diskutiert, ob wir mittelfristig die Antragsprüfung mit KI unterstützen könnten. Das ist noch kein Projekt — aber ich will vorbereitet sein."*
+
+Ihre Aufgabe: Eine SWOT-Analyse für den KI-Einsatz bei der SolidFinanz AG entwickeln und einen strukturierten Risikomanagement-Prozess vorschlagen. Und: Den Vorstand über die regulatorischen Implikationen der Antragsprüfung informieren — bevor das Projekt gestartet wird.
+
 ---
 
 ## Lernziele
