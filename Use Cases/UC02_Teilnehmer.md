@@ -8,7 +8,7 @@
 ## 1. Das Projekt im Überblick
 
 ### Projektname
-**„Sealing the future"** — Aufbau eines KI-gestützten Wissensmanagement-Systems bei WellSeal.
+**„Sealing the future"** — Aufbau eines KI-gestützten Wissensmanagement-Systems und Onboarding-Bots bei WellSeal.
 
 ### Auftrag (Originalwortlaut Geschäftsführung)
 „Das implizite Wissen unserer erfahrenen Ingenieure und Werkmeister soll strukturiert erfasst und über ein KI-gestütztes RAG-System für die folgenden unsere Serviceingenieure im Aussendienst und unsere Agenten in Houston, Busan, Dubai und Miami verfügbar gemacht werden.
