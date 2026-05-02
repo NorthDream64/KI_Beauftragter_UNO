@@ -11,7 +11,7 @@ In diesem Zusammenhang ist es eine besondere Herausforderung, das häufig impliz
 
 Die Personalabteilung hat vorgeschlagen, zusätzlich einen mehrsprachigen "Onboarding-Bot" für neue Mitarbeitende bereit zu stellen. Der Boit soll Dinge wie Reisekostenregelung, Krankmeldungen, Kantinenpläne vorhalten, aber auch - auf Wunsch der Finanzabteilung - das Einscnannen und die automatische Kontierung von Quittungen im Zuge der Reisekostenabrechnung gestatten
 
-Du bist der neu eingestellte KI-Beauftragte. Wie gehst Du mit den Themen "Qualitätssicherung", "Datenmanagement" und "Change Management" um?
+Du bist der neu eingestellte KI-Beauftragte. Wie gehst Du mit den Themen "Qualitätssicherung", "Datenmanagement" und "Change Management" um? Ein Motto des Seniorchefs ist: "Qualität kann man nicht nachträglich hineinkontrolieren, man muss es immer in den Prozess hineinbauen."
 
 ---
 
