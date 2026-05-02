@@ -8,24 +8,22 @@
 ## 1. Das Projekt im Überblick
 
 ### Projektname
-**„Maritimes Wissen 2030"** — Aufbau eines KI-gestützten Wissensmanagement-Systems bei WellSeal.
+**„Sealing the future"** — Aufbau eines KI-gestützten Wissensmanagement-Systems bei WellSeal.
 
 ### Auftrag (Originalwortlaut Geschäftsführung)
-„Das implizite Wissen unserer erfahrenen Ingenieure und Werkmeister soll strukturiert erfasst und über ein KI-gestütztes RAG-System für die folgenden Zielgruppen verfügbar gemacht werden:
+„Das implizite Wissen unserer erfahrenen Ingenieure und Werkmeister soll strukturiert erfasst und über ein KI-gestütztes RAG-System für die folgenden unsere Serviceingenieure im Aussendienst und unsere Agenten in Houston, Busan, Dubai und Miami verfügbar gemacht werden.
 
-1. Eigene Service-Ingenieure im Außendienst (Diagnose-Unterstützung)
-2. Internationale Vertriebsagenten in Houston, Yokohama, Shanghai, Busan
-3. Neue Mitarbeitende über einen integrierten mehrsprachigen Onboarding-Bot
+Zusätzlich brauchen wir ein KI-gestütztes Onboarding für unsere Mitarbeiterinnen und Mitarbeiter, durch das sie alles Wichtige (Spesenabrechnung, Überstundenregelung, Kantinenplan, Verpflegungspauschalen, Sicherheitsbeauftragte, Einreise- und Zollvorschriften, Fortbildungsmöglichkeiten) erfahren können. Wenn möglich wünscht sich die Finanzabteilung zusätzlich eine Möglichkeit, Belegte (z.B. Hotelrechnungen oder Bewirtungsbelege) einscannen und mit Projektnummern versehen zu können.
 
-Das System muss bis Ende des Geschäftsjahres produktiv sein. Sicherheit, Datenschutz und Akzeptanz haben höchste Priorität."
+Das System muss bis Ende des nächsten Geschäftsjahres produktiv sein. Sicherheit, Datenschutz und Akzeptanz haben höchste Priorität."
 
 ### Projektrahmen
 
 | Kennzahl | Wert |
 |---|---|
-| Projektdauer | 6 Monate (Mai bis Oktober 2026) |
-| Budget | 280.000 € (davon 110.000 € externe Beratung, 80.000 € Lizenzen, 90.000 € interne Ressourcen) |
-| Projektleitung | KI-Beauftragte (du) — neu eingestellt, im Amt seit Mai 2026 |
+| Projektdauer | 18 Monate (Juni 2026 bis Dezember 2027) |
+| Budget | 580.000 € (davon 210.000 € externe Beratung, 80.000 € Lizenzen, 90.000 € interne Ressourcen) |
+| Projektleitung | KI-Beauftragte (du) — neu eingestellt, im Amt seit Juni 2026 |
 | Auftraggeber | Heinrich Mäurer jun., Geschäftsführer |
 | Steuerungskreis | Junior Mäurer · CISO Schreiber · DSB Hoffmann · IT-Leiter Brandes · Betriebsrat |
 | Externer Implementierungspartner | tba — Auswahl im Projektmonat 1 |
