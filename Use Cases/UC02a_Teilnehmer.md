@@ -15,6 +15,14 @@ Der neue Geschäftsführer möchte ein KI-gestütztes Kompetenzzentrum einrichte
 
 Die Agenten sind keine Mitarbeitenden — sie sind rechtlich selbständige Geschäftspartner.
 
+WellSeal plant zwei technische KI-Initiativen:
+
+**Predictive Maintenance:** Ein ML-Modell analysiert Betriebsdaten von Dichtungssystemen auf Schiffen und prognostiziert den Wartungsbedarf — bevor ein Ausfall eintritt.
+
+**Angebotskalkulation:** Das bestehende SAP-System und die interne Kalkulationssoftware werden mit einem KI-Modell verbunden. Das Modell soll Angebotsvorschläge auf Basis historischer Projekte und Expertenwissen liefern. Geplant: Das zugekaufte Modell wird mit eigenen SAP-Daten nachtrainiert (Fine-Tuning).
+
+WellSeal ist ISO 9001-zertifiziert. CISO Dr. Schreiber lehnt jeden SAP-Datenexport in die Cloud kategorisch ab.
+
 Du bist der neu eingestellte KI-Beauftragte. Was sind deine ersten Schritte?
 
 ---
