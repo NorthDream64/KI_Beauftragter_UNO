@@ -5,7 +5,7 @@
 
 ---
 
-## 🔵 WOCHE 1 — Grundlagen: Rolle, Kommunikation, Recht
+## 🔵 Grundlagen: Rolle, Kommunikation, Recht
 
 ### 1.1 EU AI Act & Regulierung
 | URL | Name | Typ | Schlagwörter |
@@ -72,7 +72,7 @@
 
 ---
 
-## 🔴 WOCHE 3 — Risikomanagement & IT-Sicherheit
+## 🔴 Risikomanagement & IT-Sicherheit
 
 ### 3.1 KI-Risikomanagement & Frameworks
 | URL | Name | Typ | Schlagwörter |
@@ -109,7 +109,7 @@
 
 ---
 
-## 🟣 WOCHE 4 — Change Management, Strategie & Abschluss
+## 🟣 Change Management, Strategie & Abschluss
 
 ### 4.1 Change Management & KI-Einführung
 | URL | Name | Typ | Schlagwörter |
@@ -145,18 +145,17 @@
 
 ---
 
-## 📚 PROJEKTDOKUMENTE (lokal im Projekt hinterlegt)
+## 📚 PROJEKTDOKUMENTE (lokale Dateien)
 
 | Dateiname | Inhalt | Relevanz |
 |-----------|--------|----------|
-| `KI_und_Recht.pdf` | Rohrlich – KI und Recht (Hanser 2024) | Woche 1–2: Rechtliche Grundlagen |
-| `Dyck-B-Kuenstliche-Intelligenz-in-der-Fuehrung.pdf` | Dyck/Spann – KI in der Führung (Haufe 2025) | Woche 4: Change Management |
-| `ISO_42001.pdf` | ISO/IEC 42001 Norm | Woche 3: Risikomanagement |
-| `NIST_AI_Risk_Management.pdf` | NIST AI RMF 1.0 | Woche 3: Risikomanagement |
-| `Turing_Institute_AI_Ethics.pdf` | Turing Institute AI Ethics | Woche 2–3: Ethik & Governance |
-| `GRC_Capability_Model.pdf` | GRC Capability Model | Woche 3: IT-Governance |
-| `KI-in-der-Projektwirtschaft.pdf` | KI in der Projektwirtschaft | Woche 4: Strategie |
-| `Künstliche_Intelligenz__KIBeauftragter.pdf` | TÜV-Kursskript | Alle Wochen |
+| `KI_und_Recht.pdf` | Rohrlich – KI und Recht (Hanser 2024) |
+| `Dyck-B-Kuenstliche-Intelligenz-in-der-Fuehrung.pdf` | Dyck/Spann – KI in der Führung (Haufe 2025) |
+| `ISO_42001.pdf` | ISO/IEC 42001 Norm |
+| `NIST_AI_Risk_Management.pdf` | NIST AI RMF 1.0 | 
+| `Turing_Institute_AI_Ethics.pdf` | Turing Institute AI Ethics |
+| `GRC_Capability_Model.pdf` | GRC Capability Model | 
+| `KI-in-der-Projektwirtschaft.pdf` | KI in der Projektwirtschaft |
 
 ---
 
