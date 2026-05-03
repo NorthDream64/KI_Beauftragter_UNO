@@ -18,8 +18,8 @@
 ### 1.2 Rolle des KI-Beauftragten
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
-| https://www.tuv.com/germany/de/ki-beauftragter.html | TÜV Rheinland — KI-Beauftragter | Zertifizierung | Modul 764, Prüfungsanforderungen, Rollenprofil |
-| https://www.bitkom.org/Themen | Bitkom — KI-Kompetenzzentrum | Verband | KI-Governance, Rollenprofil, Best Practice Deutschland |
+| https://akademie.tuv.com/weiterbildungen/ki-beauftragter-tuev-30238361 | TÜV Rheinland — KI-Beauftragter |
+| https://www.bitkom.org/Themen | Bitkom — KI-Kompetenzzentrum | Verband | KI-Governance |
 
 ### 1.3 Datenschutz & DSGVO
 | URL | Name | Typ | Schlagwörter |
