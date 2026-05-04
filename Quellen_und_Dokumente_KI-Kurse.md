@@ -146,6 +146,17 @@
 
 ---
 
+## Allgemeine KI & Gesellschaft
+
+### KI und Mensch
+| URL | Name | Typ | Schlagwörter |
+|-----|------|-----|--------------|
+| https://brobotspodcast.substack.com/ | Health, Wellness & Mindset in the Age of AI | Podcast und Substack-Artikel |
+| Co-Intelligence: Living and Working with AI | Ethan Mollick | 2024 |
+| The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma | Mustafa Suleyman | 2023 |
+
+---
+
 ## 📚 PROJEKTDOKUMENTE (lokale Dateien)
 
 | Dateiname | Inhalt | Relevanz |
