@@ -85,7 +85,8 @@
 | https://airc.nist.gov/ | NIST AI Risk Management Framework | Standard | AI RMF, Playbook, Interaktiv |
 | https://www.iso.org/standard/81230.html | ISO/IEC 42001:2023 | Norm | KI-Managementsystem, Zertifizierung, Anforderungen |
 | https://www.iso.org/standard/27001 | ISO/IEC 27001 | Norm | Informationssicherheit, ISMS, Verknüpfung KI-Sicherheit |
-| https://naaia.ai/homepage/ | Automatisiertes AI-Inventory | AIMS | Frankreich NAAIA | nützliches Glossar: https://naaia.ai/responsible-ai-glossary/
+| https://naaia.ai/homepage/ | Automatisiertes AI-Inventory | AIMS | Frankreich NAAIA | 
+| nützliches Glossar: https://naaia.ai/responsible-ai-glossary/
 
 
 ### 3.2 IT-Sicherheit & KI-Angriffe
