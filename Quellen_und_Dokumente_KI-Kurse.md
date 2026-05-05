@@ -14,9 +14,11 @@
 | https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence | EU AI Strategy (Kommission) | Sekundärquelle | EU-Digitalstrategie, AI Act Kontext, Vertrauenswürdige KI |
 | https://artificialintelligenceact.eu/ | EU AI Act Explorer (interaktiv) | Tool | Artikel-Browser, Paragraphensuche, Compliance-Prüfung |
 | https://www.bmi.bund.de/DE/themen/moderne-verwaltung/ki-in-der-bundesverwaltung/ki-in-der-bundesverwaltung-node.html | BMI — KI in der Bundesverwaltung | Behörde | Deutschland, Umsetzung, Verwaltungs-KI |
+| https://www.oecd.org/en/publications/oecd-framework-for-the-classification-of-ai-systems_cb6d9eca-en.html | OECD Framework for the Classification of AI Systsms | 2022 | Policy Paper |
+| https://aesia.digital.gob.es/en/guides | AESIA | Checklisten, Umsetzungshilfen | Spanien Spanish Agency for the Supervision of Artificial Intelligence  |
 | https://www.dpo-consulting.com/blog/high-risk-ai-systems | DPO Consulting | Cyber Security, Data Protection | Großbritannien Bewertung von Hoch-Risko-Systemen |
 | https://www.dsn-group.de/kuenstliche-intelligenz/ki-pruefschema-fuer-hochrisiko | DSN Gruppe | Prüfschema | Deutschland Bewertung von Hoch-Risko-Systemen |
-| https://www.oecd.org/en/publications/oecd-framework-for-the-classification-of-ai-systems_cb6d9eca-en.html | OECD Framework for the Classification of AI Systsms | 2022 | Policy Paper |
+
 
 ### 1.2 Rolle des KI-Beauftragten
 | URL | Name | Typ | Schlagwörter |
