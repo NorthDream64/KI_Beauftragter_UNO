@@ -41,6 +41,9 @@ Extern bestellt, Rechtsanwalt. Sehr DSGVO-konservativ. Hat in der Vergangenheit 
 ### Kai Brandes — IT-Leiter
 Seit 12 Jahren im Unternehmen. Hat SAP eingeführt und pflegt es. Versteht M365 als Infrastruktur, nicht als Werkzeug. Hat kein Budget für neue Projekte und wenig Kapazität. Sieht KI-Initiativen als zusätzliche Last für sein Team.
 
+### Roxanne Aubieu — Leiterin Controlling
+Seit 1 Jahr im Unternehmen. Kommt ursprünglich aus der Unternehmensberatung und ist ein "Zahlenmensch", kennt aber das Geschäft noch nicht in der Tiefe. Sie orientiert sich stark an Heinrich Mäurer jun. und sieht sich in der Rolle, seine Ideen und Initiativen auf ihren strategischen und operativen Geschäftswert hin zu validieren.
+
 ### Sie — KI-Beauftragter:in (neu geschaffene Stelle)
 Die Teilnehmenden nehmen diese Rolle ein. Die Stelle wurde auf Initiative des Juniors geschaffen — sie ist im Organigramm noch nicht verankert. Es gibt keine direkte Berichtslinie, kein Budget, keine formale Weisungsbefugnis. Der KI-Beauftragte wirkt beratend und koordinierend.
 
