@@ -5,7 +5,7 @@
 
 ## Szenario
 
-Das Krankenhaus entwickelt eine App für Patienten und Angehörige, die häufig wiederkehrende Fragen beantwortet: Besuchszeiten, Abläufe vor Operationen, Medikamenteneinnahme, Entlassungsprozesse, Nachsorge. Der Chatbot basiert auf einem Sprachmodell und wird mit internen Dokumenten trainiert. Die App heisst "Ihre Fragen - Unsere Antworten" un kann im Patienten W-LAN des Krankenhauses hochgeladen werden.
+Das Krankenhaus entwickelt eine App für Patienten und Angehörige, die häufig wiederkehrende Fragen beantwortet: Besuchszeiten, Abläufe vor Operationen, Medikamenteneinnahme, Entlassungsprozesse, Nachsorge. Der Chatbot basiert auf einem Sprachmodell und wird mit internen Dokumenten trainiert. Die App heisst "Ihre Fragen - Unsere Antworten" und kann im Patienten W-LAN des Krankenhauses hochgeladen werden.
 
 **Der Lernmechanismus:** Patienten und Angehörige können Antworten mit 👍 oder 👎 bewerten. Das System lernt aus diesen Bewertungen und verbessert künftige Antworten. Damit verwandelt sich der Bot von einem statischen Informationssystem in ein **lernendes KI-System**. Das Krankenhaus überlegt noch, ob Bewertungen anonym oder mit Klinik-Account erfolgen sollen, und wer die Modell-Updates freigibt.
 
