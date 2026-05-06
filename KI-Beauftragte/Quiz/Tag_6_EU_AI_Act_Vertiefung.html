@@ -143,7 +143,7 @@ a{color:var(--accent);}
 <body>
 
 <header class="site-header">
-  <div class="eyebrow">TÜV Rheinland · Modul 764 · Tag 6</div>
+  <div class="eyebrow">KI-Beauftragte · Tag 6</div>
   <h1>Lernkontrolle<br>Risikomanagement I</h1>
   <div class="header-meta">
     <span>5 Fragen je Rolle &amp; Stufe</span>
@@ -311,7 +311,7 @@ a1: [
 /* Verteilung: 1×1 richtig · 2×2 richtig · 2×3 richtig */
 a2: [
   {
-    q: 'UC-03c/d zeigt seit einigen Monaten eine Bestätigungsschleife (Confirmation Loop): das System bestätigt zunehmend seine eigenen früheren Befunde. Was ergibt sich aus Art. 72 Post-Market-Monitoring?',
+    q: 'Die neue On-Boarding-App zeigt seit einigen Monaten eine Bestätigungsschleife (Confirmation Loop): das System bestätigt zunehmend seine eigenen früheren Befunde. Was ergibt sich aus Art. 72 Post-Market-Monitoring?',
     opts: [
       'Das Verhalten muss systematisch dokumentiert und analysiert werden — eine Bestätigungsschleife ist ein klassischer Post-Market-Befund',
       'Die Bestätigungsschleife ist nur ein Verdacht — bis zur Klärung muss nichts unternommen werden',
@@ -342,8 +342,8 @@ a2: [
       'Bei jeder Software-Aktualisierung — unabhängig vom Inhalt',
       'Wenn der Zweck oder die Leistungsmerkmale des Systems verändert werden'
     ],
-    correct: [0,3],
-    exp: 'Eine wesentliche Veränderung liegt vor, wenn sie die Konformität mit den EU AI Act-Anforderungen beeinflussen kann (Art. 43) — typischerweise bei Änderung des Zwecks, der Leistungsmerkmale oder der zentralen Architektur. Eine reine Erweiterung der Trainingsdaten ist nicht automatisch wesentlich — entscheidend ist, ob sich das Verhalten oder die Risiken substanziell verändern. Routine-Software-Updates ohne funktionale Veränderung lösen keine erneute Konformitätsbewertung aus. Diese Abgrenzung ist in der Praxis kritisch — sie entscheidet, ob aufwendige Bewertungsprozesse erneut durchlaufen werden müssen oder nicht.',
+    correct: [0,1,3],
+    exp: 'Eine wesentliche Veränderung liegt vor, wenn sie die Konformität mit den EU AI Act-Anforderungen beeinflussen kann (Art. 43) — typischerweise bei Änderung des Zwecks, der Leistungsmerkmale oder der zentralen Architektur. Eine reine, nicht substanzielle Erweiterung der Trainingsdaten löst keine Neubewertung aus — entscheidend ist, ob sich das Verhalten oder die Risiken des Systems dadurch substanziell verändern. Option B erfüllt genau dieses Kriteriumn. Routine-Software-Updates ohne funktionale Veränderung lösen keine erneute Konformitätsbewertung aus. Diese Abgrenzung ist in der Praxis kritisch — sie entscheidet, ob aufwendige Bewertungsprozesse erneut durchlaufen werden müssen oder nicht.',
     src: 'EU AI Act Art. 43', url: 'https://artificialintelligenceact.eu/article/43/'
   },
   {
@@ -359,7 +359,7 @@ a2: [
     src: 'EU AI Act Art. 12', url: 'https://artificialintelligenceact.eu/article/12/'
   },
   {
-    q: 'Welche Zusammenarbeit zwischen Krankenhaus und externem Anbieter ist bei UC-03c/d zwingend erforderlich?',
+    q: 'Welche Zusammenarbeit zwischen Krankenhaus und externem Anbieter ist bei der automatisierten Patientenverwaltung und dem Onboarding-Bot mit Lernfunktion zwingend erforderlich?',
     opts: [
       'Wartungsvertrag mit klarer Regelung zu Modell-Updates, Bias-Monitoring und Vorfallsmeldung',
       'Schnittstelle für die Übergabe von Post-Market-Daten vom Betreiber an den Anbieter',
@@ -412,7 +412,7 @@ b1: [
     src: 'EU AI Act Art. 73', url: 'https://artificialintelligenceact.eu/article/73/'
   },
   {
-    q: 'Im UC-03b-Vorfall mit der Falschauskunft zur Medikamenten-Vorbereitung — wie hätten Sie als CISO operativ reagieren sollen?',
+    q: 'Beim Vorfall mit der Falschauskunft zur Medikamenten-Vorbereitung — wie hätten Sie als CISO operativ reagieren sollen?',
     opts: [
       'Sofortige Sicherung aller Logs zum Vorfall — Beweisführung schützen',
       'Den KI-Beauftragten unverzüglich einbeziehen — gemeinsame Bewertung der Meldepflicht',
@@ -453,7 +453,7 @@ b2: [
     src: 'EU AI Act Art. 12, 72, 73', url: 'https://artificialintelligenceact.eu/article/73/'
   },
   {
-    q: 'Der externe Anbieter spielt für UC-03c/d ein Modell-Update ein, das nach Aussage des Anbieters „nur ein Routine-Update" ist. Was prüfen Sie als CISO?',
+    q: 'Der externe Anbieter spielt für KI "Automatisierte Patientenverwaltung" ein Modell-Update ein, das nach Aussage des Anbieters „nur ein Routine-Update" ist. Was prüfen Sie als CISO?',
     opts: [
       'Ob das Update als wesentliche Veränderung im Sinne von Art. 43 zu bewerten ist',
       'Ob das Update Auswirkungen auf Genauigkeit, Bias oder bekannte Risiken hat',
