@@ -44,6 +44,7 @@
 | https://www.deeplearning.ai/ | DeepLearning.AI | Bildung | ML-Grundlagen, Kurse, Andrew Ng |
 | https://huggingface.co/docs | Hugging Face Docs | Technisch | LLMs, Modelle, Open Source KI |
 | https://platform.openai.com/docs | OpenAI API Docs | Technisch | GPT-4, Prompting, Token-Limits, Sicherheitsfilter |
+| https://cset.georgetown.edu/research-area/cyberai/ | CSET (Center for Security and Emergign TEchnology) | Forschung | USA Cybersecurity |
 
 ### 2.2 Large Language Models & Prompting
 | URL | Name | Typ | Schlagwörter |
