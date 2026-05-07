@@ -14,7 +14,7 @@ Das System wurde von einem externen Softwarehaus entwickelt. Das Krankenhaus ist
 
 Die Patientenaufklärung über KI-Beteiligung ist gegenwärtig auf eine Zeile im allgemeinen Behandlungsvertrag reduziert. DSB und Ärztevertreter streiten, ob das ausreicht. Der Personalrat hat die Pilotphase mitgetragen, äußert aber Sorgen, dass beim Roll-Out die Verantwortung zunehmend bei den Ärzten verbleibt, während das Tempo durch die KI-Vorgabe steigt.
 
-**Achtung:** Die gegenwärtige Situation in Krankenhäusern: Längere Wartezeiten führen dazu, dass Patienten kränker werden, wenn sie endlich behandelt werden. Das bedeutet: Die Qualität der Trainingsdaten spiegelt eine durch den Doom Loop verzerrte Realität wider.
+**Achtung:** Die gegenwärtige Situation in Krankenhäusern: Längere Wartezeiten führen dazu, dass Patienten kränker werden, wenn sie endlich behandelt werden. Das bedeutet: Die Qualität der Trainingsdaten spiegelt eine durch den Doom Loop verzerrte Realität wider. Ein problematisches Beispiel für die Verwendung von KI zu diagnostischen Zwecken ist https://telecareaware.com/breaking-openevidence-app-access-terminated-in-the-uk-and-eu/
 
 ---
 
