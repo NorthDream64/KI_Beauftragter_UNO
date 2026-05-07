@@ -13,25 +13,25 @@
 | https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689 | EU AI Act Volltext (EUR-Lex) | Primärquelle | Regulation (EU) 2024/1689, Risikoklassen, KI-Beauftragter, Hochrisiko-KI |
 | https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence | EU AI Strategy (Kommission) | Sekundärquelle | EU-Digitalstrategie, AI Act Kontext, Vertrauenswürdige KI |
 | https://artificialintelligenceact.eu/ | EU AI Act Explorer (interaktiv) | Tool | Artikel-Browser, Paragraphensuche, Compliance-Prüfung |
-| https://www.bmi.bund.de/DE/themen/moderne-verwaltung/ki-in-der-bundesverwaltung/ki-in-der-bundesverwaltung-node.html | BMI — KI in der Bundesverwaltung | Behörde | Deutschland, Umsetzung, Verwaltungs-KI |
+| https://www.bmi.bund.de/DE/themen/sicherheit/it-und-cybersicherheit/it-und-cybersicherheit-node.html | Bundesministerium des Ineren (BMI) | Behörde | Deutschland, Cybersicherheit |
 | https://www.oecd.org/en/publications/oecd-framework-for-the-classification-of-ai-systems_cb6d9eca-en.html | OECD Framework for the Classification of AI Systsms | 2022 | Policy Paper |
 | https://aesia.digital.gob.es/en/guides | AESIA | Checklisten, Umsetzungshilfen | Spanien Spanish Agency for the Supervision of Artificial Intelligence  |
 | https://www.dpo-consulting.com/blog/high-risk-ai-systems | DPO Consulting | Cyber Security, Data Protection | Großbritannien Bewertung von Hoch-Risko-Systemen |
-| https://www.dsn-group.de/kuenstliche-intelligenz/ki-pruefschema-fuer-hochrisiko | DSN Gruppe | Prüfschema | Deutschland Bewertung von Hoch-Risko-Systemen |
+| https://www.dsn-group.de/kuenstliche-intelligenz/ki-pruefschema-fuer-hochrisiko | DSN Gruppe | Prüfschemata | Deutschland Bewertung von Hoch-Risko-Systemen |
 
 
 ### 1.2 Rolle des KI-Beauftragten
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://akademie.tuv.com/weiterbildungen/ki-beauftragter-tuev-30238361 | TÜV Rheinland — KI-Beauftragter |
-| https://www.bitkom.org/Themen/KI-Daten | Bitkom — KI-Kompetenzzentrum | Verband | KI-Governance |
+| https://www.bitkom.org/Themen/KI-Daten | Bitkom — KI-Kompetenzzentrum | Verband | KI-Governance - Daten zur KI in Deutschland |
 
 ### 1.3 Datenschutz & DSGVO
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://gdpr-info.eu/ | GDPR.eu — DSGVO Volltext | Primärquelle | Artikel-Browser, Datenschutz, personenbezogene Daten |
 | https://www.datenschutzkonferenz-online.de/ | DSK — Datenschutzkonferenz | Behörde | Deutschland, Aufsichtsbehörden, Orientierungshilfen KI |
-| https://edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-032024-processing-personal-data-through-ai_en | EDPB Guidelines AI & DSGVO | Leitlinie | DSGVO + AI Act, Datenverarbeitung, Einwilligung |
+| https://www.edpb.europa.eu/our-work-tools/general-guidance/guidelines-recommendations-best-practices_en | EDPB Guidelines AI & DSGVO | Leitlinie | DSGVO + AI Act, Datenverarbeitung, Einwilligung |
 
 ---
 
@@ -42,7 +42,7 @@
 |-----|------|-----|--------------|
 | https://aiindex.stanford.edu/ | Stanford HAI — AI Index Report | Forschung | Jährlicher State-of-AI, Statistiken, Marktdaten |
 | https://www.deeplearning.ai/ | DeepLearning.AI | Bildung | ML-Grundlagen, Kurse, Andrew Ng |
-| https://huggingface.co/docs | Hugging Face Docs | Technisch | LLMs, Modelle, Open Source KI |
+| https://huggingface.co/docs | Hugging Face | Technisch | LLMs, Modelle, Open Source KI |
 | https://platform.openai.com/docs | OpenAI API Docs | Technisch | GPT-4, Prompting, Token-Limits, Sicherheitsfilter |
 | https://cset.georgetown.edu/research-area/cyberai/ | CSET (Center for Security and Emergign TEchnology) | Forschung | USA Cybersecurity |
 
@@ -52,22 +52,16 @@
 | https://learnprompting.org/ | Learn Prompting | Bildung | Prompt Engineering, Grundlagen, Fortgeschrittene Techniken |
 | https://www.promptingguide.ai/ | Prompting Guide (DAIR.AI) | Referenz | Chain-of-Thought, Few-Shot, RAG, Sicherheit |
 | https://owasp.org/www-project-top-10-for-large-language-model-applications/ | OWASP LLM Top 10 | Sicherheit | Prompt Injection, Training Data Poisoning, LLM-Risiken |
+| https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices | Anthropic (Claude) | Promptinmg Guide
 
 ### 2.4 Microsoft 365 & Copilot — Adoption & Praxis
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
-| https://adoption.microsoft.com/en-us/ | Microsoft Adoption Hub | Offiziell/Praxis | M365, Copilot, Rollen, Deployment, Adoption, KMU |
 | https://adoption.microsoft.com/en-us/ai-readiness-wizard/ | AI Readiness Wizard | Tool | Selbstassessment, Copilot-Rollout, Readiness, Laborübung |
 | https://adoption.microsoft.com/en-us/copilot/essential-guide/ | Essential Guide to M365 Copilot Adoption | Leitfaden | Governance, Change Management, RACI, Rollout-Planung |
-| https://adoption.microsoft.com/en-us/copilot/smb/ | M365 Copilot für KMU | Leitfaden | KMU, Small Business, Einstieg, Lizenzierung |
-| https://adoption.microsoft.com/en-us/scenario-library/ | Microsoft Scenario Library | Referenz | Use Cases nach Branche/Funktion, Selbststudium, Fortgeschrittene |
-| https://adoption.microsoft.com/en-us/leading-in-the-era-of-ai/ | Leading in the Era of AI | Führung | Change Management, KI-Führung, Management, Woche 4 |
-| https://adoption.microsoft.com/en-us/microsoft-security/purview/ | Purview Adoption Guide | Leitfaden | Purview, Compliance, DLP, Sensitivity Labels, Tag 8 |
-| https://adoption.microsoft.com/en-us/microsoft-security/entra/ | Microsoft Entra Adoption Guide | Leitfaden | Identitätsmanagement, Zero Trust, Zugriffsrechte |
-| https://techcommunity.microsoft.com/category/microsoft365copilot/blog/microsoft365copilotblog | M365 Copilot Blog (Tech Community) | Dauerquelle | Produkt-Ankündigungen, Feature-Releases, IT-Pro-Leitfäden, monatliche What's New |
-| https://techcommunity.microsoft.com/blog/microsoft365copilotblog/from-draft-to-done-agentic-copilot-in-excel-word-and-powerpoint/4500196 | Agentic Copilot in Excel, Word, PowerPoint (09.03.2026) | Fachbeitrag | Agentische KI, Office-Apps, mehrstufige Aktionen, Tag 8 |
-| https://techcommunity.microsoft.com/blog/microsoft365copilotblog/enable-agents-to-bring-apps-into-the-flow-of-work—while-keeping-it-in-control/4499464 | Agenten im Arbeitsfluss — IT behält Kontrolle (09.03.2026) | Fachbeitrag | Agent Governance, IT-Kontrolle, RACI, Tag 8 |
-| https://techcommunity.microsoft.com/blog/microsoft365copilotblog/what's-new-in-microsoft-365-copilot--february-2026/4496489 | What's New in M365 Copilot — Februar 2026 | Monatsbericht | Monatliches Review, Modellwechsel, neue Features — Pflichtlektüre KB |
+| https://learn.microsoft.com/de-de/purview/purview | Microsoft Purview (Comliance) | Technische Dokumentation | Purview, Compliance, DLP, Sensitivity Labels |
+| https://learn.microsoft.com/de-de/entra/ | Microsoft Entra (Directory) | Technische Dokumentation | Identitätsmanagement, Zero Trust, Zugriffsrechte |
+| https://learn.microsoft.com/de-de/azure/sentinel/sentinel-overview | Microsoft Sentinel (SIEM) | Überwachung von Sicherheitsereignissen |
 
 ### 2.3 KI & Gesellschaft / Ethik
 | URL | Name | Typ | Schlagwörter |
@@ -161,7 +155,8 @@
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://brobotspodcast.substack.com/ | Health, Wellness & Mindset in the Age of AI | Podcast und Substack-Artikel |
-| https://www.microsoft.com/de-de/customers/search?filters=language%3Agerman&q=ki | Microsoft | KI-Use Cases und Praxisbeispiele |
+| https://www.microsoft.com/de-de/customers/search?filters=language%3Agerman&q | Microsoft | KI-Use Cases und Praxisbeispiele |
+| https://platform.claude.com/docs/en/about-claude/use-case-guides/overview | Anthropic (Claude) | KI-Use Cases und Praxisbeispiele |
 | Co-Intelligence: Living and Working with AI | Ethan Mollick | 2024 |
 | The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma | Mustafa Suleyman | 2023 |
 
