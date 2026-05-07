@@ -35,7 +35,7 @@
 
 ---
 
-## 🟢 WOCHE 2 — KI-Technologie & Datenschutz
+## 🟢 KI-Technologie & Datenschutz
 
 ### 2.1 KI-Grundlagen & Technologie
 | URL | Name | Typ | Schlagwörter |
@@ -118,7 +118,7 @@
 
 ---
 
-## 🤖 Allgemein KI & Use Cases
+## 🤖 KI Use Cases
 
 ### KI und Mensch
 | URL | Name | Typ | Schlagwörter |
