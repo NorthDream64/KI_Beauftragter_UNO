@@ -59,7 +59,7 @@
 |-----|------|-----|--------------|
 | https://adoption.microsoft.com/en-us/ai-readiness-wizard/ | AI Readiness Wizard | Tool | Selbstassessment, Copilot-Rollout, Readiness, Laborübung |
 | https://adoption.microsoft.com/en-us/copilot/essential-guide/ | Essential Guide to M365 Copilot Adoption | Leitfaden | Governance, Change Management, RACI, Rollout-Planung |
-| https://learn.microsoft.com/de-de/purview/purview | Microsoft Purview (Comliance) | Technische Dokumentation | Purview, Compliance, DLP, Sensitivity Labels |
+| https://learn.microsoft.com/de-de/purview/purview | Microsoft Purview (Compliance) | Technische Dokumentation | Purview, Compliance, DLP, Sensitivity Labels |
 | https://learn.microsoft.com/de-de/entra/ | Microsoft Entra (Directory) | Technische Dokumentation | Identitätsmanagement, Zero Trust, Zugriffsrechte |
 | https://learn.microsoft.com/de-de/azure/sentinel/sentinel-overview | Microsoft Sentinel (SIEM) | Überwachung von Sicherheitsereignissen |
 
@@ -68,7 +68,6 @@
 |-----|------|-----|--------------|
 | https://www.humanetech.com/ | Center for Humane Technology | NGO | Attention Economy, Social Harms, AI Ethics, Tech-Kritik |
 | https://www.AlgorithmWatch.org/ | AlgorithmWatch | NGO | Algorithmische Entscheidungen, Bias, Diskriminierung |
-| https://www.ki-ideenraum.de/ | KI-Ideenraum (BMBF) | Behörde | Deutschland, Gesellschaftliche KI-Debatte |
 | https://arxiv.org/list/cs.AI/recent | arXiv (Cornell University | Universität | USA, KI-Forschung |
 
 ---
@@ -78,10 +77,8 @@
 ### 3.1 KI-Risikomanagement & Frameworks
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
-| https://www.nist.gov/system/files/documents/2023/01/26/AI%20RMF%201.0.pdf | NIST AI RMF 1.0 (PDF) | Standard | Govern, Map, Measure, Manage, Risikobewertung |
-| https://airc.nist.gov/ | NIST AI Risk Management Framework | Standard | AI RMF, Playbook, Interaktiv |
-| https://www.iso.org/standard/81230.html | ISO/IEC 42001:2023 | Norm | KI-Managementsystem, Zertifizierung, Anforderungen |
-| https://www.iso.org/standard/27001 | ISO/IEC 27001 | Norm | Informationssicherheit, ISMS, Verknüpfung KI-Sicherheit |
+| https://csrc.nist.gov/Topics/Security-and-Privacy/risk-management/ | US Government (NIST / Computer Security Resource Center) | Standard | Cybersecurity|
+| https://airc.nist.gov/ | US Government (NIST / Computer Security Resource Center) | Standard | AI Risikomanagement|
 | https://naaia.ai/homepage/ | Automatisiertes AI-Inventory | AIMS | Frankreich NAAIA | 
 | nützliches Glossar: https://naaia.ai/responsible-ai-glossary/
 
@@ -90,15 +87,15 @@
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://atlas.mitre.org/ | MITRE ATLAS | Framework | KI-Angriffsvektoren, Adversarial ML, Red Teaming |
-| https://owasp.org/www-project-machine-learning-security-top-10/ | OWASP ML Security Top 10 | Sicherheit | ML-Sicherheit, Angriffe, Gegenmaßnahmen |
+| https://owasp.org/www-project-machine-learning-security-top-10/ | Open Worldwide Application Security Project (OWASP) | Sicherheit | ML-Sicherheit, Angriffe, Gegenmaßnahmen |
 | https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Kuenstliche-Intelligenz/kuenstliche-intelligenz_node.html | BSI — KI-Sicherheit | Behörde | Deutschland, Lageberichte, Empfehlungen |
 
 ### 3.3 KI-Ethik & Governance (Forschung)
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
-| https://www.turing.ac.uk/research/interest-groups/fairness-transparency-privacy | Turing Institute — AI Ethics | Forschung | Fairness, Transparency, Privacy, Governance |
-| https://ai.google/responsibility/responsible-ai-practices/ | Google — Responsible AI | Industrie | Praktische Leitlinien, Bias-Erkennung, Erklärbarkeit |
-| https://www.microsoft.com/en-us/ai/responsible-ai | Microsoft Responsible AI | Industrie | Responsible AI Standard, Governance-Prinzipien |
+| https://www.turing.ac.uk/research/interest-groups/fairness-transparency-privacy | Alan Turing Institute | Forschung | Ethikl, Fairness, Transparency, Privacy, Governance |
+| https://ai.google/responsibility/responsible-ai-practices/ | Google Inc. | Industrie | Responsible AI Progress Report seit 2019 |
+| https://www.microsoft.com/en-us/ai/responsible-ai | Microsoft | Industrie | Responsible AI Report, Standard, Governance-Prinzipien |
 | https://www.partnershiponai.org/ | Partnership on AI | NGO | Multi-Stakeholder, Best Practices, Forschung |
 
 ### 3.4 KRITIS & Krankenhaus (IT-Sicherheit im Gesundheitswesen)
