@@ -98,16 +98,6 @@
 | https://www.microsoft.com/en-us/ai/responsible-ai | Microsoft | Industrie | Responsible AI Report, Standard, Governance-Prinzipien |
 | https://www.partnershiponai.org/ | Partnership on AI | NGO | Multi-Stakeholder, Best Practices, Forschung |
 
-### 3.4 KRITIS & Krankenhaus (IT-Sicherheit im Gesundheitswesen)
-| URL | Name | Typ | Schlagwörter |
-|-----|------|-----|--------------|
-| https://www.itsicherheit-online.com | IT-SICHERHEIT (Fachmagazin) | Fachmedium | KRITIS, Cybersecurity, Cloud Security, Shadow AI, aktuelle Vorfälle |
-| https://www.itsicherheit-online.com/kategorie/kritis/ | IT-SICHERHEIT — Kategorie KRITIS | Fachmedium | Krankenhaus, OT-Security, NIS2, kritische Infrastruktur |
-| https://www.itsicherheit-online.com/die-luecke-zwischen-audit-und-realitaet/ | Die Lücke zwischen Audit und Realität (20.04.2026) | Fachbeitrag | Krankenhaus, Compliance ≠ Sicherheit, strukturelle Schwachstellen, UC-03 |
-| https://www.itsicherheit-online.com/wie-sichere-identitaeten-den-weg-fuer-moderne-ki-dokumentation-im-krankenhaus-ebnen/ | Sichere Identitäten & KI-Dokumentation im Krankenhaus (17.04.2026) | Fachbeitrag | Identitätsmanagement, Zero Trust, KI-Dokumentation, UC-03, M365 |
-| https://www.itsicherheit-online.com/cloud-security-2026-ki-zwingt-unternehmen-zur-automatisierung/ | Cloud-Security 2026: KI & Automatisierung (20.04.2026) | Fachbeitrag | Cloud Security, Automatisierung, KI-Angriffe, M365, Tag 8 |
-| https://www.itsicherheit-online.com/cyber-resilienz-warum-umsetzung-wichtiger-ist-als-neue-tools/ | Cyber-Resilienz: Umsetzung vor Tools (21.04.2026) | Fachbeitrag | Resilienz, Shadow AI, Governance, Change Management |
-
 ---
 
 ## 🟣 Change Management & Strategie
@@ -115,51 +105,31 @@
 ### 4.1 Change Management & KI-Einführung
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
-| https://hbr.org/topic/subject/change-management | Harvard Business Review — Change | Fachmedium | Change Management, Kotter, Widerstände, Transformation |
+| https://hbr.org/topic/subject/change-management | Harvard Business Review (HBR) | Fachmedium | Change Management, Kotter, Widerstände, Transformation |
 | https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai | McKinsey — State of AI | Studie | Adoption, Change, ROI, Implementierung |
-| https://brigitte-dyck.com/infomenschenbild_ki | Dyck/Spann — KI & Führung (Kurs) | Begleitmaterial | Online-Kurs zum Buch, Code: KIBUCH (-20%) |
 
 ### 4.2 KI-Strategie & Roadmaps
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://www.plattform-lernende-systeme.de/ | Plattform Lernende Systeme | Behörde | Deutschland, KI-Strategie, Whitepaper, Use Cases |
-| https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review | EU Coordinated AI Plan 2021 | EU-Dokument | Mitgliedsstaaten, Investitionen, Strategie |
-| https://www.bundesregierung.de/breg-de/themen/digitalisierung/ki-strategie | Bundesregierung KI-Strategie | Behörde | Deutschland, Nationale KI-Strategie 2023 |
-| https://openai.com/global-affairs/industrial-policy-for-the-intelligence-age | OpenAI — Industrial Policy for the Intelligence Age | Positionspapier | KI-Strategie, Industriepolitik, Intelligence Age, OpenAI-Perspektive |
-
-### 4.3 Tools & Praxisressourcen
-| URL | Name | Typ | Schlagwörter |
-|-----|------|-----|--------------|
+| https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review | EU Kommission | EU Coordinated AI Plan 2021 | Mitgliedsstaaten, Investitionen, Strategie |
+| https://openai.com/de-DE/research/index/ | OpenAI | Forschung | KI-Strategie, KI-Modelle, Intelligence Age, OpenAI-Perspektive |
 | https://www.ki-strategie-deutschland.de/ | KI-Strategie Deutschland | Behörde | Handlungsfelder, Roadmap, Förderprogramme |
-| https://next.ki-strategie.de/ | KI-Strategie — Interaktiv | Tool | Selbstbewertung, KI-Reife, Unternehmens-Check |
 
 ---
 
-## 🤖 ANTHROPIC — Claude & Agentic AI
-
-### Anthropic — Tools, Whitepaper & Training
-| URL | Name | Typ | Schlagwörter |
-|-----|------|-----|--------------|
-| https://resources.anthropic.com/hubfs/Scaling%20agentic%20coding%20across%20your%20organization.pdf | Scaling Agentic Coding Across Your Organization (Whitepaper) | Whitepaper | Agentic AI, Claude Code, Organisations-Rollout, Developer Productivity |
-| https://claude.com/blog/how-anthropic-teams-use-claude-code | How Anthropic Teams Use Claude Code (Blog) | Fachbeitrag | Claude Code, Praxisbeispiele, interne Nutzung, Agentic Coding |
-| https://anthropic.skilljar.com/ | Anthropic Skilljar — Lernplattform | Bildung | Claude-Training, Kurse, Zertifizierung, Prompting, API |
-
----
-
-## Allgemein KI & Use Cases
+## 🤖 Allgemein KI & Use Cases
 
 ### KI und Mensch
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://brobotspodcast.substack.com/ | Health, Wellness & Mindset in the Age of AI | Podcast und Substack-Artikel |
-| https://www.microsoft.com/de-de/customers/search?filters=language%3Agerman&q | Microsoft | KI-Use Cases und Praxisbeispiele |
+| https://www.microsoft.com/de-de/customers/search?q=k%C3%BCnstliche+intelligenz | Microsoft | KI-Use Cases und Praxisbeispiele |
 | https://platform.claude.com/docs/en/about-claude/use-case-guides/overview | Anthropic (Claude) | KI-Use Cases und Praxisbeispiele |
-| Co-Intelligence: Living and Working with AI | Ethan Mollick | 2024 |
-| The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma | Mustafa Suleyman | 2023 |
 
 ---
 
-## 📚 PROJEKTDOKUMENTE (lokale Dateien)
+## 📚 Literaturhinweise
 
 | Dateiname | Inhalt | Relevanz |
 |-----------|--------|----------|
@@ -170,6 +140,8 @@
 | `Turing_Institute_AI_Ethics.pdf` | Turing Institute AI Ethics |
 | `GRC_Capability_Model.pdf` | GRC Capability Model | 
 | `KI-in-der-Projektwirtschaft.pdf` | KI in der Projektwirtschaft |
+| Co-Intelligence: Living and Working with AI | Ethan Mollick | 2024 |
+| The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma | Mustafa Suleyman | 2023 |
 
 ---
 
@@ -189,5 +161,5 @@
 ```
 
 ---
-*Letzte Aktualisierung: 03. Mai 2026 | Maintainer: Uli (KI-Beauftragter, alfatraining)*  
+*Letzte Aktualisierung: 03. Mai 2026 | Maintainer: Ulrich Nord*  
 *Zuletzt ergänzt: Anthropic-Abschnitt (3 Einträge: Whitepaper, Blog, Skilljar)*
