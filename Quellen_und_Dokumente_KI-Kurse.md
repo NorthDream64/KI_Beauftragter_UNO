@@ -53,7 +53,7 @@
 | https://www.promptingguide.ai/ | Prompting Guide (DAIR.AI) | Referenz | Chain-of-Thought, Few-Shot, RAG, Sicherheit |
 | https://owasp.org/www-project-top-10-for-large-language-model-applications/ | OWASP LLM Top 10 | Sicherheit | Prompt Injection, Training Data Poisoning, LLM-Risiken |
 
-### 2.4 Microsoft 365 & Copilot — Adoption & Praxis (Tag 8)
+### 2.4 Microsoft 365 & Copilot — Adoption & Praxis
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://adoption.microsoft.com/en-us/ | Microsoft Adoption Hub | Offiziell/Praxis | M365, Copilot, Rollen, Deployment, Adoption, KMU |
@@ -119,7 +119,7 @@
 
 ---
 
-## 🟣 Change Management, Strategie & Abschluss
+## 🟣 Change Management & Strategie
 
 ### 4.1 Change Management & KI-Einführung
 | URL | Name | Typ | Schlagwörter |
@@ -155,12 +155,13 @@
 
 ---
 
-## Allgemeine KI & Gesellschaft
+## Allgemein KI & Use Cases
 
 ### KI und Mensch
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://brobotspodcast.substack.com/ | Health, Wellness & Mindset in the Age of AI | Podcast und Substack-Artikel |
+| https://www.microsoft.com/de-de/customers/search?filters=language%3Agerman&q=ki | Microsoft | KI-Use Cases und Praxisbeispiele |
 | Co-Intelligence: Living and Working with AI | Ethan Mollick | 2024 |
 | The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma | Mustafa Suleyman | 2023 |
 
