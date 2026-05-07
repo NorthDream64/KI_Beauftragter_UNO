@@ -54,7 +54,7 @@
 | https://owasp.org/www-project-top-10-for-large-language-model-applications/ | OWASP LLM Top 10 | Sicherheit | Prompt Injection, Training Data Poisoning, LLM-Risiken |
 | https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices | Anthropic (Claude) | Promptinmg Guide
 
-### 2.4 Microsoft 365 & Copilot — Adoption & Praxis
+### 2.4 Microsoft 365 & Copilot
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://adoption.microsoft.com/en-us/ai-readiness-wizard/ | AI Readiness Wizard | Tool | Selbstassessment, Copilot-Rollout, Readiness, Laborübung |
@@ -118,14 +118,18 @@
 
 ---
 
-## 🤖 KI Use Cases
+## 🤖 KI in der Praxis
 
-### KI und Mensch
+### 5.1 KI Use Cases
+| URL | Name | Typ | Schlagwörter |
+|-----|------|-----|--------------|
+| https://www.microsoft.com/de-de/customers/search?q=k%C3%BCnstliche+intelligenz | Microsoft | KI-Use Cases und Praxisbeispiele |
+| https://platform.claude.com/docs/en/about-claude/use-case-guides/overview | Anthropic (Claude) | KI-Use Cases und Praxisbeispiele |
+
+### 5.2 Mensch und KI
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://brobotspodcast.substack.com/ | Health, Wellness & Mindset in the Age of AI | Podcast und Substack-Artikel |
-| https://www.microsoft.com/de-de/customers/search?q=k%C3%BCnstliche+intelligenz | Microsoft | KI-Use Cases und Praxisbeispiele |
-| https://platform.claude.com/docs/en/about-claude/use-case-guides/overview | Anthropic (Claude) | KI-Use Cases und Praxisbeispiele |
 
 ---
 
