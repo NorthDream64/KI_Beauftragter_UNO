@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lernkontrolle · Tag 3 · Rechtliche Grundlagen I</title>
+<title>Lernkontrolle · Tag 9 · Risikomanagement I</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -42,7 +42,6 @@ a{color:var(--accent);}
 .role-btns,.level-btns{display:flex;gap:.5rem;}
 .sel-btn{flex:1;padding:.55rem .6rem;border:1px solid var(--rule);border-radius:8px;background:none;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;text-align:center;transition:all .15s;color:var(--ink);}
 .sel-btn.active-a{background:var(--role-a-soft);border-color:var(--role-a);color:var(--role-a);font-weight:500;}
-.sel-btn.active-b{background:var(--role-b-soft);border-color:var(--role-b);color:var(--role-b);font-weight:500;}
 .sel-btn.active-1{background:var(--level-1-soft);border-color:var(--level-1);color:var(--level-1);font-weight:500;}
 .sel-btn.active-2{background:var(--level-2-soft);border-color:var(--level-2);color:var(--level-2);font-weight:500;}
 .hint-text{font-size:12px;color:var(--muted);margin-top:.3rem;display:block;}
@@ -54,7 +53,6 @@ a{color:var(--accent);}
 .quiz-header-strip{display:flex;gap:.6rem;align-items:center;margin-bottom:1.4rem;flex-wrap:wrap;}
 .strip-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;}
 .strip-role-a{background:var(--role-a-soft);color:var(--role-a);}
-.strip-role-b{background:var(--role-b-soft);color:var(--role-b);}
 .strip-level-1{background:var(--level-1-soft);color:var(--level-1);}
 .strip-level-2{background:var(--level-2-soft);color:var(--level-2);}
 .strip-name{font-size:13px;color:var(--muted);margin-left:auto;}
@@ -133,7 +131,6 @@ a{color:var(--accent);}
 .comp-fill{height:100%;border-radius:2px;}
 .fill-ok{background:var(--correct);}
 .fill-wrong{background:var(--wrong);}
-.sheets-note{font-size:12px;color:var(--correct);background:var(--correct-bg);border:1px solid var(--correct-border);border-radius:8px;padding:.5rem .9rem;margin-top:1rem;display:inline-block;}
 .submit-status{display:none;font-size:12px;margin-top:.5rem;padding:.4rem .8rem;border-radius:6px;}
 .submit-status.sending{display:block;background:#fffbe8;color:#806a00;border:1px solid #d0c060;}
 .submit-status.success{display:block;background:var(--correct-bg);color:var(--correct);border:1px solid var(--correct-border);}
@@ -143,12 +140,12 @@ a{color:var(--accent);}
 <body>
 
 <header class="site-header">
-  <div class="eyebrow">Alfatraining · KI-Beauftragte:r · Tag 3</div>
-  <h1>Lernkontrolle<br>Rechtliche Grundlagen I</h1>
+  <div class="eyebrow">Alfatraining · KI-Beauftragte:r · Tag 9</div>
+  <h1>Lernkontrolle<br>Risikomanagement I</h1>
   <div class="header-meta">
-    <span>5 Fragen je Rolle &amp; Stufe</span>
+    <span>5 Fragen je Stufe</span>
     <span>Eine oder mehrere Antworten können richtig sein</span>
-    <span>Use Case: Krankenhaus-KI-Diagnoseunterstützung</span>
+    <span>Use Case: Krankenhaus-KI &amp; Character.AI-Fall (Pennsylvania 2026)</span>
   </div>
 </header>
 
@@ -157,7 +154,7 @@ a{color:var(--accent);}
 <!-- ── SETUP ── -->
 <div id="setup-section">
   <div class="setup-card">
-    <h2>Bitte wähle deine Rolle und Schwierigkeitsstufe</h2>
+    <h2>Bitte wähle deine Schwierigkeitsstufe</h2>
 
     <div style="margin-bottom:1rem;">
       <span class="field-label">Dein Name (oder Teilnehmer-Nummer)</span>
@@ -168,10 +165,9 @@ a{color:var(--accent);}
       <div>
         <span class="field-label">Rolle</span>
         <div class="role-btns">
-          <button class="sel-btn" id="btn-role-a" onclick="selectRole('a')">KI-Beauftragter</button>
-          <button class="sel-btn" id="btn-role-b" onclick="selectRole('b')">Compliance</button>
+          <button class="sel-btn active-a" id="btn-role-a" onclick="selectRole('a')">KI-Beauftragter</button>
         </div>
-        <span class="hint-text">Wähle deine Rolle im Unternehmen</span>
+        <span class="hint-text">Tag 9 ist KI-Beauftragter-spezifisch</span>
       </div>
       <div>
         <span class="field-label">Schwierigkeitsstufe</span>
@@ -219,7 +215,7 @@ a{color:var(--accent);}
     <div style="margin-top:.8rem;display:flex;justify-content:center;">
       <button class="btn" onclick="location.reload()">Neu starten</button>
     </div>
-    </div>
+  </div>
 
   <!-- REVIEW -->
   <hr style="border:none;border-top:1px solid var(--rule);margin:2rem 0">
@@ -235,283 +231,159 @@ var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTfP8ygOun58rmvY
 
 /* ═══════ SZENARIEN ════════════════════════════════════════════ */
 var SCENARIOS = {
-  a: 'Ein mittelständisches E-Commerce-Unternehmen (120 MA) setzt einen KI-Preisalgorithmus ein, der Kundendaten (Kaufhistorie, Standort, Surfverhalten) auswertet und Preise in Echtzeit individuell anpasst. Sie sind als KI-Beauftragter beauftragt, den Einsatz rechtlich einzuordnen und die nötigen Compliance-Maßnahmen zu koordinieren.',
-  b: 'Ein mittelständisches E-Commerce-Unternehmen (120 MA) setzt einen KI-Preisalgorithmus ein, der Kundendaten (Kaufhistorie, Standort, Surfverhalten) auswertet und Preise in Echtzeit individuell anpasst. Sie sind Compliance-Mitarbeiterin und sollen prüfen: welche Gesetze gelten, wo entstehen Überschneidungen, welche Dokumentationspflichten bestehen?'
+  a: 'Das Krankenhaus St. Ulrich hat ein KI-System zur Bildauswertung von CT- und Röntgenaufnahmen sowie zur Behandlungspfad-Priorisierung eingeführt. Parallel macht ein aktueller Rechtsfall Schlagzeilen: Pennsylvania (USA) verklagt Character.AI, weil ein Chatbot sich als Psychiater mit gültiger Lizenznummer ausgegeben hat — und Nutzer täuschte, echte medizinische Behandlung zu erhalten. Als KI-Beauftragter musst du beide Fälle einordnen: Welche Risikoarten erkennst du — und welche Mitigationsmaßnahmen sind angemessen?'
 };
 
 /* ═══════ FRAGENBANK ═══════════════════════════════════════════ */
-/* Verteilung je Set: 1× eine richtig · 2× zwei richtig · 2× drei richtig */
 var QBANK = {
 
 /* ── KI-Beauftragter · Anfänger ─────────────────────────────── */
-/* 1×1 richtig · 2×2 richtig · 2×3 richtig */
+/* Verteilung: 1×1 richtig · 2×2 richtig · 2×3 richtig */
 a1: [
   {
-    q: 'Was ist der grundlegende Unterschied in der Regelungslogik zwischen DSGVO und EU AI Act?',
+    q: 'Welche der folgenden Aussagen zu technischen Fehlern bei KI-Systemen sind korrekt?',
     opts: [
-      'Die DSGVO gilt nur für öffentliche Stellen, der EU AI Act für alle Unternehmen',
-      'Die DSGVO folgt einem prinzipienbasierten Ansatz — der EU AI Act folgt einer risikobasierten Produktrecht-Logik',
-      'Der EU AI Act ersetzt die DSGVO vollständig bei KI-Systemen, die personenbezogene Daten verarbeiten',
-      'Die DSGVO und der EU AI Act sind identisch aufgebaut — beide verwenden eine risikobasierte Produktrecht-Logik'
+      'Model Drift bezeichnet den Prozess, bei dem ein KI-Modell mit der Zeit ungenauer wird, weil sich die reale Welt verändert hat',
+      'EU AI Act Art. 15 fordert, dass Hochrisiko-KI-Systeme auch unter schwierigen Bedingungen zuverlässig und robust funktionieren',
+      'Technische Fehler bei KI entstehen ausschließlich durch Programmierfehler der Entwickler — Datenfehler spielen keine Rolle',
+      'Fehlerfortpflanzung bei KI ist kein eigenständiges Problem, weil KI-Systeme jeden Fehler intern selbst erkennen und korrigieren'
     ],
-    correct: [1],
-    exp: 'Die DSGVO ist prinzipienbasiert (Art. 5 als Kernachse: Transparenz, Zweckbindung, Datensparsamkeit) und schützt Grundrechte bei der Datenverarbeitung. Der EU AI Act ist risikobasiertes Produktrecht — er stuft KI-Systeme nach ihrem Gefährdungspotenzial ein und legt Anforderungen für jeden Risikobereich fest. Beide Gesetze können gleichzeitig gelten und schließen sich nicht aus.',
-    src: 'DSGVO Art. 5 · EU AI Act Art. 1', url: 'https://dsgvo-gesetz.de/art-5-dsgvo/'
+    correct: [0, 1],
+    exp: 'Model Drift ist real: Wenn sich die Welt verändert (neue Krankheitsbilder, veränderte Patientenpopulation, neue Aufnahmetechnik), verliert ein einmal trainiertes Modell an Genauigkeit. EU AI Act Art. 15 fordert Robustheit: Hochrisiko-Systeme müssen auch bei unvollständigen Eingaben, schlechter Bildqualität oder Angriffen zuverlässig funktionieren. Technische Fehler entstehen keineswegs nur durch Code-Fehler — fehlerhafte, veraltete oder verzerrte Daten sind mindestens genauso häufige Ursachen. Fehlerfortpflanzung ist ein bekanntes Problem: Ein kleiner Fehler in einer frühen Stufe kann sich in nachgelagerten Entscheidungen verstärken, ohne dass das System es erkennt.',
+    src: 'EU AI Act Art. 15',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689'
   },
   {
-    q: 'Das E-Commerce-Unternehmen fragt Sie als KI-Beauftragter: "Brauchen wir für den Preisalgorithmus eine DSGVO-Folgenabschätzung?" Welche Aussagen sind korrekt?',
+    q: 'Was sind die charakteristischen Risiken von KI-Agenten?',
     opts: [
-      'Eine DSFA nach DSGVO Art. 35 ist erforderlich, wenn die Verarbeitung ein hohes Risiko für Betroffene darstellt',
-      'Da der Algorithmus keine Gesundheitsdaten verarbeitet, ist keine DSFA erforderlich',
-      'Profiling auf Basis von Kaufverhalten und Standort kann ein hohes DSGVO-Risiko begründen und eine DSFA auslösen',
-      'Die DSFA ist freiwillig — sie hat keine Rechtsfolgen bei Unterlassung'
+      'Autonome Entscheidungsketten: KI-Agenten führen mehrere Schritte ohne menschliche Zwischenprüfung durch',
+      'Kontrollverlust: Je länger eine Agenten-Kette läuft, desto schwieriger wird eine menschliche Korrektur',
+      'KI-Agenten sind nach EU AI Act grundsätzlich verboten, weil sie keine menschliche Aufsicht ermöglichen',
+      'KI-Agenten sind nur in militärischen Anwendungen relevant — im Unternehmenskontext spielen sie keine Rolle'
     ],
-    correct: [0,2],
-    exp: 'Art. 35 DSGVO verpflichtet zu einer DSFA bei Verarbeitungen mit voraussichtlich hohem Risiko. Profiling auf Basis von Kaufhistorie, Standort und Surfverhalten ist ein Indiz für hohes Risiko — insbesondere wenn es zu individuellen Preisangeboten führt. Das Unterlassen einer erforderlichen DSFA kann Bußgelder nach sich ziehen.',
-    src: 'DSGVO Art. 35', url: 'https://dsgvo-gesetz.de/art-35-dsgvo/'
+    correct: [0, 1],
+    exp: 'KI-Agenten führen autonome Entscheidungsketten aus — sie kombinieren mehrere Schritte (Suche, Analyse, Aktion) ohne menschliche Zwischenprüfung. Das Risiko: Kontrollverlust. Wenn ein Agent frühzeitig eine falsche Annahme trifft, pflanzt sie sich durch alle nachfolgenden Schritte fort — und je länger die Kette, desto schwieriger die Korrektur. KI-Agenten sind nicht verboten — sie sind ein aktives und schnell wachsendes Feld, auch in Unternehmen. Der EU AI Act regelt das Risiko proportional zum konkreten Einsatz, nicht technologisch. Im Krankenhaus-Kontext wäre ein Agent, der Behandlungspfade autonom priorisiert, ein klares Hochrisiko-Szenario.',
+    src: 'EU AI Act Art. 9 · Rohrlich – KI und Recht, Kap. 5',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689'
   },
   {
-    q: 'Welcher Risikoklasse ordnet der EU AI Act einen KI-Preisalgorithmus im E-Commerce typischerweise zu?',
+    q: 'Was versteht man unter Bias in einem KI-System?',
     opts: [
-      'Minimales Risiko nach EU AI Act — und zugleich gelten DSGVO sowie Wettbewerbsrecht parallel weiter',
-      'Kein Anwendungsfall des Anhang III — der Algorithmus optimiert Preise, prüft aber keine Kreditwürdigkeit oder Beschäftigung',
-      'Begrenztes Risiko — nur Transparenzpflichten nach Art. 50 EU AI Act gelten',
-      'Verbotene Praxis nach Art. 5 KI-VO — der Algorithmus nutzt Schwächen aufgrund der wirtschaftlichen Lage aus'
+      'Eine systematische Verzerrung in Trainingsdaten oder Algorithmen, die zu unfairen oder fehlerhaften Ergebnissen führt',
+      'Einen zufälligen Rechenfehler, der nur bei großen Datenmengen auftritt',
+      'Das bewusste Einschränken eines KI-Modells auf bestimmte Aufgaben durch die Entwickler',
+      'Einen Designfehler in der Benutzeroberfläche, der die Bedienung erschwert'
     ],
-    correct: [0,1],
-    exp: 'Ein KI-Preisalgorithmus im E-Commerce fällt in der Regel unter minimales Risiko nach EU AI Act — er taucht nicht in Anhang III auf und erfüllt keine Verbotstatbestände nach Art. 5. Das bedeutet: keine spezifischen KI-VO-Anforderungen. Jedoch gelten daneben die DSGVO (bei Verarbeitung personenbezogener Daten) und ggf. das Wettbewerbsrecht. "Minimales Risiko im KI-VO" bedeutet nicht "rechtsfrei": Sowohl DSGVO als auch das UWG bei diskriminierender Preisgestaltung bleiben anwendbar (A und B korrekt). Option C ist falsch: Begrenztes Risiko würde nur Transparenzpflichten auslösen — diese Kategorie trifft hier nicht zu. Option D ist falsch: Art. 5 KI-VO verbietet die gezielte Ausnutzung von Schwächen aufgrund von Alter, Behinderung oder sozialer/wirtschaftlicher Lage zur Verhaltensbeeinflussung. Eine differenzierte Preisgestaltung erreicht diese Schwelle in der Regel nicht — verboten ist erst die manipulative Ausnutzung.',
-    src: 'EU AI Act Art. 5 · Anhang III', url: 'https://artificialintelligenceact.eu/annex/3/'
+    correct: [0],
+    exp: 'Bias bezeichnet eine systematische Verzerrung — in Trainingsdaten (z.B. unterrepräsentierte demografische Gruppen) oder im Algorithmus selbst. Systematisch bedeutet: der Fehler tritt regelmäßig und vorhersehbar auf, nicht zufällig. Im medizinischen Kontext kann Bias dazu führen, dass ein KI-Diagnosesystem bei bestimmten Ethnien, Altersgruppen oder Geschlechtern schlechtere Ergebnisse liefert — weil diese in den Trainingsdaten unterrepräsentiert waren. Art. 10 EU AI Act verlangt deshalb repräsentative Trainingsdaten.',
+    src: 'EU AI Act Art. 10 · Turing Institute AI Ethics',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689'
   },
   {
-    q: 'Welche DSGVO-Grundsätze aus Art. 5 sind beim Einsatz des KI-Preisalgorithmus besonders relevant?',
+    q: 'Pennsylvania verklagt Character.AI, weil ein Chatbot sich als Psychiater mit gültiger PA-Lizenznummer ausgegeben hat. Welche ethischen Risiken sind in diesem Fall erkennbar?',
     opts: [
-      'Zweckbindung: Kundendaten dürfen nur für den Zweck genutzt werden, für den sie erhoben wurden',
-      'Datensparsamkeit: Es dürfen nur die für den Algorithmus wirklich erforderlichen Daten verarbeitet werden',
-      'Vertraulichkeit: Der Algorithmus selbst muss Open Source sein',
-      'Transparenz: Betroffene müssen über die Datenverarbeitung informiert werden'
+      'Verletzung von Informed Consent: Nutzer wussten nicht, dass sie mit einem KI-Chatbot sprechen — und konnten deshalb keine informierte Zustimmung geben',
+      'Verletzung des Autonomieprinzips: Nutzer konnten keine freie, informierte Entscheidung über ihre Behandlung treffen',
+      'Verletzung von Transparenzpflichten: Der Chatbot hat aktiv eine falsche Identität behauptet und eine erfundene Lizenznummer geliefert',
+      'Character.AI hat gegen EU AI Act Art. 5 verstoßen — dieser verbietet alle kommerziellen KI-Chatbots im Gesundheitsbereich'
     ],
-    correct: [0,1,3],
-    exp: 'Art. 5 DSGVO enthält die Kernprinzipien: Zweckbindung (Nutzung nur für festgelegte Zwecke), Datensparsamkeit (nur notwendige Daten) und Transparenz (Informationspflichten nach Art. 13/14 DSGVO). Open Source ist kein DSGVO-Gebot — Vertraulichkeit in Art. 5 bezieht sich auf Datensicherheit, nicht auf Code-Offenlegung.',
-    src: 'DSGVO Art. 5', url: 'https://dsgvo-gesetz.de/art-5-dsgvo/'
+    correct: [0, 1, 2],
+    exp: 'Drei ethische Risiken sind klar erkennbar: Informed Consent ist verletzt — wer glaubt, mit einem Psychiater zu sprechen, kann keine informierte Zustimmung zur KI-Interaktion geben. Das Autonomieprinzip ist verletzt — Täuschung über die Natur des Gegenübers untergräbt jede freie Entscheidung. Transparenzpflichten sind verletzt — der Chatbot nannte sogar eine erfundene Lizenznummer "PS306189", die in Pennsylvania nicht existiert. Art. 5 EU AI Act regelt verbotene Praktiken (Subliminalmanipulation, Social Scoring, biometrische Massenüberwachung) — er verbietet nicht generell Chatbots im Gesundheitsbereich. Relevant wäre Art. 50 EU AI Act: Offenlegungspflicht bei KI-Interaktion.',
+    src: 'Pennsylvania v. Character.AI (Mai 2026) · EU AI Act Art. 50',
+    url: 'https://www.npr.org/2026/05/05/nx-s1-5812861/characterai-chatbot-medical-advice-pennsylvania-lawsuit'
   },
   {
-    q: 'Können DSGVO und EU AI Act gleichzeitig auf denselben KI-Einsatz anwendbar sein?',
+    q: 'Welche Maßnahmen würdest du als KI-Beauftragter vorschlagen, um Bias-Risiken im Krankenhaus-KI-System zu begrenzen?',
     opts: [
-      'Nein — der EU AI Act als neueres Recht verdrängt die DSGVO für KI-Systeme vollständig',
-      'Ja — bei KI-Systemen, die personenbezogene Daten verarbeiten, gelten beide Gesetze parallel',
-      'Ja — der EU AI Act regelt die Technik, die DSGVO regelt die Daten — beide Dimensionen können gleichzeitig betroffen sein',
-      'Ja — die DSGVO kennt keine Bereichsausnahme für KMU: Auch kleine Unternehmen sind bei KI-Einsatz mit Personendaten vollständig gebunden'
+      'Überprüfen, ob die Trainingsdaten alle relevanten Patientengruppen (Alter, Geschlecht, Herkunft) repräsentativ abbilden',
+      'Regelmäßige Leistungsüberprüfung des Modells nach dem Go-Live — nicht nur einmalig bei der Einführung',
+      'Das System sofort abschalten — Bias ist bei medizinischer KI unvermeidlich und nicht steuerbar',
+      'Dokumentieren, welche Patientengruppen in der Validierungsstudie einbezogen waren, und Lücken transparent benennen'
     ],
-    correct: [1,2,3],
-    exp: 'Beide Gesetze können und werden oft gleichzeitig gelten: Der EU AI Act reguliert das KI-System als Produkt (Sicherheit, Transparenz, Risikomanagement), die DSGVO reguliert die Verarbeitung personenbezogener Daten. Bei einem Preisalgorithmus, der Kundendaten nutzt, greifen beide. Es gibt keine KMU-Ausnahme von der DSGVO.',
-    src: 'DSGVO Art. 1 · EU AI Act Art. 2', url: 'https://dsgvo-gesetz.de/art-1-dsgvo/'
+    correct: [0, 1, 3],
+    exp: 'Drei erste Maßnahmen sind richtig und umsetzbar: Repräsentativitätsprüfung der Trainingsdaten — wer in den Daten fehlt, taucht als Fehler im System auf. Regelmäßige Post-Go-Live-Überprüfung — Bias kann sich erst bei echtem Einsatz zeigen (Model Drift, veränderte Patientenpopulation). Dokumentation der Validierungsstudie — Lücken transparent zu benennen ist Voraussetzung für gezielte Verbesserung und Teil der EU AI Act Art. 9 Anforderungen. Die Abschalt-Option ist eine Überreaktion: Bias ist ein steuerbares Risiko, kein Absolutum. Ziel ist nicht Null-Fehler, sondern bekannte, begrenzte und dokumentierte Restunsicherheit.',
+    src: 'EU AI Act Art. 10 · Turing Institute AI Ethics',
+    url: 'https://www.turing.ac.uk/research/interest-groups/fairness-transparency-privacy'
   }
 ],
 
 /* ── KI-Beauftragter · Fortgeschrittene ─────────────────────── */
-/* 1×1 richtig · 2×2 richtig · 2×3 richtig */
+/* Verteilung: 1×1 richtig · 2×2 richtig · 2×3 richtig */
 a2: [
   {
-    q: 'Der Preisalgorithmus zeigt Kunden in ärmeren Stadtteilen systematisch höhere Preise. Welche Aussage ist richtig?',
+    q: 'Pennsylvania klagt, Character.AI habe nicht ausreichend verhindert, dass ein Chatbot medizinische Identität annahm. Welche Maßnahmen wären aus KI-Risikomanagement-Perspektive am wirksamsten gewesen?',
     opts: [
-      'Nur die DSGVO ist betroffen — Diskriminierungsfragen spielen keine Rolle',
-      'Das Verhalten verstößt eindeutig sowohl gegen DSGVO als auch AGG — eine weitere Prüfung ist nicht erforderlich',
-      'Der EU AI Act ist hier nicht anwendbar, weil es kein Hochrisiko-System ist',
-      'Eine juristische Gesamtbetrachtung ist nötig — eindeutige Alleinverletzungen sind selten'
+      'Technisch erzwungene Guardrails: Der Chatbot darf keine Aussagen über Qualifikationen oder Lizenznummern machen, die er nicht besitzt',
+      'Verpflichtende, nicht überspringbare Hinweispflicht: Klarer Hinweis auf KI-Natur am Anfang jeder Konversation — nicht nur im Kleingedruckten',
+      'Eine Altersprüfung beim Kontoanlegen — Minderjährige hätten keinen Zugang gehabt',
+      'Sperren aller Suchanfragen nach Begriffen wie „Psychiater" oder „Diagnose" auf der Plattform'
     ],
-    correct: [3],
-    exp: 'Eine juristische Gesamtbetrachtung ist nötig — eindeutige Alleinverletzungen sind selten. Das Szenario kann gleichzeitig DSGVO Art. 22 (automatisierte Entscheidung) und AGG (mittelbare Diskriminierung) berühren, beides muss aber im Einzelfall geprüft werden. Option A ist falsch: Diskriminierung ist hier sehr wohl ein Thema. Option B ist falsch: "Eindeutigkeit" ohne weitere Prüfung gibt es bei solchen Konstellationen nicht. Option C ist falsch: Auch ohne Hochrisiko-Einstufung kann Art. 5 EU AI Act greifen.',
-    src: 'DSGVO Art. 22 · AGG · EU AI Act Art. 5', url: 'https://dsgvo-gesetz.de/art-22-dsgvo/'
+    correct: [0, 1],
+    exp: 'Die wirksamsten Maßnahmen sind strukturelle Guardrails: Technisch erzwungene Guardrails verhindern, dass der Chatbot falsche Qualifikations- oder Lizenzbehauptungen aufstellt — unabhängig davon, wie der Nutzer fragt oder welche Persona-Konfiguration gewählt wurde. Nicht überspringbare Hinweise auf die KI-Natur schaffen echten Informed Consent (EU AI Act Art. 50: Offenlegungspflicht). Altersprüfung hätte den konkreten Fall nicht gelöst: Das Problem war die Identitätstäuschung gegenüber Erwachsenen. Sperren von Suchbegriffen wäre übermäßig einschränkend, leicht umgehbar und trifft nicht die eigentliche Ursache — fehlende Transparenz über die KI-Natur.',
+    src: 'Pennsylvania v. Character.AI (Mai 2026) · EU AI Act Art. 50',
+    url: 'https://www.pa.gov/governor/newsroom/2026-press-releases/shapiro-administration-sues-character-ai-over-fake-medical-claim'
   },
   {
-    q: 'Welche Pflichten hat das Unternehmen gegenüber seinen Kunden?',
+    q: 'Ein Radiologe bemerkt, dass das KI-Diagnosesystem bei Patientinnen über 70 Jahren systematisch schlechtere Erkennungsraten liefert als bei jüngeren Patienten. Worum handelt es sich am ehesten?',
     opts: [
-      'Kunden über die Datenverarbeitung informieren (DSGVO Art. 13)',
-      'Den Quellcode des Algorithmus auf Anfrage veröffentlichen',
-      'Kunden eine menschliche Überprüfung der Preisentscheidung ermöglichen (DSGVO Art. 22)',
-      'Den Algorithmus vor Inbetriebnahme bei der Datenschutzbehörde anmelden'
+      'Systematischer Bias — wahrscheinlich sind ältere Patientinnen in den Trainingsdaten unterrepräsentiert',
+      'Zufälliger Fehler — in dieser Altersgruppe treten schlechter beleuchtete Aufnahmen häufiger auf',
+      'Model Drift — das Modell ist veraltet und muss vollständig neu trainiert werden',
+      'Ein Softwarefehler im PACS-System, der nichts mit dem KI-Modell zu tun hat'
     ],
-    correct: [0,2],
-    exp: 'Zwei Pflichten: Information der Kunden (Art. 13 DSGVO) und das Recht auf menschliche Überprüfung bei automatisierten Entscheidungen (Art. 22 DSGVO). Eine Pflicht zur Quellcode-Offenlegung gibt es nicht. Eine Vorab-Registrierung beim Datenschutz ist ebenfalls nicht vorgeschrieben.',
-    src: 'DSGVO Art. 13, 22', url: 'https://dsgvo-gesetz.de/art-13-dsgvo/'
+    correct: [0],
+    exp: 'Systematisch schlechtere Ergebnisse bei einer demografischen Gruppe sind das Lehrbuch-Beispiel für systematischen Bias. Wahrscheinliche Ursache: Unterrepräsentation älterer Patientinnen in den Trainingsdaten — klinische Studien erfassen diese Gruppe häufig weniger vollständig (Komorbidität, Ausschlusskriterien). Der Unterschied zu zufälligen Fehlern: Zufällige Fehler treffen alle Gruppen gleichmäßig und sind nicht vorhersagbar. Model Drift wäre eine andere Ursache (zeitliche Verschiebung), die im beschriebenen Fall nicht relevant ist. Ein PACS-Softwarefehler ist denkbar, aber die erste Hypothese muss das Modell selbst sein, da das Muster gruppenspezifisch ist.',
+    src: 'EU AI Act Art. 10 · AlgorithmWatch',
+    url: 'https://www.AlgorithmWatch.org/'
   },
   {
-    q: 'Das Unternehmen generiert mit KI automatisch Produktbeschreibungen. Welche rechtlichen Fragen stellen sich?',
+    q: 'Die Behandlungspfad-Priorisierung des Krankenhaus-KI-Systems zeigt Ärzten standardmäßig die KI-Empfehlung als erste Option an. Welche Risiken sind dabei besonders zu beachten?',
     opts: [
-      'Urheberrechtsfrage: Wer ist Urheber KI-generierter Texte — Mensch oder Maschine?',
-      'KI-generierte Inhalte sind nach deutschem Urheberrecht automatisch als Werke geschützt',
-      'Haftungsfrage: Das Unternehmen haftet für fehlerhafte oder irreführende KI-generierte Beschreibungen nach UWG',
-      'KI-generierte Produktbeschreibungen sind grundsätzlich verboten — sie verstoßen gegen das Irreführungsverbot des UWG'
+      'Automation Bias: Ärzte neigen dazu, die erste angezeigte KI-Empfehlung zu übernehmen, ohne sie kritisch zu hinterfragen',
+      'Verlust des Informed Consent: Patienten wurden nicht darüber informiert, dass ihre Daten KI-gestützt verarbeitet werden',
+      'Das Problem entfällt vollständig, wenn das System als „Entscheidungsunterstützung" deklariert wird — dann liegt die Verantwortung allein beim Arzt',
+      'Jede KI-Empfehlung muss nach EU AI Act in Echtzeit von einem zweiten Arzt validiert werden — sonst ist der Betrieb illegal'
     ],
-    correct: [0,2],
-    exp: 'Zwei rechtliche Dimensionen: (1) Urheberrecht — KI-generierte Werke sind nach deutschem Recht nicht urheberrechtlich schutzfähig, da kein menschlicher Schöpfungsakt vorliegt. (2) Haftung — Das Unternehmen haftet nach UWG für irreführende Beschreibungen, unabhängig davon, ob sie KI-generiert sind. Option D ist falsch: KI-generierte Inhalte sind nicht grundsätzlich verboten — sie müssen nur nicht irreführend sein.',
-    src: 'EU AI Act Art. 50 · UWG', url: 'https://artificialintelligenceact.eu/article/50/'
+    correct: [0, 1],
+    exp: 'Zwei zentrale Risiken: Automation Bias ist kognitiv gut belegt — wenn eine KI eine Empfehlung sichtbar als erste Option zeigt, übernehmen Ärzte sie häufiger als bei offener Auswahl, selbst wenn sie fehlerhaft ist. Das ist kein Vorwurf, sondern ein bekanntes kognitives Muster. Informed Consent ist relevant: Patienten müssen nach Art. 13 DSGVO und Art. 50 EU AI Act darüber informiert werden, dass ihre Daten KI-gestützt verarbeitet werden. Die Deklaration als "Entscheidungsunterstützung" hebt die Haftung des Betreibers nicht auf — er bleibt in der Verantwortung. EU AI Act Art. 14 fordert wirksame menschliche Aufsicht, aber nicht zwingend eine Vier-Augen-Validierung jeder Einzelempfehlung.',
+    src: 'EU AI Act Art. 14 · DSGVO Art. 13',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689'
   },
   {
-    q: 'Als KI-Beauftragter koordinieren Sie die Compliance für den Preisalgorithmus. Welche Maßnahmen sind zwingend erforderlich?',
+    q: 'Das KI-Diagnosesystem des Krankenhauses St. Ulrich wertet CT- und Röntgenaufnahmen aus und priorisiert Behandlungspfade. Welche Anforderungen des EU AI Act sind für dieses System besonders relevant?',
     opts: [
-      'DSFA nach DSGVO Art. 35, sofern das Profiling ein hohes Risiko für Betroffene darstellt',
-      'Eintrag in das EU-weite KI-Register nach Art. 71 EU AI Act — Pflicht für alle kommerziellen KI-Systeme',
-      'Datenschutzerklärung aktualisieren: Hinweis auf automatisierte Verarbeitung und Profiling',
-      'Auftragsverarbeitungsvertrag (AVV) nach DSGVO Art. 28 mit dem Anbieter des Algorithmus, falls dieser die Daten verarbeitet'
+      'Art. 9: Risikomanagementsystem — der Betreiber muss bekannte Risiken systematisch identifizieren, bewerten und steuern',
+      'Art. 10: Datenmanagementsystem — Trainingsdaten müssen repräsentativ, fehlerfrei und vollständig dokumentiert sein',
+      'Art. 15: Genauigkeit, Robustheit und Cybersicherheit — das System muss auch bei schlechter Bildqualität oder Angriffen zuverlässig funktionieren',
+      'Art. 5: Verbot autonomer Entscheidungen — jedes Krankenhaus-KI-System muss nach Art. 5 gesondert genehmigt werden'
     ],
-    correct: [0,2,3],
-    exp: 'Drei zwingend erforderliche Maßnahmen: DSFA (bei hohem Profiling-Risiko), aktualisierte Datenschutzerklärung mit Hinweis auf Profiling, und AVV mit dem Algorithmus-Anbieter. Option B ist falsch: Das EU-KI-Register ist nur für Hochrisiko-Systeme nach Anhang III verpflichtend — ein E-Commerce-Preisalgorithmus fällt nicht darunter.',
-    src: 'DSGVO Art. 28, 35 · EU AI Act Art. 71', url: 'https://dsgvo-gesetz.de/art-28-dsgvo/'
+    correct: [0, 1, 2],
+    exp: 'Die drei Kernanforderungen für Hochrisiko-KI im medizinischen Bereich: Art. 9 (Risikomanagement) verpflichtet zur systematischen Dokumentation und Steuerung aller bekannten Risiken — Bias, Drift, Fehlerfortpflanzung. Art. 10 (Datenmanagement) fordert repräsentative, gut dokumentierte Trainingsdaten — entscheidend für Bias-Vermeidung. Art. 15 (Genauigkeit, Robustheit, Cybersicherheit) stellt sicher, dass das System auch unter schwierigen Bedingungen funktioniert. Art. 5 regelt verbotene Praktiken (Subliminalmanipulation, biometrische Massenüberwachung etc.) — er ist keine Genehmigungspflicht für Krankenhaus-KI. Medizinische Bildgebungs-KI ist ein Hochrisiko-System nach Anhang III der KI-VO und unterliegt dem Konformitätsbewertungsverfahren.',
+    src: 'EU AI Act Art. 9, 10, 15 · EUR-Lex 2024/1689',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689'
   },
   {
-    q: 'Welche Pflichten hat das Unternehmen als Betreiber nach dem EU AI Act?',
+    q: 'Du erstellst als KI-Beauftragter die erste Risikomatrix für das Krankenhaus-KI-System. Welche Aussagen zur Methodik sind korrekt?',
     opts: [
-      'Der EU AI Act richtet sich vor allem an Anbieter — bei Hochrisiko-Systemen greifen zusätzlich Betreiber-Pflichten nach Art. 26',
-      'Das Unternehmen muss alle Pflichten erfüllen, die der EU AI Act für Anbieter vorsieht',
-      'Beim Preisalgorithmus mit minimalem Risiko entstehen keine besonderen EU AI Act-Pflichten',
-      'DSGVO und UWG gelten unabhängig vom EU AI Act weiter'
+      'Eintrittswahrscheinlichkeit und Schadenshöhe sind beide zu bewerten — erst ihre Kombination ergibt die Risikoprioritätsnummer',
+      'Bias-Risiken haben im medizinischen Kontext typischerweise hohe Schadenshöhe (Fehldiagnosen bei bestimmten Gruppen) — sie gehören priorisiert in den Fokus',
+      'Eine Risikomatrix ersetzt den EU AI Act Art. 9 Risikomanagementplan vollständig — sie ist das einzige geforderte Dokument',
+      'Mitigationsmaßnahmen sollten direkt in der Matrix vermerkt werden — ein Risiko ohne dokumentierte Gegenmaßnahme ist unvollständig'
     ],
-    correct: [0,2,3],
-    exp: 'Der EU AI Act folgt der Produktrecht-Logik: Hauptadressat ist der Anbieter. Bei Hochrisiko-Systemen greifen zusätzlich Betreiber-Pflichten nach Art. 26 — bei minimalem Risiko, wie hier, gibt es keine besonderen EU AI Act-Pflichten. DSGVO und Wettbewerbsrecht (UWG) bleiben unabhängig anwendbar. Option B ist falsch: Anbieter- und Betreiber-Pflichten sind nicht identisch.',
-    src: 'EU AI Act Art. 26', url: 'https://artificialintelligenceact.eu/article/26/'
-  }
-],
-
-/* ── Compliance · Anfänger ───────────────────────────────────── */
-/* 1×1 richtig · 2×2 richtig · 2×3 richtig */
-b1: [
-  {
-    q: 'Ein Kunde des E-Commerce-Unternehmens fragt: "Warum sehe ich andere Preise als mein Freund?" Das Unternehmen nutzt einen KI-Preisalgorithmus. Welches Recht gibt dem Kunden Auskunftsansprüche?',
-    opts: [
-      'Nur der EU AI Act — er enthält ein allgemeines Auskunftsrecht über KI-Entscheidungen',
-      'DSGVO Art. 17 — Recht auf Löschung der verarbeiteten Daten nach Ausübung des Auskunftsrechts',
-      'Kein Gesetz — Preisgestaltung ist eine Unternehmensgeheimnis und muss nicht offengelegt werden',
-      'DSGVO Art. 22 — Recht auf Erläuterung bei automatisierten Entscheidungen mit erheblichen Folgen'
-    ],
-    correct: [3],
-    exp: 'Art. 22 DSGVO greift bei automatisierten Einzelentscheidungen mit erheblichen Folgen und gibt das Recht auf menschliche Überprüfung und Erläuterung. Art. 15 gewährt zwar auch Auskunft über die Logik automatisierter Verarbeitung, aber über verarbeitete Daten und — wenn automatisierte Verarbeitung stattfindet — über die involvierte Logik. der direkte Auskunftsanspruch über die Preisgestaltungslogik ergibt sich primär aus Art. 22. Der EU AI Act enthält kein allgemeines Auskunftsrecht für Endnutzer. Art. 17 (Löschung) setzt voraus, dass ein Löschgrund vorliegt — er ist kein automatisches Folgerecht des Auskunftsrechts.',
-    src: 'DSGVO Art. 15, 22', url: 'https://dsgvo-gesetz.de/art-15-dsgvo/'
-  },
-  {
-    q: 'Welche Aussagen zur Rechtsgrundlage für die Datenverarbeitung durch den Preisalgorithmus sind korrekt?',
-    opts: [
-      'Das Unternehmen braucht keine Rechtsgrundlage, da Preisoptimierung ein legitimes Geschäftsinteresse ist',
-      'Berechtigtes Interesse nach DSGVO Art. 6 Abs. 1 lit. f kann eine mögliche Rechtsgrundlage sein — es erfordert aber eine Interessenabwägung',
-      'Einwilligung nach DSGVO Art. 6 Abs. 1 lit. a ist eine mögliche Rechtsgrundlage — sie muss freiwillig, informiert und widerrufbar sein',
-      'Ohne explizite Einwilligung jedes Kunden ist jede Datenverarbeitung für den Algorithmus rechtswidrig'
-    ],
-    correct: [1,2],
-    exp: 'Für jede Datenverarbeitung braucht es eine Rechtsgrundlage aus Art. 6 DSGVO. Für Profiling kommen primär berechtigtes Interesse (lit. f, mit Abwägungstest) oder Einwilligung (lit. a) in Betracht. Weder ist eine explizite Einwilligung immer zwingend, noch reicht bloßes Geschäftsinteresse ohne Rechtsgrundlagenprüfung.',
-    src: 'DSGVO Art. 6', url: 'https://dsgvo-gesetz.de/art-6-dsgvo/'
-  },
-  {
-    q: 'Das Unternehmen will Produktbeschreibungen KI-generiert auf seiner Website einsetzen. Welche rechtlichen Anforderungen gelten?',
-    opts: [
-      'Kennzeichnungspflicht nach EU AI Act Art. 50 für KI-generierte Texte in bestimmten Kontexten',
-      'KI-generierte Texte sind automatisch urheberrechtlich durch das Unternehmen geschützt',
-      'Das Unternehmen haftet für irreführende oder falsche KI-generierte Produktbeschreibungen nach UWG',
-      'Für Produktbeschreibungen gelten keine besonderen rechtlichen Anforderungen — sie sind rein werblicher Natur'
-    ],
-    correct: [0,2],
-    exp: 'Zwei Anforderungen: Art. 50 EU AI Act verpflichtet zur Kennzeichnung KI-generierter Inhalte in bestimmten Kontexten (z.B. Deep Fakes, KI-generierte Texte in bestimmten Anwendungsfällen). Das UWG schützt vor irreführender Werbung — das gilt unabhängig davon, ob Inhalte menschlich oder KI-generiert sind. KI-Werke sind nach deutschem Urheberrecht nicht automatisch schutzfähig.',
-    src: 'EU AI Act Art. 50 · UWG § 5', url: 'https://artificialintelligenceact.eu/article/50/'
-  },
-  {
-    q: 'Was versteht die DSGVO unter "Profiling" und warum ist es für den Preisalgorithmus relevant?',
-    opts: [
-      'Profiling ist jede Form automatisierter Verarbeitung personenbezogener Daten zur Bewertung persönlicher Aspekte einer Person',
-      'Profiling betrifft nur Kreditwürdigkeitsprüfungen und Bewerbungsverfahren — nicht Preisgestaltung',
-      'Der Preisalgorithmus betreibt Profiling, weil er Kaufverhalten und Standort auswertet, um individuelle Preise zu berechnen',
-      'Profiling ist nach DSGVO nicht generell verboten — bei automatisierten Entscheidungen mit erheblichen Folgen greifen jedoch besondere Schutzrechte nach Art. 22'
-    ],
-    correct: [0,2,3],
-    exp: 'DSGVO Art. 4 Nr. 4 definiert Profiling als automatisierte Verarbeitung zur Bewertung persönlicher Aspekte. Der Preisalgorithmus erfüllt diese Definition: Er wertet Kaufverhalten, Standort und Surfverhalten aus, um individuelle Preisangebote zu erstellen. Profiling ist nicht generell verboten, aber bei Entscheidungen mit erheblichen Folgen gelten besondere Schutzrechte (Art. 22 DSGVO).',
-    src: 'DSGVO Art. 4 Nr. 4, Art. 22', url: 'https://dsgvo-gesetz.de/art-4-dsgvo/'
-  },
-  {
-    q: 'Welche Gesetze können beim Einsatz eines KI-Preisalgorithmus im E-Commerce gleichzeitig relevant sein?',
-    opts: [
-      'DSGVO — wegen Verarbeitung personenbezogener Kundendaten',
-      'EU AI Act — wegen des Einsatzes eines KI-Systems',
-      'UWG (Gesetz gegen unlauteren Wettbewerb) — wegen möglicher wettbewerbswidriger Preisgestaltung',
-      'HGB (Handelsgesetzbuch) — als primäre Rechtsgrundlage für alle KI-Systeme im Handel'
-    ],
-    correct: [0,1,2],
-    exp: 'Drei Rechtsgebiete können gleichzeitig gelten: DSGVO (Kundendaten), EU AI Act (KI-System), und UWG (Wettbewerbsrecht bei potenziell diskriminierender Preisgestaltung). Das HGB ist für KI-Systeme nicht primär relevant — es regelt Handelsrecht und Buchführung, nicht den Einsatz von KI.',
-    src: 'DSGVO · EU AI Act · UWG', url: 'https://dsgvo-gesetz.de/art-1-dsgvo/'
-  }
-],
-
-/* ── Compliance · Fortgeschrittene ─────────────────────────── */
-/* 1×1 richtig · 2×2 richtig · 2×3 richtig */
-b2: [
-  {
-    q: 'Das Unternehmen hat weder eine DSFA durchgeführt noch den Kunden in der Datenschutzerklärung über das Profiling informiert. Welche Konsequenzen drohen?',
-    opts: [
-      'Bußgeld bis zu 4 % des weltweiten Jahresumsatzes nach DSGVO Art. 83 Abs. 4 für das Fehlen der DSFA',
-      'Bußgeld bis zu 20 Mio. € oder 4 % des weltweiten Jahresumsatzes nach DSGVO Art. 83 Abs. 5 für die fehlende Transparenz gegenüber Betroffenen',
-      'Konsequenzen sind nur möglich, wenn Kunden aktiv Beschwerde einlegen — ohne Beschwerde prüfen Behörden nicht von Amts wegen',
-      'Schadensersatz nach DSGVO Art. 82 setzt immer einen nachgewiesenen materiellen Schaden voraus — immaterieller Schaden wird nicht ersetzt'
-    ],
-    correct: [1],
-    exp: 'Fehlende Transparenz (Art. 13 DSGVO) fällt unter Art. 83 Abs. 5 — bis zu 20 Mio. € oder 4 % des Jahresumsatzes. Fehlende DSFA fällt unter Art. 83 Abs. 4 — bis zu 10 Mio. € oder 2 %. Datenschutzbehörden können auch von Amts wegen tätig werden. Art. 82 Abs. 1 DSGVO schließt immateriellen Schaden ausdrücklich ein — materieller Schaden ist keine Voraussetzung. Option D ist daher falsch.',
-    src: 'DSGVO Art. 82, 83', url: 'https://dsgvo-gesetz.de/art-83-dsgvo/'
-  },
-  {
-    q: 'Sie stellen fest, dass der Algorithmus-Anbieter die Kundendaten auch für das Training anderer Modelle nutzt. Was ist zu tun?',
-    opts: [
-      'Den bestehenden AVV nach DSGVO Art. 28 prüfen — erlaubt er die Datennutzung für Trainingszwecke?',
-      'Solange der Anbieter ein Unternehmen in der EU ist, ist keine weitere Prüfung erforderlich',
-      'Falls der AVV das Training nicht abdeckt: neue Vereinbarung oder Wechsel des Anbieters',
-      'Die Kunden müssen über diese Datennutzung nach Art. 13 DSGVO informiert werden — ggf. Aktualisierung der Datenschutzerklärung'
-    ],
-    correct: [0,2,3],
-    exp: 'Drei Maßnahmen: AVV-Prüfung (Art. 28 DSGVO erlaubt Auftragsverarbeitung nur für vertraglich vereinbarte Zwecke — Training ist i.d.R. nicht enthalten), ggf. neue Vereinbarung oder Anbieterwechsel, und Aktualisierung der Datenschutzerklärung. EU-Sitz allein reicht nicht — maßgeblich ist die vertragliche Zweckbindung im AVV.',
-    src: 'DSGVO Art. 28', url: 'https://dsgvo-gesetz.de/art-28-dsgvo/'
-  },
-  {
-    q: 'Wie unterscheidet sich die Haftungslogik bei KI-Schäden zwischen DSGVO und der KI-Haftungsrichtlinie (Entwurf)?',
-    opts: [
-      'DSGVO Art. 82: Verschuldensunabhängige Haftung des Verantwortlichen — dieser muss fehlende Verletzung nachweisen',
-      'KI-Haftungsrichtlinie (Entwurf): Beweislasterleichterung für Betroffene bei Hochrisiko-KI durch Kausalitätsvermutung',
-      'DSGVO und KI-Haftungsrichtlinie haben identische Haftungsregeln — eine regelt nur den digitalen Bereich',
-      'Für Schäden durch KI gilt ausschließlich die allgemeine Produkthaftungsrichtlinie — DSGVO ist nicht anwendbar'
-    ],
-    correct: [0,1],
-    exp: 'DSGVO Art. 82 sieht eine verschuldensunabhängige Haftung vor — der Verantwortliche muss nachweisen, dass er nicht für den Schaden verantwortlich ist. Der Entwurf der KI-Haftungsrichtlinie sieht Beweislasterleichterungen vor: Bei Hochrisiko-KI wird eine Kausalität zwischen KI-Einsatz und Schaden vermutet. Beide Instrumente können nebeneinander anwendbar sein.',
-    src: 'DSGVO Art. 82 · KI-Haftungsrichtlinie (Entwurf)', url: 'https://dsgvo-gesetz.de/art-82-dsgvo/'
-  },
-  {
-    q: 'Das Unternehmen möchte den Algorithmus auf den österreichischen Markt ausweiten. Was ändert sich rechtlich?',
-    opts: [
-      'DSGVO gilt in Österreich identisch — keine Anpassung erforderlich',
-      'EU AI Act gilt EU-weit — keine Zusatzanforderungen allein aufgrund der geografischen Ausweitung',
-      'Die österreichische Datenschutzbehörde (DSB) wird zuständige Aufsichtsbehörde für österreichische Betroffene',
-      'Österreich hat abweichende nationale KI-Regeln, die den EU AI Act ergänzen und zusätzliche Zulassungspflichten vorsehen'
-    ],
-    correct: [0,1,2],
-    exp: 'DSGVO und EU AI Act gelten EU-weit einheitlich — keine inhaltliche Anpassung. Mit der Ausweitung auf österreichische Kunden wird die österreichische DSB für diese Betroffenen zuständig (Art. 55, 56 DSGVO). Option D ist falsch: Österreich hat keine national abweichenden KI-Zulassungsregeln — der EU AI Act ist eine Vollharmonisierung.',
-    src: 'DSGVO Art. 55 · EU AI Act Art. 2', url: 'https://dsgvo-gesetz.de/art-55-dsgvo/'
-  },
-  {
-    q: 'Welche Überschneidungen und Unterschiede bestehen zwischen einer DSFA (DSGVO Art. 35) und einer Grundrechte-Folgenabschätzung (EU AI Act Art. 27)?',
-    opts: [
-      'Beide Instrumente prüfen Risiken für Grundrechte — sie haben aber unterschiedliche Auslöser und Prüfgegenstände',
-      'DSFA und GRFA können bei demselben KI-System parallel erforderlich sein und sollten koordiniert durchgeführt werden',
-      'Die GRFA ersetzt die DSFA vollständig — wer eine GRFA durchgeführt hat, braucht keine DSFA mehr',
-      'DSFA und GRFA haben denselben Prüfgegenstand und können jederzeit durch eine einzige kombinierte Prüfung ersetzt werden'
-    ],
-    correct: [0,1],
-    exp: 'DSFA und GRFA sind verwandte, aber eigenständige Instrumente: Die DSFA (Art. 35 DSGVO) prüft Datenschutzrisiken bei hochriskanter Datenverarbeitung. Die GRFA (Art. 27 EU AI Act) hat einen breiteren Fokus und prüft Risiken für alle Grundrechte nach der EU-Grundrechtecharta. Bei einem KI-System, das personenbezogene Daten verarbeitet, können beide parallel erforderlich sein. Eine ersetzt die andere nicht. Die Behauptung einer vollständigen Austauschbarkeit (Option D) ist falsch — beide haben unterschiedliche gesetzliche Grundlagen und Prüfgegenstände.',
-    src: 'DSGVO Art. 35 · EU AI Act Art. 27', url: 'https://dsgvo-gesetz.de/art-35-dsgvo/'
+    correct: [0, 1, 3],
+    exp: 'Drei methodisch korrekte Aussagen: Die Risikoprioritätsnummer ergibt sich aus Eintrittswahrscheinlichkeit × Schadenshöhe — keine der beiden Dimensionen allein reicht. Bias-Risiken im medizinischen Bereich sind typischerweise hoch in der Schadenshöhe: Eine systematische Fehldiagnose bei einer Patientengruppe kann lebensbedrohlich sein — deshalb priorisiert. Mitigationsmaßnahmen gehören in die Matrix — sie dokumentieren, was konkret getan wird, um das Risiko zu senken, und ermöglichen späteres Monitoring. Die Aussage "Matrix ersetzt Art. 9" ist falsch: Die Matrix ist ein Werkzeug innerhalb des Risikomanagementsystems — Art. 9 verlangt darüber hinaus Prozesse, Verantwortlichkeiten, regelmäßiges Monitoring und vollständige Dokumentation.',
+    src: 'EU AI Act Art. 9 · NIST AI RMF',
+    url: 'https://airc.nist.gov/'
   }
 ]
 }; /* Ende QBANK */
 
 /* ═══════ STATE ════════════════════════════════════════════════ */
-var S = { role:null, level:null, name:'', questions:[], selections:[], submitted:false };
+var S = { role:'a', level:null, name:'', questions:[], selections:[], submitted:false };
 
 /* ═══════ SETUP ════════════════════════════════════════════════ */
 function selectRole(r) {
   S.role = r;
-  document.getElementById('btn-role-a').className='sel-btn'+(r==='a'?' active-a':'');
-  document.getElementById('btn-role-b').className='sel-btn'+(r==='b'?' active-b':'');
   checkReady();
 }
 function selectLevel(l) {
@@ -528,7 +400,6 @@ function startQuiz() {
   S.name = document.getElementById('participant-name').value.trim() || 'Anonym';
   var key = S.role + S.level;
   S.questions = QBANK[key].map(function(q,i){
-    /* Shuffle options, remap correct[] */
     var n=q.opts.length, idx=[];
     for(var k=0;k<n;k++) idx.push(k);
     for(var j=n-1;j>0;j--){ var r=Math.floor(Math.random()*(j+1)),t=idx[j];idx[j]=idx[r];idx[r]=t; }
@@ -545,13 +416,10 @@ function startQuiz() {
   document.getElementById('setup-section').style.display='none';
   document.getElementById('quiz-section').style.display='block';
 
-  /* Header strip */
-  var rLabel = S.role==='a'?'KI-Beauftragter':'Compliance';
   var lLabel = S.level==='1'?'Anfänger':'Fortgeschrittene';
-  var rClass = S.role==='a'?'strip-role-a':'strip-role-b';
   var lClass = S.level==='1'?'strip-level-1':'strip-level-2';
   document.getElementById('quiz-header-strip').innerHTML =
-    '<span class="strip-tag '+rClass+'">'+rLabel+'</span>'
+    '<span class="strip-tag strip-role-a">KI-Beauftragter</span>'
     +'<span class="strip-tag '+lClass+'">'+lLabel+'</span>'
     +'<span class="strip-name">'+S.name+'</span>';
 
@@ -615,7 +483,6 @@ function renderQuestions() {
 
     card.appendChild(optList);
 
-    /* Feedback placeholder */
     var fb = document.createElement('div');
     fb.id = 'fb-'+qi;
     card.appendChild(fb);
@@ -632,7 +499,6 @@ function toggleOpt(qi, oi) {
   var pos = sel.indexOf(oi);
   if (pos >= 0) sel.splice(pos,1); else sel.push(oi);
 
-  /* Update visual */
   var cb = document.getElementById('cb-'+qi+'-'+oi);
   var row = document.getElementById('opt-'+qi+'-'+oi);
   var isSel = sel.indexOf(oi) >= 0;
@@ -669,7 +535,6 @@ function submitQuiz() {
 
     if (isFull) correct++; else wrong++;
 
-    /* Update option visuals */
     q.opts.forEach(function(opt,oi){
       var row = document.getElementById('opt-'+qi+'-'+oi);
       var cb  = document.getElementById('cb-'+qi+'-'+oi);
@@ -679,7 +544,6 @@ function submitQuiz() {
       cb.className = 'opt-cb'+(isSel?' chk':'');
     });
 
-    /* Inline feedback */
     var fbEl = document.getElementById('fb-'+qi);
     var fbType = isFull?'fb-ok':'fb-wrong';
     var fbTitle = isFull?'Richtig — alle Antworten korrekt.':'Falsch — nicht alle richtigen Antworten gewählt oder falsche angekreuzt.';
@@ -709,7 +573,6 @@ function showResults(correct, wrong) {
     +'<div class="stat"><div class="stat-n" style="color:var(--wrong)">'+wrong+'</div><div class="stat-l">Falsch</div></div>'
     +'<div class="stat"><div class="stat-n">'+pct+'%</div><div class="stat-l">Ergebnis</div></div>';
 
-  /* Comp bars — binary */
   var topics = S.questions.map(function(q,i){
     var sel=S.selections[i], cor=q.correct;
     var isFull=sel.slice().sort().join(',')===cor.slice().sort().join(',');
@@ -721,7 +584,6 @@ function showResults(correct, wrong) {
       +'<div class="comp-track"><div class="comp-fill '+t.cls+'" style="width:'+t.pct+'%"></div></div></div>';
   }).join('');
 
-  /* Detail review */
   renderReview();
 
   document.getElementById('quiz-section').style.display='none';
@@ -744,7 +606,6 @@ function renderReview() {
     card.className = 'q-card';
     card.style.marginBottom = '.8rem';
 
-    /* Question header */
     var header = document.createElement('div');
     header.style.cssText = 'display:flex;gap:.6rem;align-items:baseline;margin-bottom:.5rem;';
     var numEl = document.createElement('div');
@@ -764,7 +625,6 @@ function renderReview() {
     qEl.textContent = q.q;
     card.appendChild(qEl);
 
-    /* Options with reveal */
     var optList = document.createElement('div');
     optList.className = 'opt-list';
     q.opts.forEach(function(opt, oi) {
@@ -795,12 +655,10 @@ function renderReview() {
     });
     card.appendChild(optList);
 
-    /* Explanation */
     var fbType = isFull?'fb-ok':'fb-wrong';
-    var fbTitle = isFull?'Richtig.':'Falsch.';
     var fb = document.createElement('div');
     fb.innerHTML = '<div class="feedback '+fbType+'" style="margin-top:.7rem">'
-      +'<div class="fb-title">'+fbTitle+'</div>'
+      +'<div class="fb-title">'+(isFull?'Richtig.':'Falsch.')+'</div>'
       +'<div class="fb-text">'+q.exp+'</div>'
       +'<div class="fb-source">Quelle: <a href="'+q.url+'" target="_blank">'+q.src+'</a></div>'
       +'</div>';
@@ -812,10 +670,9 @@ function renderReview() {
 /* ═══════ GOOGLE SHEETS ═════════════════════════════════════════ */
 function sendToSheets(correct, wrong) {
   if (!APPS_SCRIPT_URL) return;
-  var TAG_NR = 3;
-  var THEMA  = 'Rechtliche Grundlagen I';
+  var TAG_NR = 9;
+  var THEMA  = 'Risikomanagement I — Bias, technische Fehler, ethische Risiken, KI-Agenten';
   var letters = ['A','B','C','D'];
-  var role  = S.role === 'a' ? 'KI-Beauftragter' : 'Compliance';
   var stufe = S.level === '1' ? 'Anfänger' : 'Fortgeschrittene';
 
   var status = document.getElementById('submit-status');
@@ -838,7 +695,7 @@ function sendToSheets(correct, wrong) {
       + '&teilnehmer=' + encodeURIComponent(S.name)
       + '&tag='        + TAG_NR
       + '&thema='      + encodeURIComponent(THEMA)
-      + '&stufe='      + encodeURIComponent(stufe + ' · ' + role)
+      + '&stufe='      + encodeURIComponent(stufe + ' · KI-Beauftragter')
       + '&frage_nr='   + (i + 1)
       + '&frage_text=' + encodeURIComponent(q.q.substring(0, 80))
       + '&gewaehlt='   + encodeURIComponent(gewaehlt)
@@ -861,8 +718,6 @@ function sendToSheets(correct, wrong) {
   }
   sendNext();
 }
-
-/* ═══════ CLIPBOARD BACKUP ══════════════════════════════════════ */
 </script>
 </body>
 </html>
