@@ -44,7 +44,8 @@
 | https://www.deeplearning.ai/ | DeepLearning.AI | Bildung | ML-Grundlagen, Kurse, Andrew Ng |
 | https://huggingface.co/docs | Hugging Face | Technisch | LLMs, Modelle, Open Source KI |
 | https://platform.openai.com/docs | OpenAI API Docs | Technisch | GPT-4, Prompting, Token-Limits, Sicherheitsfilter |
-| https://cset.georgetown.edu/research-area/cyberai/ | CSET (Center for Security and Emergign TEchnology) | Forschung | USA Cybersecurity |
+| https://cset.georgetown.edu/research-area/cyberai/ | CSET (Center for Security and Emergign Technology) | Forschung | USA Cybersecurity |
+
 
 ### 2.2 Large Language Models & Prompting
 | URL | Name | Typ | Schlagwörter |
@@ -116,6 +117,8 @@
 | https://openai.com/de-DE/research/index/ | OpenAI | Forschung | KI-Strategie, KI-Modelle, Intelligence Age, OpenAI-Perspektive |
 | https://www.ki-strategie-deutschland.de/ | KI-Strategie Deutschland | Behörde | Handlungsfelder, Roadmap, Förderprogramme |
 | https://www.nber.org/papers?page=1&perPage=50&sortBy=public_date&q=artifical+intelligence | NBER (National Bureau of Economic Research | Behörde | Forschungsaufsätze |
+| https://www.iaps.ai/ | IAPS (Institute for AI Policy and Strategy | Forschung | USA KI Strategie |
+| https://ai-2027.com/ | AI 2027 | Forschung | künftige KI-Szenarien |
 
 ---
 
@@ -143,15 +146,15 @@
 
 | Dateiname | Inhalt | Relevanz |
 |-----------|--------|----------|
-| `KI_und_Recht.pdf` | Rohrlich – KI und Recht (Hanser 2024) |
-| `Dyck-B-Kuenstliche-Intelligenz-in-der-Fuehrung.pdf` | Dyck/Spann – KI in der Führung (Haufe 2025) |
-| `ISO_42001.pdf` | ISO/IEC 42001 Norm |
-| `NIST_AI_Risk_Management.pdf` | NIST AI RMF 1.0 | 
-| `Turing_Institute_AI_Ethics.pdf` | Turing Institute AI Ethics |
-| `GRC_Capability_Model.pdf` | GRC Capability Model | 
-| `KI-in-der-Projektwirtschaft.pdf` | KI in der Projektwirtschaft |
-| Co-Intelligence: Living and Working with AI | Ethan Mollick | 2024 |
-| The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma | Mustafa Suleyman | 2023 |
+| "KI_und_Recht.pdf" | Rohrlich – KI und Recht (Hanser 2024) |
+| "Dyck-B-Kuenstliche-Intelligenz-in-der-Fuehrung.pdf" | Dyck/Spann – KI in der Führung (Haufe 2025) |
+| "ISO_42001.pdf" | ISO/IEC 42001 Norm |
+| "NIST_AI_Risk_Management.pdf" | NIST AI RMF 1.0 | 
+| "Turing_Institute_AI_Ethics.pdf" | Turing Institute AI Ethics |
+| "GRC_Capability_Model.pdf" | GRC Capability Model | 
+| "KI-in-der-Projektwirtschaft.pdf" | KI in der Projektwirtschaft |
+| "Co-Intelligence: Living and Working with AI" | Ethan Mollick | 2024 |
+| "The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma" | Mustafa Suleyman | 2023 |
 
 ---
 
