@@ -115,6 +115,7 @@
 | https://digital-strategy.ec.europa.eu/en/library/coordinated-plan-artificial-intelligence-2021-review | EU Kommission | EU Coordinated AI Plan 2021 | Mitgliedsstaaten, Investitionen, Strategie |
 | https://openai.com/de-DE/research/index/ | OpenAI | Forschung | KI-Strategie, KI-Modelle, Intelligence Age, OpenAI-Perspektive |
 | https://www.ki-strategie-deutschland.de/ | KI-Strategie Deutschland | Behörde | Handlungsfelder, Roadmap, Förderprogramme |
+| https://www.nber.org/papers?page=1&perPage=50&sortBy=public_date&q=artifical+intelligence | NBER (National Bureau of Economic Research | Behörde | Forschungsaufsätze |
 
 ---
 
