@@ -131,6 +131,11 @@
 |-----|------|-----|--------------|
 | https://brobotspodcast.substack.com/ | Health, Wellness & Mindset in the Age of AI | Podcast und Substack-Artikel |
 
+### 5.3 KI-Newsletter
+| URL | Name | Typ | Schlagwörter |
+|-----|------|-----|--------------|
+| https://aiweekly.co/ai-news-today | AI Weekly | Sammelpunkt für aktuelle Artikel zu KI |
+
 ---
 
 ## 📚 Literaturhinweise
