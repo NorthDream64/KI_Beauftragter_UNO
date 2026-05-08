@@ -83,7 +83,6 @@
 | https://naaia.ai/homepage/ | Automatisiertes AI-Inventory | AIMS | Frankreich NAAIA | 
 | nützliches Glossar: https://naaia.ai/responsible-ai-glossary/
 
-
 ### 3.2 IT-Sicherheit & KI-Angriffe
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
@@ -91,7 +90,7 @@
 | https://owasp.org/www-project-machine-learning-security-top-10/ | Open Worldwide Application Security Project (OWASP) | Sicherheit | ML-Sicherheit, Angriffe, Gegenmaßnahmen |
 | https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Kuenstliche-Intelligenz/kuenstliche-intelligenz_node.html | BSI — KI-Sicherheit | Behörde | Deutschland, Lageberichte, Empfehlungen |
 
-### 3.3 KI-Ethik & Governance (Forschung)
+### 3.3 KI-Ethik & Governance
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://www.turing.ac.uk/research/interest-groups/fairness-transparency-privacy | Alan Turing Institute | Forschung | Ethikl, Fairness, Transparency, Privacy, Governance |
