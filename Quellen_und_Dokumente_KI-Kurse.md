@@ -82,6 +82,7 @@
 | https://airc.nist.gov/ | US Government (NIST / Computer Security Resource Center) | Standard | AI Risikomanagement|
 | https://naaia.ai/homepage/ | Automatisiertes AI-Inventory | AIMS | Frankreich NAAIA | 
 | nützliches Glossar: https://naaia.ai/responsible-ai-glossary/
+| https://metr.org/ | Modellbewertung & Bedrohungsszenarien | METR (Model Evaluation and Threat Research | USA NGO |
 
 ### 3.2 IT-Sicherheit & KI-Angriffe
 | URL | Name | Typ | Schlagwörter |
@@ -145,6 +146,9 @@
 
 | Dateiname | Inhalt | Relevanz |
 |-----------|--------|----------|
+| "Co-Intelligence: Living and Working with AI" | Ethan Mollick | 2024 |
+| "The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma" | Mustafa Suleyman | 2023 |
+| "Life 3.0: Being Human in the Age of Artificial Intelligence" | Max Tegmark | 2017 |
 | "KI_und_Recht.pdf" | Rohrlich – KI und Recht (Hanser 2024) |
 | "Dyck-B-Kuenstliche-Intelligenz-in-der-Fuehrung.pdf" | Dyck/Spann – KI in der Führung (Haufe 2025) |
 | "ISO_42001.pdf" | ISO/IEC 42001 Norm |
@@ -152,8 +156,6 @@
 | "Turing_Institute_AI_Ethics.pdf" | Turing Institute AI Ethics |
 | "GRC_Capability_Model.pdf" | GRC Capability Model | 
 | "KI-in-der-Projektwirtschaft.pdf" | KI in der Projektwirtschaft |
-| "Co-Intelligence: Living and Working with AI" | Ethan Mollick | 2024 |
-| "The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma" | Mustafa Suleyman | 2023 |
 
 ---
 
