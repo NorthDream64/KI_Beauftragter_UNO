@@ -136,9 +136,9 @@ body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--paper);
   &nbsp;|&nbsp;
   <strong>Use Cases:</strong>
   <span style="color:#1a5276">&#9632; UC-01 Dr. Seika (Bauplanungsbüro)</span>
-  <span style="color:#1a7a4a">&#9632; UC-02 WellSeal GmbH</span>
+  <span style="color:#1a7a4a">&#9632; UC-02 WellSeal (Schiffszulieferer)</span>
   <span style="color:#9a5f0a">&#9632; UC-03 Krankenhaus St. Ulrich</span>
-  <span style="color:#5b2d8e">&#9632; UC-04 SolidFinanz AG</span>
+  <span style="color:#5b2d8e">&#9632; UC-05 SdT GmbH (Collectibles)</span>
   &nbsp;|&nbsp;
   <em>Klick auf &#9660; öffnet Zeitplan &middot; &#128190; nach Änderungen speichern</em>
 </div>
@@ -149,10 +149,10 @@ body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--paper);
 <script>
 var WEEKS = [
 {
-  num:1, title:'Grundlagen operativer KI-Projekte & ISO 42001', cls:'w1', tag:'KI-Grundlagen',
+  num:1, title:'Grundlagen operativer KI-Projekte', cls:'w1', tag:'KI-Grundlagen',
   days:[
   {
-    id:'T01', dow:'Mo', title:'Einführung & KI-Grundlagen (operativer Fokus)',
+    id:'T01', dow:'Mo', title:'Grundlagen operativer KI-Projekte I',
     sub:'KI, ML, DL, NLP, Computer Vision · Thematische Einführung · alfaview',
     defUC:[], defNotes:'',
     lernziel:'Du kannst die grundlegenden Konzepte von KI, ML, DL, NLP und Computer Vision mit operativem Fokus erläutern und die Relevanz für den KI-Manager-Alltag einordnen.',
@@ -166,7 +166,7 @@ var WEEKS = [
     sources:['<a href="https://www.tuv.com/de/deutschland/privatkunden/aus-und-weiterbildung/it-und-software/kuenstliche-intelligenz/ki-manager-in.html" target="_blank">TÜV Rheinland: KI-Manager:in (Modul 763)</a>']
   },
   {
-    id:'T02', dow:'Di', title:'Rollen, Aufgaben & ISO 42001 Managementsystem',
+    id:'T02', dow:'Di', title:'Grundlagen operativer KI-Projekte II',
     sub:'ISO 42001 · Aufbau, Betrieb & Wirksamkeit · Rollen im KI-Ökosystem',
     defUC:[], defNotes:'',
     lernziel:'Du kannst die Anforderungen an ein KI-Managementsystem nach ISO 42001 beschreiben und Aufbau, Betrieb sowie Wirksamkeitsprüfung eines solchen Systems erläutern.',
@@ -180,7 +180,7 @@ var WEEKS = [
     sources:['<a href="https://www.iso.org/standard/81230.html" target="_blank">ISO 42001 (AI Management Systems)</a>','<a href="https://artificialintelligenceact.eu/" target="_blank">EU AI Act (Überblick)</a>']
   },
   {
-    id:'T03', dow:'Mi', title:'Rollenabgrenzung & Operative Anwendungsfälle',
+    id:'T03', dow:'Mi', title:'Grundlagen operativer KI-Projekte III',
     sub:'KIB vs. KIM vs. KI-Auditor:in · Anwendungsfallidentifikation · Bewertungsmethoden',
     defUC:[], defNotes:'',
     lernziel:'Du kannst die Rollen KI-Beauftragter, KI-Manager:in und KI-Auditor:in voneinander abgrenzen und operative KI-Anwendungsfälle im Unternehmenskontext systematisch identifizieren und bewerten.',
@@ -194,7 +194,7 @@ var WEEKS = [
     sources:['<a href="https://artificialintelligenceact.eu/article/26/" target="_blank">EU AI Act Art. 26 (Betreiberpflichten)</a>','<a href="https://www.iso.org/standard/81230.html" target="_blank">ISO 42001</a>']
   },
   {
-    id:'T04', dow:'Do', title:'Projektinitiierung & Stakeholder-Management',
+    id:'T04', dow:'Do', title:'Grundlagen operativer KI-Projekte IV',
     sub:'Zieldefinition · Scope · Machbarkeitsanalyse · Stakeholder-Map',
     defUC:[], defNotes:'',
     lernziel:'Du kannst ein KI-Projekt von der Zieldefinition bis zur Machbarkeitsanalyse strukturieren und ein vollständiges Stakeholder-Management-Konzept für ein KI-Vorhaben entwickeln.',
@@ -208,7 +208,7 @@ var WEEKS = [
     sources:['<a href="https://www.pmi.org/pmbok-guide-standards" target="_blank">PMI PMBOK — Projektmanagement-Standards</a>','<a href="https://www.bitkom.org/Themen/Technologien-Software/Kuenstliche-Intelligenz" target="_blank">Bitkom KI-Praxisleitfäden</a>']
   },
   {
-    id:'T05', dow:'Fr', title:'Wertschöpfung, ROI & Erfolgreiche KI-Initiativen',
+    id:'T05', dow:'Fr', title:'Grundlagen operativer KI-Projekte',
     sub:'ROI-Bewertung · KI-Business-Case · Best Practices im Management',
     defUC:[], defNotes:'Stellenrecherche 14:50–15:35',
     lernziel:'Du kannst den Wertschöpfungsbeitrag von KI-Initiativen quantifizieren, einen KI-Business-Case aufbauen und erfolgreiche KI-Initiativen aus dem Management-Umfeld analysieren und auf eigene Szenarien übertragen.',
@@ -224,10 +224,10 @@ var WEEKS = [
   ]
 },
 {
-  num:2, title:'Datenmanagement, Tool-Einsatz & Modelltraining', cls:'w2', tag:'Daten & Modelle',
+  num:2, title:'Datenmanagement & Tool-Einsatz', cls:'w2', tag:'Daten & Modelle',
   days:[
   {
-    id:'T06', dow:'Mo', title:'Datenmanagement & KI-Tool-Auswahl',
+    id:'T06', dow:'Mo', title:'Datenmanagement & Tool-Einsatz I',
     sub:'Datenqualität · Datenintegration · KI-Tools & Plattformen',
     defUC:[], defNotes:'',
     lernziel:'Du kannst Datenqualitätsdimensionen benennen, Datenaufbereitungsmaßnahmen ableiten und geeignete KI-Tools und Plattformen für operative Anwendungsfälle auswählen.',
@@ -241,7 +241,7 @@ var WEEKS = [
     sources:['<a href="https://learn.microsoft.com/de-de/azure/architecture/data-guide/" target="_blank">Azure Data Architecture Guide (Microsoft)</a>','<a href="https://www.bitkom.org/Themen/Technologien-Software/Kuenstliche-Intelligenz" target="_blank">Bitkom KI-Praxisleitfäden</a>']
   },
   {
-    id:'T07', dow:'Di', title:'Praktisches Prompting & Datenpipelines',
+    id:'T07', dow:'Di', title:'Datenmanagement & Tool-Einsatz II',
     sub:'Prompt Engineering · Text, Bild, Video · Datenpipelines aufbauen',
     defUC:[], defNotes:'',
     lernziel:'Du kannst effektive Prompts für Text-, Bild- und Videoanwendungen erstellen und einfache Datenpipelines konzipieren und bewerten.',
@@ -255,7 +255,7 @@ var WEEKS = [
     sources:['<a href="https://platform.openai.com/docs/guides/prompt-engineering" target="_blank">OpenAI Prompt Engineering Guide</a>','<a href="https://openai.com/chatgpt/business" target="_blank">ChatGPT Business</a>']
   },
   {
-    id:'T08', dow:'Mi', title:'MLOps-Konzepte & KI-Automatisierung',
+    id:'T08', dow:'Mi', title:'Datenmanagement & Tool-Einsatz III',
     sub:'MLOps-Grundlagen · Deployment-Strategien · Automatisierung im Betrieb',
     defUC:[], defNotes:'',
     lernziel:'Du kannst MLOps-Konzepte aus Managementsicht erläutern und KI-Automatisierungsmöglichkeiten im Betrieb identifizieren und bewerten.',
@@ -269,7 +269,7 @@ var WEEKS = [
     sources:['<a href="https://www.uipath.com/de/rpa/robotic-process-automation" target="_blank">UiPath RPA</a>','<a href="https://learn.microsoft.com/de-de/azure/machine-learning/concept-model-management-and-deployment" target="_blank">Azure ML Deployment</a>']
   },
   {
-    id:'T09', dow:'Do', title:'Modelltraining, Validierung & Testverfahren',
+    id:'T09', dow:'Do', title:'Modelltraining, Validierung & Einsatz I',
     sub:'Training & Validierung · Black-Box/White-Box-Tests · Modelleinsatz',
     defUC:[], defNotes:'Managerperspektive halten — keine tiefen Code-Details',
     lernziel:'Du kannst Training und Validierung von KI-Modellen nicht-technisch erläutern und geeignete Testverfahren (Black-Box, White-Box, Unit-Tests) aus Betreibersicht anwenden.',
@@ -283,7 +283,7 @@ var WEEKS = [
     sources:['<a href="https://artificialintelligenceact.eu/article/9/" target="_blank">EU AI Act Art. 9 (Risikomanagementsystem)</a>','<a href="https://www.nist.gov/artificial-intelligence/ai-risk-management-framework" target="_blank">NIST AI RMF</a>']
   },
   {
-    id:'T10', dow:'Fr', title:'Monitoring, Optimierung & KI-Agenten',
+    id:'T10', dow:'Fr', title:'Modelltraining, Validierung & Einsatz II',
     sub:'Monitoring · Model Drift · Iterative Optimierung · KI-Agenten in Projekten',
     defUC:[], defNotes:'Stellenrecherche 14:50–15:35',
     lernziel:'Du kannst Monitoring-Konzepte für KI-Systeme beschreiben, Model Drift erkennen und gegensteuern sowie KI-Agenten sinnvoll in Projekte integrieren.',
@@ -299,11 +299,11 @@ var WEEKS = [
   ]
 },
 {
-  num:3, title:'Risikomanagement, Qualitätssicherung & Projektsteuerung', cls:'w3', tag:'Risiko & Betrieb',
+  num:3, title:'Risikomanagement & Qualitätssicherung', cls:'w3', tag:'Risiko & Betrieb',
   days:[
   {
-    id:'T11', dow:'Mo', title:'Technische Risikoanalyse & Qualitätssicherung',
-    sub:'Bias-Metriken · Fairness-Tests · Modellfehler-Analyse · KPIs & Monitoring',
+    id:'T11', dow:'Mo', title:'Risikomanagement & Qualitätssicherung II',
+    sub:'Technische Risikoanalyse & Qualitätssicherung · Fairness-Tests · Modellfehler-Analyse · KPIs & Monitoring',
     defUC:[], defNotes:'',
     lernziel:'Du kannst technische Risikoanalysen für KI-Systeme durchführen (Bias-Metriken, Fairness-Tests, Modellfehler-Analyse) und ein KI-spezifisches Qualitätssicherungskonzept mit KPIs und Abnahmeprozessen entwickeln.',
     phases:[
