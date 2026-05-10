@@ -146,7 +146,7 @@
 
 | Dateiname | Inhalt | Relevanz |
 |-----------|--------|----------|
-| "Co-Intelligence: Living and Working with AI" | Ethan Mollick | 2024 |
+| 'Co-Intelligence: Living and Working with AI' | Ethan Mollick | 2024 |
 | "The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma" | Mustafa Suleyman | 2023 |
 | "Life 3.0: Being Human in the Age of Artificial Intelligence" | Max Tegmark | 2017 |
 | "KI_und_Recht.pdf" | Rohrlich – KI und Recht (Hanser 2024) |
