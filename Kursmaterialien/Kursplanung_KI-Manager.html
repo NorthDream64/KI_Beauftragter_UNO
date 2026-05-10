@@ -107,7 +107,7 @@ body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--paper);
 
 <div class="header">
   <div>
-    <div class="header-title">&#128202; KI-Manager:in &#8211; Kursplanung (Modul 763)</div>
+    <div class="header-title">&#128202; KI-Manager:in &#8211; Kursplanung</div>
     <div class="header-sub">Alfatraining &middot; 20 Schulungstage (Woche 1&#8211;4) &middot; Letzte Speicherung: <span id="last-saved">&#8212;</span></div>
   </div>
   <div style="display:flex;align-items:center;gap:8px">
@@ -208,7 +208,7 @@ var WEEKS = [
     sources:['<a href="https://www.pmi.org/pmbok-guide-standards" target="_blank">PMI PMBOK — Projektmanagement-Standards</a>','<a href="https://www.bitkom.org/Themen/Technologien-Software/Kuenstliche-Intelligenz" target="_blank">Bitkom KI-Praxisleitfäden</a>']
   },
   {
-    id:'T05', dow:'Fr', title:'Grundlagen operativer KI-Projekte',
+    id:'T05', dow:'Fr', title:'Grundlagen operativer KI-Projekte V',
     sub:'ROI-Bewertung · KI-Business-Case · Best Practices im Management',
     defUC:[], defNotes:'Stellenrecherche 14:50–15:35',
     lernziel:'Du kannst den Wertschöpfungsbeitrag von KI-Initiativen quantifizieren, einen KI-Business-Case aufbauen und erfolgreiche KI-Initiativen aus dem Management-Umfeld analysieren und auf eigene Szenarien übertragen.',
@@ -302,7 +302,7 @@ var WEEKS = [
   num:3, title:'Risikomanagement & Qualitätssicherung', cls:'w3', tag:'Risiko & Betrieb',
   days:[
   {
-    id:'T11', dow:'Mo', title:'Risikomanagement & Qualitätssicherung II',
+    id:'T11', dow:'Mo', title:'Risikomanagement & Qualitätssicherung I',
     sub:'Technische Risikoanalyse & Qualitätssicherung · Fairness-Tests · Modellfehler-Analyse · KPIs & Monitoring',
     defUC:[], defNotes:'',
     lernziel:'Du kannst technische Risikoanalysen für KI-Systeme durchführen (Bias-Metriken, Fairness-Tests, Modellfehler-Analyse) und ein KI-spezifisches Qualitätssicherungskonzept mit KPIs und Abnahmeprozessen entwickeln.',
@@ -316,7 +316,7 @@ var WEEKS = [
     sources:['<a href="https://www.nist.gov/artificial-intelligence/ai-risk-management-framework" target="_blank">NIST AI RMF</a>','<a href="https://www.iso.org/standard/81230.html" target="_blank">ISO/IEC 5338 · ISO/IEC 25059</a>']
   },
   {
-    id:'T12', dow:'Di', title:'ISO 42001 Vertiefung & Security/Erklärbarkeit',
+    id:'T12', dow:'Di', title:'Risikomanagement & Qualitätssicherung II',
     sub:'ISO 42001 operativ · KI-Security · Erklärbarkeit von KI-Systemen',
     defUC:[], defNotes:'',
     lernziel:'Du kannst die operativen Anforderungen von ISO 42001 auf ein konkretes Unternehmen anwenden und die Konzepte Security und Erklärbarkeit von KI-Systemen aus Betreibersicht einordnen.',
@@ -330,7 +330,7 @@ var WEEKS = [
     sources:['<a href="https://www.iso.org/standard/81230.html" target="_blank">ISO 42001</a>','<a href="https://artificialintelligenceact.eu/article/13/" target="_blank">EU AI Act Art. 13 (Transparenz)</a>']
   },
   {
-    id:'T13', dow:'Mi', title:'Agile Methoden & Ressourcenplanung',
+    id:'T13', dow:'Mi', title:'Operative Projektsteuerung und agile Methoden I',
     sub:'Scrum · Kanban · Iterative Deployment-Zyklen · Budget & Ressourcen',
     defUC:[], defNotes:'',
     lernziel:'Du kannst agile Methoden (Scrum, Kanban) auf KI-Projekte anwenden, iterative Deployment-Zyklen planen und eine Ressourcen- und Budgetplanung für ein KI-Vorhaben durchführen.',
@@ -344,7 +344,7 @@ var WEEKS = [
     sources:['<a href="https://www.scrum.org/resources/scrum-guide" target="_blank">Scrum Guide (scrum.org)</a>','<a href="https://www.atlassian.com/de/agile/kanban" target="_blank">Kanban Guide (Atlassian)</a>']
   },
   {
-    id:'T14', dow:'Do', title:'Stakeholder-Kommunikation, KVP & Externe Partner',
+    id:'T14', dow:'Do', title:'Operative Projektsteuerung und agile Methoden II',
     sub:'Team-Kommunikation · KVP/PDCA · Externe Partner & Dienstleister',
     defUC:[], defNotes:'',
     lernziel:'Du kannst zielgruppengerechte Kommunikationsstrategien für KI-Projekte entwickeln, KVP-Methoden im KI-Betrieb anwenden und Kriterien für die Auswahl und Steuerung externer KI-Partner formulieren.',
@@ -358,7 +358,7 @@ var WEEKS = [
     sources:['<a href="https://www.bitkom.org/Themen/Technologien-Software/Kuenstliche-Intelligenz" target="_blank">Bitkom KI-Praxisleitfäden</a>','<a href="https://www.pmi.org/pmbok-guide-standards" target="_blank">PMI PMBOK</a>']
   },
   {
-    id:'T15', dow:'Fr', title:'Reifegradanalyse, GAP-Analyse & KI-Roadmap',
+    id:'T15', dow:'Fr', title:'Organisationsentwicklung, Governance und Change Management I',
     sub:'Unternehmensprozesse analysieren · Reifegradmodelle · KI-Roadmap erstellen',
     defUC:[], defNotes:'Stellenrecherche 14:50–15:35',
     lernziel:'Du kannst Unternehmensprozesse auf KI-Potenziale analysieren, den KI-Reifegrad mit anerkannten Modellen bewerten und eine operative KI-Roadmap erstellen.',
@@ -374,10 +374,10 @@ var WEEKS = [
   ]
 },
 {
-  num:4, title:'Governance, Changemanagement & Zertifizierung', cls:'w4', tag:'Abschluss & Prüfung',
+  num:4, title:'Organisationsentwicklung, Governance & Zertifizierung', cls:'w4', tag:'Abschluss & Prüfung',
   days:[
   {
-    id:'T16', dow:'Mo', title:'KI-Governance, Strategie & Organisationsstruktur',
+    id:'T16', dow:'Mo', title:'Organisationsentwicklung, Governance und Change Management II',
     sub:'KI-Governance · Strategieentwicklung · Organisationsstruktur · Verantwortlichkeiten',
     defUC:[], defNotes:'',
     lernziel:'Du kannst eine tragfähige KI-Governance-Struktur entwerfen, Verantwortlichkeiten im KI-Ökosystem klar zuordnen und eine KI-Strategie mit konkreten Governancekomponenten entwickeln.',
@@ -391,7 +391,7 @@ var WEEKS = [
     sources:['<a href="https://artificialintelligenceact.eu/article/26/" target="_blank">EU AI Act Art. 26 (Betreiberpflichten)</a>','<a href="https://www.iso.org/standard/81230.html" target="_blank">ISO 42001</a>']
   },
   {
-    id:'T17', dow:'Di', title:'Widerstände, CDR, Nachhaltigkeit & Zertifizierungsvorbereitung',
+    id:'T17', dow:'Di', title:'Organisationsentwicklung, Governance und Change Management III & Zertifizierungsvorbereitung',
     sub:'Widerstände im KI-Betrieb · Corporate Digital Responsibility · Prüfungsvorbereitung',
     defUC:[], defNotes:'',
     lernziel:'Du kannst Widerstände gegen KI im Betrieb diagnostizieren und Gegenstrategien entwickeln, Corporate Digital Responsibility und Nachhaltigkeitsanforderungen einordnen und dich gezielt auf die TÜV-Prüfung vorbereiten.',
