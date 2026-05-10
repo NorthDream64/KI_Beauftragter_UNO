@@ -138,6 +138,7 @@ body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--paper);
   <span style="color:#1a5276">&#9632; UC-01 Dr. Seika (Bauplanungsbüro)</span>
   <span style="color:#1a7a4a">&#9632; UC-02 WellSeal (Schiffszulieferer)</span>
   <span style="color:#9a5f0a">&#9632; UC-03 Krankenhaus St. Ulrich</span>
+  <span style="color:#9a8d4e">&#9632; UC-04 SolidFinanz AG</span>
   <span style="color:#5b2d8e">&#9632; UC-05 SdT GmbH (Collectibles)</span>
   &nbsp;|&nbsp;
   <em>Klick auf &#9660; öffnet Zeitplan &middot; &#128190; nach Änderungen speichern</em>
@@ -537,7 +538,7 @@ function render() {
   if(ts) document.getElementById('last-saved').textContent = ts;
 
   var html = '';
-  var ucLabels = {ucm1:'UC-01 Dr. Seika',ucm2:'UC-02 WellSeal',ucm3:'UC-03 St. Ulrich',uc04:'UC-04 SolidFinanz'};
+  var ucLabels = {ucm1:'UC-01 Dr. Seika',ucm2:'UC-02 WellSeal',ucm3:'UC-03 St. Ulrich',uc04:'UC-04 SolidFinanz', uc05: 'SdT (Sammel Deinen Traum)'};
 
   WEEKS.forEach(function(w){
     html += '<div class="week-section '+w.cls+'">';
