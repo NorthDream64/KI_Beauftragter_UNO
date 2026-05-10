@@ -146,16 +146,16 @@
 
 | Dateiname | Inhalt | Relevanz |
 |-----------|--------|----------|
-| 'Co-Intelligence: Living and Working with AI' | Ethan Mollick | 2024 |
-| "The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma" | Mustafa Suleyman | 2023 |
-| "Life 3.0: Being Human in the Age of Artificial Intelligence" | Max Tegmark | 2017 |
-| "KI_und_Recht.pdf" | Rohrlich – KI und Recht (Hanser 2024) |
-| "Dyck-B-Kuenstliche-Intelligenz-in-der-Fuehrung.pdf" | Dyck/Spann – KI in der Führung (Haufe 2025) |
-| "ISO_42001.pdf" | ISO/IEC 42001 Norm |
-| "NIST_AI_Risk_Management.pdf" | NIST AI RMF 1.0 | 
-| "Turing_Institute_AI_Ethics.pdf" | Turing Institute AI Ethics |
-| "GRC_Capability_Model.pdf" | GRC Capability Model | 
-| "KI-in-der-Projektwirtschaft.pdf" | KI in der Projektwirtschaft |
+| Co-Intelligence: Living and Working with AI | Ethan Mollick | 2024 |
+| The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma" | Mustafa Suleyman | 2023 |
+| Life 3.0: Being Human in the Age of Artificial Intelligence" | Max Tegmark | 2017 |
+| KI_und_Recht - Der Leitfaden für rechtliche Herausforderungen beim Einsatz von KI-Anwendungen | Michael Rohrlich | 2024 |
+| Künstliche Intelligenz in der Führung - Chancen, Entscheidungen und Strategien für morgen | Brigitte Dyck / Dr. Korbinian Spann| 2025 |
+| ISO_42001 | ISO/IEC 42001 Norm |
+| NIST_AI_Risk_Management | NIST AI RMF 1.0 | 2023 |
+| AI Ethics and Governance in Practice | Turing Institute AI Ethics | 2024 |
+| GRC_Capability_Model | GRC Capability Model | 
+| KI in der Projektwirtschaft | Christian Bernert / Steffen Scheurer / Harald Wehnes (Hrg) | GPM | 2024 |
 
 ---
 
