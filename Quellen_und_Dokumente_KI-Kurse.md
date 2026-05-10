@@ -64,12 +64,16 @@
 | https://learn.microsoft.com/de-de/entra/ | Microsoft Entra (Directory) | Technische Dokumentation | Identitätsmanagement, Zero Trust, Zugriffsrechte |
 | https://learn.microsoft.com/de-de/azure/sentinel/sentinel-overview | Microsoft Sentinel (SIEM) | Überwachung von Sicherheitsereignissen |
 
-### 2.3 KI & Gesellschaft / Ethik
+### 2.3 KI, Ethik & Governance
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://www.humanetech.com/ | Center for Humane Technology | NGO | Attention Economy, Social Harms, AI Ethics, Tech-Kritik |
 | https://www.AlgorithmWatch.org/ | AlgorithmWatch | NGO | Algorithmische Entscheidungen, Bias, Diskriminierung |
 | https://arxiv.org/list/cs.AI/recent | arXiv (Cornell University | Universität | USA, KI-Forschung |
+| https://www.turing.ac.uk/research/interest-groups/fairness-transparency-privacy | Alan Turing Institute | Forschung | Ethikl, Fairness, Transparency, Privacy, Governance |
+| https://ai.google/responsibility/responsible-ai-practices/ | Google Inc. | Industrie | Responsible AI Progress Report seit 2019 |
+| https://www.microsoft.com/en-us/ai/responsible-ai | Microsoft | Industrie | Responsible AI Report, Standard, Governance-Prinzipien |
+| https://www.partnershiponai.org/ | Partnership on AI | NGO | Multi-Stakeholder, Best Practices, Forschung |
 
 ---
 
@@ -91,14 +95,6 @@
 | https://owasp.org/www-project-machine-learning-security-top-10/ | Open Worldwide Application Security Project (OWASP) | Sicherheit | ML-Sicherheit, Angriffe, Gegenmaßnahmen |
 | https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Informationen-und-Empfehlungen/Kuenstliche-Intelligenz/kuenstliche-intelligenz_node.html | BSI — KI-Sicherheit | Behörde | Deutschland, Lageberichte, Empfehlungen |
 
-### 3.3 KI-Ethik & Governance
-| URL | Name | Typ | Schlagwörter |
-|-----|------|-----|--------------|
-| https://www.turing.ac.uk/research/interest-groups/fairness-transparency-privacy | Alan Turing Institute | Forschung | Ethikl, Fairness, Transparency, Privacy, Governance |
-| https://ai.google/responsibility/responsible-ai-practices/ | Google Inc. | Industrie | Responsible AI Progress Report seit 2019 |
-| https://www.microsoft.com/en-us/ai/responsible-ai | Microsoft | Industrie | Responsible AI Report, Standard, Governance-Prinzipien |
-| https://www.partnershiponai.org/ | Partnership on AI | NGO | Multi-Stakeholder, Best Practices, Forschung |
-
 ---
 
 ## 🟣 Change Management & Strategie
@@ -118,7 +114,8 @@
 | https://www.ki-strategie-deutschland.de/ | KI-Strategie Deutschland | Behörde | Handlungsfelder, Roadmap, Förderprogramme |
 | https://www.nber.org/papers?page=1&perPage=50&sortBy=public_date&q=artifical+intelligence | NBER (National Bureau of Economic Research | Behörde | Forschungsaufsätze |
 | https://www.iaps.ai/ | IAPS (Institute for AI Policy and Strategy | Forschung | USA KI Strategie |
-| https://ai-2027.com/ | AI 2027 | Forschung | künftige KI-Szenarien |
+| https://ai-2027.com/ | AI 2027 | Artikel | künftige KI-Szenarien |
+| https://ainowinstitute.org/publications | AI Now Institute | Forschung | NGO KI-Policies |
 
 ---
 
@@ -130,21 +127,17 @@
 | https://www.microsoft.com/de-de/customers/search?q=k%C3%BCnstliche+intelligenz | Microsoft | KI-Use Cases und Praxisbeispiele |
 | https://platform.claude.com/docs/en/about-claude/use-case-guides/overview | Anthropic (Claude) | KI-Use Cases und Praxisbeispiele |
 
-### 5.2 Mensch und KI
+### 5.2 KI Newsletter & Podcasts
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://brobotspodcast.substack.com/ | Health, Wellness & Mindset in the Age of AI | Podcast und Substack-Artikel |
-
-### 5.3 KI-Newsletter
-| URL | Name | Typ | Schlagwörter |
-|-----|------|-----|--------------|
 | https://aiweekly.co/ai-news-today | AI Weekly | Sammelpunkt für aktuelle Artikel zu KI |
 
 ---
 
 ## 📚 Literaturhinweise
 
-| Dateiname | Autor(en) | Jahr |
+| Publikation | Autor(en) | Jahr |
 |-----------|--------|----------|
 | Co-Intelligence: Living and Working with AI | Ethan Mollick | 2024 |
 | The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma" | Mustafa Suleyman | 2023 |
