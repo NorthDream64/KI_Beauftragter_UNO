@@ -568,7 +568,7 @@ function render() {
       html += '<div class="cb-item"><input type="checkbox" id="cb_p_'+d.id+'" '+(s.pptx?'checked':'')+' onchange="updateRow(\''+d.id+'\');updateSummary()"><label>PPTX</label></div>';
       html += '</div>';
       html += '<div class="uc-field">';
-      ['ucm1','ucm2','ucm3','uc04'].forEach(function(u){
+      ['ucm1','ucm2','ucm3','uc04', 'uc05'].forEach(function(u){
         var active = (s.uc||[]).indexOf(u)>=0?' active':'';
         html += '<span id="uc_'+u+'_'+d.id+'" class="uc-tag '+u+active+'" onclick="toggleUC(this,\''+d.id+'\')">'+ucLabels[u]+'</span>';
       });
