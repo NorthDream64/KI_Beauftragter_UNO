@@ -144,7 +144,7 @@
 
 ## 📚 Literaturhinweise
 
-| Dateiname | Inhalt | Relevanz |
+| Dateiname | Autor(en) | Jahr |
 |-----------|--------|----------|
 | Co-Intelligence: Living and Working with AI | Ethan Mollick | 2024 |
 | The Coming Wave, Technology, Power and the 21st Century's Greatest Dilemma" | Mustafa Suleyman | 2023 |
