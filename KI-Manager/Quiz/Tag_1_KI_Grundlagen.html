@@ -300,7 +300,7 @@ a2: [
     q: 'Die Bank erwägt, einen Chatbot für Kundenanfragen einzusetzen. Welche Aussagen sind korrekt?',
     opts: [
       'NLP (Natural Language Processing) ist die relevante Disziplin: Sprachverständnis, Kontextverarbeitung und Antwortgenerierung basieren auf NLP-Modellen mit Transformer-Architektur',
-      'Transformer-Architektur (2017, „Attention is all you need“) ist die Grundlage von GPT-Modellen und modernen Chatbots — sie ermöglicht echtes Kontextverständnis über mehrere Sätze hinweg',
+      'Transformer-Architektur ist die Grundlage von GPT-Modellen und modernen Chatbots — sie ermöglicht echtes Kontextverständnis über mehrere Sätze hinweg',
       'Für einen Bank-Chatbot ist ausschließlich Reinforcement Learning geeignet — NLP-Transformer-Modelle sind für regulierte Branchen nicht zugelassen',
       'Chatbots sind eine Form von Computer Vision — sie analysieren Texteingaben als visuelle Muster statt als Sprachsignale'
     ],
@@ -311,10 +311,10 @@ a2: [
   {
     q: 'Welche Bankprozesse lassen sich welchem KI-Typ zuordnen? Wählen Sie alle korrekten Paare.',
     opts: [
-      'Automatische Analyse eingereichter Kontoauszüge und Belege auf Authentizität und Doppeleinreichungen → Computer Vision',
-      'Kundensegmentierung nach Anlagevorlieben ohne vorab definierte Gruppen → Unsupervised Learning',
-      'Automatische Beantwortung von Kundenanfragen per E-Mail mit Verständnis des Kontexts → NLP-Modell (Transformer)',
-      'Kreditrisikovorhersage auf Basis historischer Ausfallquoten → Unsupervised Learning'
+      'Automatische Analyse eingereichter Kontoauszüge und Belege auf Authentizität und Doppeleinreichungen',
+      'Kundensegmentierung nach Anlagevorlieben ohne vorab definierte Gruppen',
+      'Automatische Beantwortung von Kundenanfragen per E-Mail mit Verständnis des Kontexts',
+      'Kreditrisikovorhersage auf Basis historischer Ausfallquoten'
     ],
     correct: [0,1,2],
     exp: 'Die ersten drei Paare sind korrekt: Belegprüfung = Computer Vision, Kundensegmentierung ohne vordefinierte Gruppen = Unsupervised Learning, kontextuelles E-Mail-Verständnis = NLP/Transformer. Option D ist falsch: Kreditrisiko auf Basis historischer Ausfälle ist Supervised Learning — bekannte Outputs (Ausfall ja/nein) sind vorhanden. Unsupervised Learning hätte keine Zielgröße.',
