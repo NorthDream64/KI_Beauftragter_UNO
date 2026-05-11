@@ -311,13 +311,13 @@ a2: [
   {
     q: 'Welche Bankprozesse lassen sich welchem KI-Typ zuordnen? Wählen Sie alle korrekten Paare.',
     opts: [
-      'Automatische Analyse eingereichter Kontoauszüge und Belege auf Authentizität und Doppeleinreichungen',
-      'Kundensegmentierung nach Anlagevorlieben ohne vorab definierte Gruppen',
-      'Automatische Beantwortung von Kundenanfragen per E-Mail mit Verständnis des Kontexts',
-      'Kreditrisikovorhersage auf Basis historischer Ausfallquoten'
+      'Automatische Analyse eingereichter Kontoauszüge und Belege auf Authentizität und Doppeleinreichungen -> Unsupervized learning',
+      'Kundensegmentierung nach Anlagevorlieben ohne vorab definierte Gruppen -> Unsupervized learning',
+      'Automatische Beantwortung von Kundenanfragen per E-Mail mit Verständnis des Kontexts -> Natural Language Processing',
+      'Kreditrisikovorhersage auf Basis historischer Ausfallquoten -> Reinforcement learning'
     ],
     correct: [0,1,2],
-    exp: 'Die ersten drei Paare sind korrekt: Belegprüfung = Computer Vision, Kundensegmentierung ohne vordefinierte Gruppen = Unsupervised Learning, kontextuelles E-Mail-Verständnis = NLP/Transformer. Option D ist falsch: Kreditrisiko auf Basis historischer Ausfälle ist Supervised Learning — bekannte Outputs (Ausfall ja/nein) sind vorhanden. Unsupervised Learning hätte keine Zielgröße.',
+    exp: 'Belegprüfung = Computer Vision, Kundensegmentierung ohne vordefinierte Gruppen = Unsupervised Learning, kontextuelles E-Mail-Verständnis = NLP/Transformer. Kreditrisiko auf Basis historischer Ausfälle ist Supervised Learning — bekannte Outputs (Ausfall ja/nein) sind vorhanden. Unsupervised Learning hätte keine Zielgröße.',
     src: 'Tag 1 HandOut · Block 2+3 · KI-Taxonomie · Praxisblock SolidFinanz'
   },
   {
