@@ -10,6 +10,7 @@
   --ink:#1a1a18;--paper:#f5f2ec;--card:#fff;--rule:#d5d0c5;--muted:#888880;
   --accent:#2a4a8a;--accent-soft:#e8edf7;
   --accent2:#5a3a7a;--accent2-soft:#f0eaf7;
+  --accent3:#1a6a5a;--accent3-soft:#e6f4f1;
   --correct:#2a7a50;--correct-bg:#eaf5ee;--correct-border:#a0d8b8;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -39,10 +40,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);l
 
 .kurs-card.kurs-1{border-top:3px solid var(--accent);}
 .kurs-card.kurs-2{border-top:3px solid var(--accent2);}
+.kurs-card.kurs-3{border-top:3px solid var(--accent3);}
 
 .kurs-icon{width:52px;height:52px;min-width:52px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;}
 .icon-blue{background:var(--accent-soft);}
 .icon-purple{background:var(--accent2-soft);}
+.icon-teal{background:var(--accent3-soft);}
 .icon-muted{background:var(--paper);}
 
 .kurs-body{flex:1;}
@@ -53,6 +56,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);l
 .pill{font-family:'DM Mono',monospace;font-size:10px;padding:3px 10px;border-radius:100px;background:var(--paper);border:1px solid var(--rule);color:var(--muted);}
 .pill-blue{background:var(--accent-soft);border-color:#c0d0e8;color:var(--accent);}
 .pill-purple{background:var(--accent2-soft);border-color:#c8b8e0;color:var(--accent2);}
+.pill-teal{background:var(--accent3-soft);border-color:#a0d0c8;color:var(--accent3);}
 .pill-green{background:var(--correct-bg);border-color:var(--correct-border);color:var(--correct);}
 
 .kurs-action{margin-top:auto;}
@@ -60,6 +64,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);l
 .btn-kurs:hover{background:#333;}
 .btn-kurs-2{background:var(--accent2);}
 .btn-kurs-2:hover{background:#4a2a6a;}
+.btn-kurs-3{background:var(--accent3);}
+.btn-kurs-3:hover{background:#145548;}
 .btn-soon{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.4rem;background:#ccc;color:#fff;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:not-allowed;}
 
 /* ── TRENNLINIE ── */
@@ -77,6 +83,7 @@ footer{border-top:1px solid var(--rule);padding:1.5rem 2rem;max-width:820px;marg
 .kurs-card{animation:fadeUp .4s ease both;}
 .kurs-card:nth-child(1){animation-delay:.05s;}
 .kurs-card:nth-child(2){animation-delay:.12s;}
+.kurs-card:nth-child(3){animation-delay:.19s;}
 
 @media(max-width:600px){
   .hero{padding:2rem 1.2rem 1.8rem;}
@@ -122,17 +129,37 @@ footer{border-top:1px solid var(--rule);padding:1.5rem 2rem;max-width:820px;marg
     </div>
 
     <!-- KI-Manager -->
-    <div class="kurs-card kurs-2 coming-soon">
+    <div class="kurs-card kurs-2 available">
       <div class="kurs-icon icon-purple">🚀</div>
       <div class="kurs-body">
-        <div class="kurs-eyebrow">In Vorbereitung</div>
-        <div class="kurs-title">KI-Manager · Transformationsmanagement</div>
+        <div class="kurs-eyebrow">Modul · 20 Kurstage</div>
+        <div class="kurs-title">KI-Manager:in</div>
         <div class="kurs-desc">Strategische KI-Transformation, Führung und Change, KI-Roadmaps, Business Cases und Governance auf Managementebene. Abschluss mit TÜV Rheinland Zertifizierung.</div>
         <div class="kurs-meta">
-          <span class="pill pill-purple">In Vorbereitung</span>
+          <span class="pill pill-purple">20 Tage</span>
+          <span class="pill pill-purple">4 Wochen</span>
+          <span class="pill pill-green">✓ Verfügbar</span>
         </div>
         <div class="kurs-action">
-          <span class="btn-soon">Bald verfügbar</span>
+          <a class="btn-kurs btn-kurs-2" href="KI-Manager/index.html">Zu den Quizzen →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- KI-Transformation -->
+    <div class="kurs-card kurs-3 available">
+      <div class="kurs-icon icon-teal">🌱</div>
+      <div class="kurs-body">
+        <div class="kurs-eyebrow">Modul · 20 Kurstage</div>
+        <div class="kurs-title">Manager:in für angewandte KI-Transformation</div>
+        <div class="kurs-desc">Angewandte KI-Transformation für Führungskräfte: Strategie, Wertschöpfung, Change Management, Governance und Skalierung von KI-Initiativen im Unternehmen.</div>
+        <div class="kurs-meta">
+          <span class="pill pill-teal">20 Tage</span>
+          <span class="pill pill-teal">4 Wochen</span>
+          <span class="pill pill-green">✓ Verfügbar</span>
+        </div>
+        <div class="kurs-action">
+          <a class="btn-kurs btn-kurs-3" href="KI-Transformation/index.html">Zu den Quizzen →</a>
         </div>
       </div>
     </div>
