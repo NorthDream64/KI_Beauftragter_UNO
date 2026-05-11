@@ -108,6 +108,8 @@ a{color:var(--accent);}
 .comp-fill{height:100%;border-radius:2px;}
 .fill-ok{background:var(--correct);}
 .fill-wrong{background:var(--wrong);}
+.submit-status.sending{background:#fff8e8;color:#7a5a00;border:1px solid #e8d090;}
+.submit-status.success{background:#eaf5ee;color:#2a7a50;border:1px solid #a0d8b8;}
 </style>
 </head>
 <body>
@@ -168,6 +170,7 @@ a{color:var(--accent);}
 </div>
 
 <div id="results-section" style="display:none">
+  <div id="submit-status" class="submit-status" style="display:none;max-width:600px;margin:1rem auto;text-align:center;padding:.6rem 1rem;border-radius:8px;font-family:'DM Mono',monospace;font-size:12px;"></div>
   <div class="result-block">
     <div class="result-grade" id="result-grade"></div>
     <div class="result-label" id="result-label"></div>
@@ -465,7 +468,9 @@ b2: [
 /* ═══════════════════════════════════════════════════════════════
    ENGINE (unverändert aus dem Standard-Quiz-Template)
 ═══════════════════════════════════════════════════════════════ */
+var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTfP8ygOun58rmvY9hQXFmPEgVyxppQGEPYjar1e78N6uanaGHuzBNOyU5P4kgvmz7/exec';
 var selectedRole = null, selectedLevel = null, questions = [], userAnswers = [];
+var participantName = '';
 
 function selectRole(r) {
   selectedRole = r;
@@ -508,6 +513,7 @@ function startQuiz() {
   var roleLabels = {a:'KI-Manager:in', b:'Geschäftsführer:in'};
   var levelLabels = {1:'Anfänger', 2:'Fortgeschrittene'};
   var name = document.getElementById('participant-name').value.trim() || 'Anonym';
+  participantName = name;
   var strip = document.getElementById('quiz-header-strip');
   strip.innerHTML =
     '<span class="strip-tag strip-role-' + selectedRole + '">' + roleLabels[selectedRole] + '</span>' +
@@ -641,7 +647,65 @@ function submitQuiz() {
     rev.appendChild(card);
   });
 
+  sendToSheets(score, questions.length - score);
   window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function sendToSheets(correct, wrong) {
+  if (!APPS_SCRIPT_URL) return;
+  var TAG_NR = 1;
+  var THEMA  = 'KI-Grundlagen';
+  var letters = ['A','B','C','D','E'];
+  var roleLabels = {a:'KI-Manager:in', b:'Geschäftsführer:in'};
+  var levelLabels = {1:'Anfänger', 2:'Fortgeschrittene'};
+  var stufe = (roleLabels[selectedRole] || selectedRole) + ' / ' + (levelLabels[selectedLevel] || selectedLevel);
+
+  var status = document.getElementById('submit-status');
+  if (status) {
+    status.className = 'submit-status sending';
+    status.style.display = 'block';
+    status.textContent = 'Ergebnis wird übermittelt...';
+  }
+
+  var toSend = [];
+  questions.forEach(function(q, i) {
+    var selIndices  = userAnswers[i].slice().sort();
+    var corrIndices = q.correct.slice().sort();
+    var isFull      = selIndices.join(',') === corrIndices.join(',');
+    var gewaehlt    = selIndices.map(function(idx) { return letters[idx]; }).join(',') || '-';
+    var korrekt     = corrIndices.map(function(idx) { return letters[idx]; }).join(',');
+    var ergebnis    = isFull ? 'RICHTIG' : 'FALSCH';
+
+    toSend.push(
+      APPS_SCRIPT_URL
+      + '?tab='        + encodeURIComponent('KI-Manager')
+      + '&teilnehmer=' + encodeURIComponent(participantName)
+      + '&tag='        + TAG_NR
+      + '&thema='      + encodeURIComponent(THEMA)
+      + '&stufe='      + encodeURIComponent(stufe)
+      + '&frage_nr='   + (i + 1)
+      + '&frage_text=' + encodeURIComponent(q.q.substring(0, 80))
+      + '&gewaehlt='   + encodeURIComponent(gewaehlt)
+      + '&korrekt='    + encodeURIComponent(korrekt)
+      + '&ergebnis='   + encodeURIComponent(ergebnis)
+    );
+  });
+
+  var idx = 0;
+  function sendNext() {
+    if (idx >= toSend.length) {
+      if (status) {
+        status.className = 'submit-status success';
+        status.textContent = '✓ ' + toSend.length + ' Antworten übermittelt ('
+          + new Date().toLocaleTimeString('de-DE') + ')';
+      }
+      return;
+    }
+    fetch(toSend[idx], { mode: 'no-cors' })
+      .catch(function() {})
+      .then(function() { idx++; setTimeout(sendNext, 400); });
+  }
+  sendNext();
 }
 </script>
 
