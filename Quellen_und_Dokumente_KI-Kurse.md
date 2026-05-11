@@ -11,7 +11,7 @@
 | URL | Name | Typ | Schlagwörter |
 |-----|------|-----|--------------|
 | https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401689 | EU AI Act Volltext (EUR-Lex) | Primärquelle | Regulation (EU) 2024/1689, Risikoklassen, KI-Beauftragter, Hochrisiko-KI |
-| https://digital-strategy.ec.europa.eu/en/policies/european-approach-artificial-intelligence | EU AI Strategy (Kommission) | Sekundärquelle | EU-Digitalstrategie, AI Act Kontext, Vertrauenswürdige KI |
+| https://digital-strategy.ec.europa.eu/de | EU AI Strategy (Kommission) | Sekundärquelle | EU-Digitalstrategie, AI Act Kontext, Vertrauenswürdige KI |
 | https://artificialintelligenceact.eu/ | EU AI Act Explorer (interaktiv) | Tool | Artikel-Browser, Paragraphensuche, Compliance-Prüfung |
 | https://www.bmi.bund.de/DE/themen/sicherheit/it-und-cybersicherheit/it-und-cybersicherheit-node.html | Bundesministerium des Ineren (BMI) | Behörde | Deutschland, Cybersicherheit |
 | https://www.oecd.org/en/publications/oecd-framework-for-the-classification-of-ai-systems_cb6d9eca-en.html | OECD Framework for the Classification of AI Systsms | 2022 | Policy Paper |
