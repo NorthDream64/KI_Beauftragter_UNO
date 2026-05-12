@@ -74,6 +74,7 @@
 | https://ai.google/responsibility/responsible-ai-practices/ | Google Inc. | Industrie | Responsible AI Progress Report seit 2019 |
 | https://www.microsoft.com/en-us/ai/responsible-ai | Microsoft | Industrie | Responsible AI Report, Standard, Governance-Prinzipien |
 | https://www.partnershiponai.org/ | Partnership on AI | NGO | Multi-Stakeholder, Best Practices, Forschung |
+| https://knowledge.wharton.upenn.edu/category/technology/ai/ | Wharton AI & Analytics Initiative | Universität | Forschung |
 
 ---
 
