@@ -1,5 +1,5 @@
 # SolidFinanz AG
-> alfatraining · Projektaufgabe: KI-Beauftragter
+> alfatraining · KI-Beauftragter / KI-Manager
 > ⚠️ Fiktives Unternehmen — alle Namen und Details sind für Schulungszwecke erstellt
 
 ---

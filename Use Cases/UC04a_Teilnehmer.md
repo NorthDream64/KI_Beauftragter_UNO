@@ -1,4 +1,4 @@
-# UC-04: Projektabschlussarbeit
+# UC-04: SolidFinanz AG
 > KI-Beauftragter · KI-Manager
 
 ---

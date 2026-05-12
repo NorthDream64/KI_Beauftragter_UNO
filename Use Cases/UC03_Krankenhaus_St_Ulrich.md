@@ -1,5 +1,5 @@
 # UC-03 Unternehmensakte — Krankenhaus St. Ulrich
-> Fallstudie KI-Beauftragter
+> KI-Beauftragter
 > ⚠️ Fiktives Unternehmen — alle Namen und Details sind für Schulungszwecke erstellt
 
 ---
