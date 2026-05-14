@@ -193,7 +193,7 @@ a{color:var(--accent);}
 /* ═══ SZENARIEN ═══════════════════════════════════════════════ */
 
 var SCENARIOS = {
-  a: 'Sie sind KI-Manager:in bei der SolidFinanz AG. Die Geschäftsführung hat entschieden, ein KI-Managementsystem nach ISO 42001 aufzubauen und bis Ende des Jahres die Zertifizierung anzustreben. Sie koordinieren die Einführung — und bereiten das Unternehmen gleichzeitig auf die vollständige EU AI Act-Durchsetzung vor, die im August 2026 in Kraft tritt.',
+  a: 'Sie sind KI-Manager:in bei der SolidFinanz AG. Die Geschäftsführung hat entschieden, ein KI-Managementsystem nach ISO 42001 aufzubauen und bis Ende des Jahres die Zertifizierung anzustreben. Sie koordinieren die Einführung — und bereiten das Unternehmen gleichzeitig auf die schrittweise EU AI Act-Durchsetzung vor: Für Hochrisiko-KI-Systeme gilt ab 2. Dezember 2027 die vollständige Konformitätspflicht (Digital AI Omnibus, Mai 2026).',
   b: 'Sie leiten die Qualitätsmanagement-Abteilung eines mittelständischen Fertigungsunternehmens (ISO 9001-zertifiziert). Die Geschäftsführung hat entschieden, zusätzlich ISO 42001 einzuführen, um das neue KI-Bilderkennungssystem in der Qualitätssicherung normkonform zu betreiben. Sie sollen die Integration in das bestehende QMS koordinieren und die Zertifizierungsreife herstellen.'
 };
 
@@ -219,7 +219,7 @@ a1: [
     q: 'Welche der folgenden Aussagen beschreibt die Rolle der ISO 42001 im Verhältnis zum EU AI Act am treffendsten?',
     opts: ['ISO 42001 ist der offizielle Ausführungsstandard des EU AI Acts und ersetzt nationale Regulierungen vollständig', 'ISO 42001 gilt nur für Hersteller von KI-Systemen, nicht für Unternehmen, die KI lediglich einsetzen', 'ISO 42001 bietet einen organisatorischen Governance-Rahmen, der auf EU AI Act-Anforderungen vorbereitet, ohne diese rechtlich zu ersetzen', 'Der EU AI Act macht ISO 42001 zwingend verpflichtend für alle Unternehmen, die KI einsetzen'],
     correct: [2],
-    exp: 'ISO 42001 und EU AI Act sind komplementär: Die Norm schafft die organisatorische Governance-Struktur und bereitet auf EU AI Act-Anforderungen vor — insbesondere für Artikel 9 (Risikomanagement), 10 (Daten-Governance) und 11 (technische Dokumentation). Eine Zertifizierung demonstriert systematische Sorgfalt, ist aber kein rechtsverbindlicher Ersatz. Ab August 2026 greift die vollständige EU AI Act-Durchsetzung mit aktiver Aufsicht durch das EU AI Office.',
+    exp: 'ISO 42001 und EU AI Act sind komplementär: Die Norm schafft die organisatorische Governance-Struktur und bereitet auf EU AI Act-Anforderungen vor — insbesondere für Artikel 9 (Risikomanagement), 10 (Daten-Governance) und 11 (technische Dokumentation). Eine Zertifizierung demonstriert systematische Sorgfalt, ist aber kein rechtsverbindlicher Ersatz. Im Rahmen des Digital AI Omnibus (Mai 2026) wurden die Fristen verschoben: Hochrisiko-KI-Systeme müssen ab 2. Dezember 2027 vollständig konform sein; KI in regulierten Produkten ab 2. August 2028.',
     src: 'ISO 42001 / EU AI Act', url: 'https://artificialintelligenceact.eu/'
   },
   {
@@ -257,7 +257,7 @@ a2: [
     q: 'Seit April 2026 liegt mit der prEN 18286 ein harmonisierter Standard zum EU AI Act vor. Welche Aussagen zum Zusammenspiel von ISO 42001 und prEN 18286 sind zutreffend?',
     opts: ['ISO 42001 definiert das organisationale AIMS, während prEN 18286 als systemspezifisches QMS auf Ebene einzelner KI-Systeme ansetzt', 'Unternehmen mit Hochrisiko-KI profitieren von einer Zweischicht-Architektur: ISO 42001 als AIMS-Rahmen und prEN 18286 für die systemspezifische Konformität', 'prEN 18286 macht ISO 42001 überflüssig, da der neue Standard alle AIMS-Anforderungen vollständig ersetzt', 'Die Kombination aus ISO 42001, prEN 18286 und EU AI Act bildet den aktuellen Best-Practice-Referenzrahmen für KI-Governance in der EU'],
     correct: [0, 1, 3],
-    exp: 'Die prEN 18286 (April 2026) ergänzt ISO 42001 als harmonisierter Standard im Sinne des EU AI Acts — sie ersetzt die Norm nicht, sondern adressiert die systemspezifische Ebene. Der empfohlene Ansatz für Hochrisiko-KI ist eine Zweischicht-Architektur: ISO 42001 auf Organisationsebene, prEN 18286 auf KI-Systemebene. Dies gilt insbesondere mit Blick auf die vollständige EU AI Act-Durchsetzung ab August 2026.',
+    exp: 'Die prEN 18286 (April 2026) ergänzt ISO 42001 als harmonisierter Standard im Sinne des EU AI Acts — sie ersetzt die Norm nicht, sondern adressiert die systemspezifische Ebene. Der empfohlene Ansatz für Hochrisiko-KI ist eine Zweischicht-Architektur: ISO 42001 auf Organisationsebene, prEN 18286 auf KI-Systemebene. Relevant: Nach dem Digital AI Omnibus (Mai 2026) gilt für Hochrisiko-KI-Systeme die vollständige Konformitätspflicht ab 2. Dezember 2027.',
     src: 'Cloud Security Alliance / ISO 42001', url: 'https://cloudsecurityalliance.org/blog/2026/04/27/building-eu-ai-act-compliance-with-pren-18286-and-iso-42001'
   },
   {
@@ -268,7 +268,7 @@ a2: [
     src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
   },
   {
-    q: 'Für Hochrisiko-KI-Systeme nach EU AI Act gilt ab August 2026 die vollständige Durchsetzung. Welche Maßnahmen sind im AIMS zwingend zu verankern?',
+    q: 'Nach dem Digital AI Omnibus (Mai 2026) gilt für Hochrisiko-KI-Systeme ab 2. Dezember 2027 die vollständige Durchsetzung des EU AI Acts. Welche Maßnahmen sind im AIMS zwingend zu verankern?',
     opts: ['Ein kontinuierliches Risikomanagementsystem (RMS), das den gesamten Lebenszyklus des KI-Systems abdeckt', 'Die vollständige Automatisierung aller Risikoentscheidungen ohne menschliche Aufsicht, um Reaktionszeiten zu minimieren', 'Die Beschränkung des Monitoring auf die Trainings- und Entwicklungsphase, da Risiken im Produktivbetrieb durch das Deployment-Team verantwortet werden', 'Die Sicherstellung menschlicher Aufsicht über KI-Systementscheidungen mit erheblicher Auswirkung — als Anforderung von ISO 42001 und EU AI Act gleichermaßen'],
     correct: [0, 3],
     exp: 'EU AI Act Artikel 9 und 14 verlangen für Hochrisiko-KI ein kontinuierliches Risikomanagement sowie wirksame menschliche Aufsicht. ISO 42001 spiegelt diese Anforderungen in Klausel 8 und der KI-Risikobehandlung wider. Die vollständige Automatisierung von Risikoentscheidungen ohne menschliche Kontrolle widerspricht beiden Regelwerken grundsätzlich.',
@@ -307,9 +307,9 @@ b1: [
   },
   {
     q: 'Welche Aussagen zur Verbindung zwischen ISO 42001 und dem EU AI Act sind aus QM-Perspektive relevant?',
-    opts: ['ISO 42001 deckt mit seinen Governance-Anforderungen wesentliche EU AI Act-Artikel ab: Risikomanagement (Art. 9), Daten-Governance (Art. 10) und Dokumentation (Art. 11)', 'Da das Unternehmen ISO 9001 zertifiziert ist, besteht automatisch Konformität mit dem EU AI Act für alle eingesetzten KI-Systeme', 'Der EU AI Act gilt nur für Hersteller von KI-Systemen und ist für Unternehmen, die KI lediglich einsetzen, rechtlich irrelevant', 'Ab August 2026 greift die vollständige EU AI Act-Durchsetzung — ISO-42001-Konformität reduziert das Compliance-Risiko, ersetzt aber nicht den gesetzlichen Konformitätsnachweis bei Hochrisiko-KI'],
+    opts: ['ISO 42001 deckt mit seinen Governance-Anforderungen wesentliche EU AI Act-Artikel ab: Risikomanagement (Art. 9), Daten-Governance (Art. 10) und Dokumentation (Art. 11)', 'Da das Unternehmen ISO 9001 zertifiziert ist, besteht automatisch Konformität mit dem EU AI Act für alle eingesetzten KI-Systeme', 'Der EU AI Act gilt nur für Hersteller von KI-Systemen und ist für Unternehmen, die KI lediglich einsetzen, rechtlich irrelevant', 'Ab 2. Dezember 2027 greift die vollständige EU AI Act-Durchsetzung für Hochrisiko-KI — ISO-42001-Konformität reduziert das Compliance-Risiko, ersetzt aber nicht den gesetzlichen Konformitätsnachweis (Digital AI Omnibus, Mai 2026)'],
     correct: [0, 3],
-    exp: 'ISO 42001 und EU AI Act sind komplementär: Eine Zertifizierung demonstriert systematische Governance und reduziert Compliance-Risiken erheblich. Dennoch bleibt die gesetzliche Pflicht bestehen — insbesondere für Hochrisiko-KI-Systeme. Ab August 2026 beginnt die aktive Durchsetzung durch das EU AI Office. Weder ISO 9001 noch ein anderer Standard ersetzt die spezifischen EU AI Act-Konformitätsnachweise.',
+    exp: 'ISO 42001 und EU AI Act sind komplementär: Eine Zertifizierung demonstriert systematische Governance und reduziert Compliance-Risiken erheblich. Dennoch bleibt die gesetzliche Pflicht bestehen — insbesondere für Hochrisiko-KI-Systeme. Nach dem Digital AI Omnibus (Mai 2026) beginnt die aktive Durchsetzung für Hochrisiko-KI ab 2. Dezember 2027 durch das EU AI Office. Weder ISO 9001 noch ein anderer Standard ersetzt die spezifischen EU AI Act-Konformitätsnachweise.',
     src: 'EU AI Act / ISO 42001', url: 'https://artificialintelligenceact.eu/'
   }
 ],
@@ -326,7 +326,7 @@ b2: [
     q: 'Die Managementbewertung ist ein Kernelement des AIMS nach ISO 42001. Welche Inputs sind zwingend zu berücksichtigen?',
     opts: ['Ergebnisse interner Audits, Kennzahlen zur Systemleistung sowie der Status von Korrekturmaßnahmen und Verbesserungsinitiativen', 'Eine vollständige Neubewertung aller KI-Projekte nach Marktrelevanz, um Investitionsentscheidungen zu steuern', 'Veränderungen im externen und internen Kontext, die das AIMS betreffen — einschließlich regulatorischer Entwicklungen wie neuer EU AI Act-Durchsetzungsphasen', 'Individuelle Leistungsbeurteilungen aller Mitarbeitenden, die mit KI-Systemen arbeiten'],
     correct: [0, 2],
-    exp: 'Die Managementbewertung nach ISO 42001 folgt den HLS-Vorgaben: Audit-Ergebnisse, Leistungskennzahlen, Korrekturmaßnahmen und Kontextveränderungen sind Pflicht-Inputs. Die Integration regulatorischer Entwicklungen — wie der EU AI Act-Vollzugsphase ab August 2026 und der neuen prEN 18286 (April 2026) — ist besonders relevant. Individuelle Leistungsbeurteilungen sind kein AIMS-Thema.',
+    exp: 'Die Managementbewertung nach ISO 42001 folgt den HLS-Vorgaben: Audit-Ergebnisse, Leistungskennzahlen, Korrekturmaßnahmen und Kontextveränderungen sind Pflicht-Inputs. Die Integration regulatorischer Entwicklungen — wie der verschobenen EU AI Act-Vollzugsphase (Hochrisiko-KI ab 2. Dezember 2027, Digital AI Omnibus Mai 2026) und der neuen prEN 18286 (April 2026) — ist besonders relevant. Individuelle Leistungsbeurteilungen sind kein AIMS-Thema.',
     src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
   },
   {
