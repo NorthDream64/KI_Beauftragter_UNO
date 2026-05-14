@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lernkontrolle · KI-Manager Tag 2 · ISO 42001</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1a1a18;--paper:#f5f2ec;--card:#fff;--rule:#d5d0c5;--muted:#888880;
+  --accent:#5a3a7a;--accent-soft:#f0eaf7;
+  --role-a:#1a6a5a;--role-a-soft:#e6f4f1;
+  --role-b:#5a3a7a;--role-b-soft:#f0eaf7;
+  --level-1:#7a4a00;--level-1-soft:#fdf0e0;
+  --level-2:#0a4a7a;--level-2-soft:#e0eff7;
+  --correct:#2a7a50;--correct-bg:#eaf5ee;--correct-border:#a0d8b8;
+  --wrong:#9a2a2a;--wrong-bg:#faeaea;--wrong-border:#d8a0a0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-size:15px;}
+a{color:var(--accent);}
+.site-header{border-bottom:2px solid var(--ink);padding:1.8rem 2rem 1.4rem;max-width:820px;margin:0 auto;}
+.eyebrow{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;}
+.site-header h1{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.15;margin-bottom:.4rem;}
+.header-meta{font-size:12px;color:var(--muted);display:flex;gap:1rem;flex-wrap:wrap;}
+.header-meta span::before{content:"· ";}
+.header-meta span:first-child::before{content:"";}
+.main{max-width:820px;margin:0 auto;padding:1.8rem 2rem 4rem;}
+.setup-card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:2rem;max-width:540px;margin:0 auto;}
+.setup-card h2{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1.2rem;}
+.field-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.35rem;}
+.setup-input{width:100%;border:1px solid var(--rule);border-radius:8px;padding:.6rem .9rem;font-family:'DM Sans',sans-serif;font-size:14px;background:var(--paper);outline:none;color:var(--ink);transition:border-color .15s;}
+.setup-input:focus{border-color:var(--ink);}
+.setup-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+@media(max-width:480px){.setup-grid{grid-template-columns:1fr;}}
+.role-btns,.level-btns{display:flex;gap:.5rem;}
+.sel-btn{flex:1;padding:.55rem .6rem;border:1px solid var(--rule);border-radius:8px;background:none;font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;text-align:center;transition:all .15s;color:var(--ink);}
+.sel-btn.active-a{background:var(--role-a-soft);border-color:var(--role-a);color:var(--role-a);font-weight:500;}
+.sel-btn.active-b{background:var(--role-b-soft);border-color:var(--role-b);color:var(--role-b);font-weight:500;}
+.sel-btn.active-1{background:var(--level-1-soft);border-color:var(--level-1);color:var(--level-1);font-weight:500;}
+.sel-btn.active-2{background:var(--level-2-soft);border-color:var(--level-2);color:var(--level-2);font-weight:500;}
+.hint-text{font-size:12px;color:var(--muted);margin-top:.3rem;display:block;}
+.btn-start{width:100%;padding:.75rem;background:var(--ink);color:#fff;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;cursor:pointer;margin-top:1rem;transition:background .15s;}
+.btn-start:hover{background:#333;}
+.btn-start:disabled{background:#aaa;cursor:not-allowed;}
+.quiz-header-strip{display:flex;gap:.6rem;align-items:center;margin-bottom:1.4rem;flex-wrap:wrap;}
+.strip-tag{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;}
+.strip-role-a{background:var(--role-a-soft);color:var(--role-a);}
+.strip-role-b{background:var(--role-b-soft);color:var(--role-b);}
+.strip-level-1{background:var(--level-1-soft);color:var(--level-1);}
+.strip-level-2{background:var(--level-2-soft);color:var(--level-2);}
+.strip-name{font-size:13px;color:var(--muted);margin-left:auto;}
+.progress-bar{height:3px;background:var(--rule);border-radius:2px;margin-bottom:1.2rem;}
+.progress-fill{height:100%;background:var(--ink);border-radius:2px;transition:width .3s;}
+.progress-label{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:.5rem;}
+.scenario-box{background:var(--accent-soft);border:1px solid #c8b8e0;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:.9rem 1.1rem;margin-bottom:1.2rem;}
+.scenario-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;}
+.scenario-text{font-size:13px;color:var(--ink);line-height:1.6;}
+.q-card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:1.5rem;margin-bottom:1rem;}
+.q-num{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem;}
+.q-text{font-size:15px;font-weight:500;line-height:1.55;margin-bottom:.5rem;}
+.opt-list{display:flex;flex-direction:column;gap:.5rem;}
+.opt{display:flex;align-items:flex-start;gap:.7rem;padding:.75rem 1rem;border:1px solid var(--rule);border-radius:8px;cursor:pointer;background:#fdfdfb;transition:all .12s;-webkit-user-select:none;user-select:none;}
+.opt:hover:not(.disabled){border-color:#888;background:#f5f2ec;}
+.opt.selected{background:var(--accent-soft);border-color:#b8a0d8;}
+.opt.disabled{cursor:default;}
+.opt.correct-sel{background:var(--correct-bg);border-color:var(--correct-border);}
+.opt.wrong-sel{background:var(--wrong-bg);border-color:var(--wrong-border);}
+.opt.missed{background:var(--wrong-bg);border-color:var(--wrong-border);}
+.opt-cb{width:18px;height:18px;min-width:18px;border:1.5px solid #bbb;border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .12s;}
+.opt-cb.chk{background:var(--ink);border-color:var(--ink);}
+.opt-cb.chk::after{content:'';display:block;width:8px;height:8px;background:#fff;border-radius:2px;}
+.opt.correct-sel .opt-cb{background:var(--correct);border-color:var(--correct);}
+.opt.correct-sel .opt-cb::after{content:'\2713';color:#fff;font-size:11px;background:none;width:auto;height:auto;}
+.opt.wrong-sel .opt-cb{background:var(--wrong);border-color:var(--wrong);}
+.opt.wrong-sel .opt-cb::after{content:'\2717';color:#fff;font-size:11px;background:none;width:auto;height:auto;}
+.opt.missed .opt-cb{background:var(--wrong);border-color:var(--wrong);}
+.opt.missed .opt-cb::after{content:'\2192';color:#fff;font-size:11px;background:none;width:auto;height:auto;}
+.opt-letter{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);min-width:16px;flex-shrink:0;margin-top:2px;}
+.opt-text{font-size:14px;line-height:1.5;}
+.feedback{border-radius:8px;padding:.9rem 1.1rem;margin-top:.9rem;}
+.feedback.fb-ok{background:var(--correct-bg);border:1px solid var(--correct-border);}
+.feedback.fb-wrong{background:var(--wrong-bg);border:1px solid var(--wrong-border);}
+.fb-title{font-weight:500;font-size:14px;margin-bottom:.4rem;}
+.fb-ok .fb-title{color:var(--correct);}
+.fb-wrong .fb-title{color:var(--wrong);}
+.fb-text{font-size:13px;line-height:1.65;color:#444;margin-bottom:.5rem;}
+.fb-source{font-size:12px;color:var(--muted);border-top:1px solid var(--rule);padding-top:.5rem;}
+.nav-row{display:flex;align-items:center;gap:.6rem;margin-top:1rem;}
+.btn{display:inline-flex;align-items:center;padding:.55rem 1.2rem;border:1px solid var(--rule);border-radius:8px;background:none;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;color:var(--ink);transition:all .15s;}
+.btn:hover{background:var(--paper);border-color:#888;}
+.btn:disabled{opacity:.3;cursor:not-allowed;}
+.btn-full{width:100%;justify-content:center;padding:.7rem;font-size:15px;margin-top:1rem;}
+.btn-submit{background:#1a6a5a;color:#fff;border-color:#1a6a5a;}
+.btn-submit:hover{background:#145548;}
+.result-block{max-width:600px;margin:0 auto;text-align:center;}
+.result-grade{font-family:'Playfair Display',serif;font-size:4.5rem;line-height:1;margin-bottom:.3rem;}
+.result-label{font-size:1.1rem;font-weight:500;margin-bottom:.3rem;}
+.result-sub{font-size:13px;color:var(--muted);margin-bottom:1.5rem;}
+.stats-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.stat{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:.9rem 1.2rem;text-align:center;min-width:90px;}
+.stat-n{font-size:1.8rem;font-weight:500;}
+.stat-l{font-size:11px;color:var(--muted);margin-top:2px;}
+.comp-title{font-size:13px;font-weight:500;text-align:left;margin-bottom:.8rem;}
+.comp-row{margin-bottom:.7rem;text-align:left;}
+.comp-labels{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:3px;}
+.comp-track{height:4px;background:var(--rule);border-radius:2px;}
+.comp-fill{height:100%;border-radius:2px;}
+.fill-ok{background:var(--correct);}
+.fill-wrong{background:var(--wrong);}
+.submit-status.sending{background:#fff8e8;color:#7a5a00;border:1px solid #e8d090;}
+.submit-status.success{background:#eaf5ee;color:#2a7a50;border:1px solid #a0d8b8;}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="eyebrow">Alfatraining &middot; KI-Manager:in &middot; Tag 1</div>
+  <h1>Lernkontrolle<br>ISO 42001 &amp; KI-Managementsystem</h1>
+  <div class="header-meta">
+    <span>5 Fragen je Rolle &amp; Stufe</span>
+    <span>Eine oder mehrere Antworten k&ouml;nnen richtig sein</span>
+    <span>Use Case: SolidFinanz AG &mdash; erster Vorstandsbericht</span>
+  </div>
+</header>
+
+<main class="main">
+
+<div id="setup-section">
+  <div class="setup-card">
+    <h2>Bitte w&auml;hle deine Rolle und Schwierigkeitsstufe</h2>
+    <div style="margin-bottom:1rem;">
+      <span class="field-label">Dein Name (oder Teilnehmer-Nummer)</span>
+      <input type="text" id="participant-name" class="setup-input" placeholder="z. B. Teilnehmer-07 oder Vorname">
+    </div>
+    <div class="setup-grid">
+      <div>
+        <span class="field-label">Rolle</span>
+        <div class="role-btns">
+          <button class="sel-btn" id="btn-role-a" onclick="selectRole('a')">KI-Manager:in</button>
+          <button class="sel-btn" id="btn-role-b" onclick="selectRole('b')">Gesch&auml;ftsf&uuml;hrer:in</button>
+        </div>
+        <span class="hint-text">W&auml;hle deine Rolle im Unternehmen</span>
+      </div>
+      <div>
+        <span class="field-label">Schwierigkeitsstufe</span>
+        <div class="level-btns">
+          <button class="sel-btn" id="btn-level-1" onclick="selectLevel('1')">Anf&auml;nger</button>
+          <button class="sel-btn" id="btn-level-2" onclick="selectLevel('2')">Fortgeschrittene</button>
+        </div>
+        <span class="hint-text">Anf&auml;nger = Konzepte &middot; Fortgeschr. = Szenarien</span>
+      </div>
+    </div>
+    <button class="btn-start" id="btn-start" onclick="startQuiz()" disabled>Quiz starten &rarr;</button>
+  </div>
+</div>
+
+<div id="quiz-section" style="display:none">
+  <div class="quiz-header-strip" id="quiz-header-strip"></div>
+  <div class="progress-label" id="progress-label"></div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="scenario-box">
+    <div class="scenario-label">Fallbeispiel &middot; Gilt f&uuml;r alle Fragen</div>
+    <div class="scenario-text" id="scenario-text"></div>
+  </div>
+  <div id="questions-container"></div>
+  <div class="nav-row" style="margin-top:1.5rem">
+    <button class="btn btn-submit btn-full" id="btn-submit" onclick="submitQuiz()" disabled>Auswertung anzeigen &rarr;</button>
+  </div>
+</div>
+
+<div id="results-section" style="display:none">
+  <div id="submit-status" class="submit-status" style="display:none;max-width:600px;margin:1rem auto;text-align:center;padding:.6rem 1rem;border-radius:8px;font-family:'DM Mono',monospace;font-size:12px;"></div>
+  <div class="result-block">
+    <div class="result-grade" id="result-grade"></div>
+    <div class="result-label" id="result-label"></div>
+    <div class="result-sub" id="result-sub"></div>
+    <div class="stats-row" id="stats-row"></div>
+    <div class="comp-title">Kompetenzprofil</div>
+    <div id="comp-bars"></div>
+    <div style="margin-top:.8rem;display:flex;justify-content:center;">
+      <button class="btn" onclick="location.reload()">Neu starten</button>
+    </div>
+  </div>
+  <hr style="border:none;border-top:1px solid var(--rule);margin:2rem 0">
+  <h2 style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:1rem">Detailauswertung</h2>
+  <div id="review-container"></div>
+</div>
+
+</main>
+
+<script>
+/* ═══ SZENARIEN ═══════════════════════════════════════════════ */
+
+var SCENARIOS = {
+  a: 'Sie sind KI-Manager:in bei der SolidFinanz AG. Die Geschäftsführung hat entschieden, ein KI-Managementsystem nach ISO 42001 aufzubauen und bis Ende des Jahres die Zertifizierung anzustreben. Sie koordinieren die Einführung — und bereiten das Unternehmen gleichzeitig auf die vollständige EU AI Act-Durchsetzung vor, die im August 2026 in Kraft tritt.',
+  b: 'Sie leiten die Qualitätsmanagement-Abteilung eines mittelständischen Fertigungsunternehmens (ISO 9001-zertifiziert). Die Geschäftsführung hat entschieden, zusätzlich ISO 42001 einzuführen, um das neue KI-Bilderkennungssystem in der Qualitätssicherung normkonform zu betreiben. Sie sollen die Integration in das bestehende QMS koordinieren und die Zertifizierungsreife herstellen.'
+};
+
+/* ═══ FRAGENBANK ══════════════════════════════════════════════ */
+
+var QBANK = {
+a1: [
+  {
+    q: 'Was muss ein KI-Managementsystem (AIMS) nach ISO 42001 mindestens abdecken? Welche Kernelemente sind korrekt beschrieben?',
+    opts: ['Die Definition des organisatorischen Kontexts und des Anwendungsbereichs des AIMS', 'Die vollautomatische Erkennung und Behebung von Bias in allen KI-Modellen ohne menschliche Prüfung', 'Die Überprüfung der Wirksamkeit des Systems durch interne Audits und eine Managementbewertung', 'Die kontinuierliche Verbesserung auf Basis systematisch erhobener Leistungsdaten'],
+    correct: [0, 2, 3],
+    exp: 'Ein AIMS nach ISO 42001 fordert strukturell: die Bestimmung des Kontexts (Klausel 4), die Leistungsbewertung durch interne Audits (Klausel 9) sowie einen systematischen Verbesserungsprozess (Klausel 10). Vollautomatische Bias-Behebung ohne menschliche Aufsicht widerspricht dem in der Norm verankerten Grundprinzip menschlicher Kontrolle über KI-Systeme.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Welche Aussagen zur Verbindung zwischen ISO 42001 und anderen ISO-Normen sind korrekt?',
+    opts: ['Unternehmen, die bereits ISO 9001 oder ISO 27001 betreiben, können Dokumentations- und Auditprozesse integrieren und so den Einführungsaufwand reduzieren', 'Ein ISO-42001-Zertifikat ersetzt automatisch die Konformitätsnachweise des EU AI Acts für Hochrisiko-KI-Systeme', 'ISO 42001 folgt der ISO High Level Structure (HLS) und kann daher in ein bestehendes Integriertes Managementsystem (IMS) eingebettet werden', 'ISO 42001 schreibt vor, dass stets alle drei Normen (42001, 9001, 27001) gemeinsam zertifiziert werden müssen'],
+    correct: [0, 2],
+    exp: 'Die gemeinsame High Level Structure ermöglicht die nahtlose Integration von ISO 42001 in bestehende Managementsysteme — das reduziert Einführungsaufwand erheblich. Ein ISO-42001-Zertifikat ist ein wertvolles Nachweismittel, ersetzt aber nicht die gesetzliche Konformität nach EU AI Act, insbesondere nicht für Hochrisiko-KI-Systeme mit spezifischen gesetzlichen Anforderungen.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Welche der folgenden Aussagen beschreibt die Rolle der ISO 42001 im Verhältnis zum EU AI Act am treffendsten?',
+    opts: ['ISO 42001 ist der offizielle Ausführungsstandard des EU AI Acts und ersetzt nationale Regulierungen vollständig', 'ISO 42001 gilt nur für Hersteller von KI-Systemen, nicht für Unternehmen, die KI lediglich einsetzen', 'ISO 42001 bietet einen organisatorischen Governance-Rahmen, der auf EU AI Act-Anforderungen vorbereitet, ohne diese rechtlich zu ersetzen', 'Der EU AI Act macht ISO 42001 zwingend verpflichtend für alle Unternehmen, die KI einsetzen'],
+    correct: [2],
+    exp: 'ISO 42001 und EU AI Act sind komplementär: Die Norm schafft die organisatorische Governance-Struktur und bereitet auf EU AI Act-Anforderungen vor — insbesondere für Artikel 9 (Risikomanagement), 10 (Daten-Governance) und 11 (technische Dokumentation). Eine Zertifizierung demonstriert systematische Sorgfalt, ist aber kein rechtsverbindlicher Ersatz. Ab August 2026 greift die vollständige EU AI Act-Durchsetzung mit aktiver Aufsicht durch das EU AI Office.',
+    src: 'ISO 42001 / EU AI Act', url: 'https://artificialintelligenceact.eu/'
+  },
+  {
+    q: 'Eine Organisation führt ISO 42001 ein. Welche Aufgaben trägt die KI-Manager:in dabei?',
+    opts: ['Aufbau und kontinuierlicher Betrieb des AIMS, einschließlich Governance-Struktur und Rollenverteilung', 'Überprüfung der Wirksamkeit des implementierten Managementsystems und Einleitung von Verbesserungsmaßnahmen', 'Eigenständige Durchführung aller technischen Penetrationstests für KI-Infrastruktur ohne Einbezug der IT-Sicherheit', 'Sicherstellung, dass Verantwortlichkeiten, Befugnisse und Schnittstellen im AIMS dokumentiert und kommuniziert sind'],
+    correct: [0, 1, 3],
+    exp: 'KI-Manager:innen verantworten den gesamten AIMS-Lebenszyklus: von der Strukturierung (Governance, Rollen, Scope) über den laufenden Betrieb bis zur Wirksamkeitsprüfung. Technische IT-Sicherheitstests sind Spezialaufgaben anderer Rollen — sie fallen nicht in die originäre KI-Manager-Zuständigkeit.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'ISO 42001 stellt spezifische Anforderungen an die Daten-Governance. Welche Aussagen treffen zu?',
+    opts: ['Die Dokumentation von Datenquellen, Trainingsdaten und Datenaufbereitungsschritten ist erforderlich, um Auditierbarkeit sicherzustellen', 'ISO 42001 schreibt die vollständige öffentliche Veröffentlichung aller verwendeten Trainingsdatensätze vor', 'Daten-Governance-Maßnahmen müssen sicherstellen, dass KI-Modelle mit qualitativ hochwertigen und repräsentativen Daten trainiert werden', 'Klare Anforderungen an Logging-Systeme innerhalb der Datenpipelines sind notwendig, um Nachvollziehbarkeit herzustellen'],
+    correct: [0, 2, 3],
+    exp: 'ISO 42001 verpflichtet zur systematischen Dokumentation und Qualitätssicherung von Trainingsdaten sowie zur Einführung von Logging-Systemen. Eine öffentliche Veröffentlichung aller Trainingsdaten ist nicht gefordert — die Norm balanciert interne Transparenz (Auditierbarkeit) mit dem Schutz von Datenschutz und Geschäftsgeheimnissen.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  }
+],
+
+a2: [
+  {
+    q: 'ISO 42001 folgt einer 10-Klausel-Struktur (HLS). Welche Aussagen zur operativen Umsetzung der Klauseln 4–10 sind korrekt?',
+    opts: ['Klausel 6 (Planung) verlangt die Identifikation von KI-bezogenen Risiken und Chancen sowie die Definition messbarer Ziele', 'Klausel 8 (Betrieb) umfasst den gesamten KI-Lebenszyklus — von der Konzeption über Training und Validierung bis zum Monitoring im Produktivbetrieb', 'Klausel 5 (Führung) kann durch ein externes Consulting-Unternehmen vollständig delegiert werden, da sie keine interne Verantwortung erfordert', 'Klausel 9 (Leistungsbewertung) mandatiert interne Audits, Monitoring-Metriken und eine formale Managementbewertung'],
+    correct: [0, 1, 3],
+    exp: 'Die HLS-Klauseln 4–10 bilden einen Plan-Do-Check-Act-Zyklus. Führungsverantwortung (Klausel 5) ist nicht delegierbar — die Norm erfordert explizites Commitment des Top-Managements. Klausel 6 fordert einen strukturierten Umgang mit KI-spezifischen Risiken und Chancen, Klausel 8 deckt den vollständigen KI-Systemlebenszyklus ab, und Klausel 9 schreibt formale Überprüfungsschritte vor.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Welche Maßnahmen sind im Rahmen der Wirksamkeitsprüfung des AIMS nach ISO 42001 vorgesehen?',
+    opts: ['Die Reduzierung der Modellkomplexität durch Entfernung aller versteckten Schichten, um Interpretierbarkeit zu maximieren', 'Regelmäßige Robustheitstests und Leistungsprüfungen im Betrieb, die nachweisen, dass das System innerhalb definierter Parameter funktioniert', 'Die Etablierung von Feedbackschleifen und Mechanismen zur iterativen Optimierung des AIMS auf Basis von Audit-Ergebnissen', 'Die vollständige Auslagerung der Wirksamkeitsprüfung an externe Zertifizierungsstellen ohne interne Kontrollen'],
+    correct: [1, 2],
+    exp: 'Wirksamkeitsprüfung im AIMS umfasst interne Audits, Leistungsmonitoring und strukturierte Feedbackschleifen — alles interne Maßnahmen, die nicht vollständig externalisiert werden können. Modellvereinfachung durch Entfernung von Hidden Layers ist keine ISO-42001-Anforderung und würde zudem die Modellperformance beeinträchtigen.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Seit April 2026 liegt mit der prEN 18286 ein harmonisierter Standard zum EU AI Act vor. Welche Aussagen zum Zusammenspiel von ISO 42001 und prEN 18286 sind zutreffend?',
+    opts: ['ISO 42001 definiert das organisationale AIMS, während prEN 18286 als systemspezifisches QMS auf Ebene einzelner KI-Systeme ansetzt', 'Unternehmen mit Hochrisiko-KI profitieren von einer Zweischicht-Architektur: ISO 42001 als AIMS-Rahmen und prEN 18286 für die systemspezifische Konformität', 'prEN 18286 macht ISO 42001 überflüssig, da der neue Standard alle AIMS-Anforderungen vollständig ersetzt', 'Die Kombination aus ISO 42001, prEN 18286 und EU AI Act bildet den aktuellen Best-Practice-Referenzrahmen für KI-Governance in der EU'],
+    correct: [0, 1, 3],
+    exp: 'Die prEN 18286 (April 2026) ergänzt ISO 42001 als harmonisierter Standard im Sinne des EU AI Acts — sie ersetzt die Norm nicht, sondern adressiert die systemspezifische Ebene. Der empfohlene Ansatz für Hochrisiko-KI ist eine Zweischicht-Architektur: ISO 42001 auf Organisationsebene, prEN 18286 auf KI-Systemebene. Dies gilt insbesondere mit Blick auf die vollständige EU AI Act-Durchsetzung ab August 2026.',
+    src: 'Cloud Security Alliance / ISO 42001', url: 'https://cloudsecurityalliance.org/blog/2026/04/27/building-eu-ai-act-compliance-with-pren-18286-and-iso-42001'
+  },
+  {
+    q: 'Das AIMS nach ISO 42001 stellt spezifische Anforderungen an Prozesse im KI-Betrieb. Welche Aussagen sind korrekt?',
+    opts: ['MLOps-Pipelines unterstützen die ISO-42001-Anforderungen, indem sie Training, Validierung und Deployment standardisieren und auditierbar machen', 'Logging-Systeme für Modellentscheidungen und Systemaktivitäten sind erforderlich, um Nachvollziehbarkeit und Auditierbarkeit zu gewährleisten', 'Sicherheits- und Transparenzanforderungen der ISO 42001 gelten ausschließlich für Modelle, die personenbezogene Daten verarbeiten', 'Die Definition klarer Eskalationswege für den Fall von Leistungsabfall oder erkanntem Modell-Drift ist Bestandteil des AIMS-Betriebs'],
+    correct: [0, 1, 3],
+    exp: 'ISO 42001 fordert systematische Prozesse über den gesamten KI-Lebenszyklus: MLOps-Konzepte unterstützen diese Anforderungen technisch durch Standardisierung und Auditierbarkeit. Logging und Auditierbarkeit gelten unabhängig vom Verarbeitungsgegenstand. Transparenz- und Sicherheitsanforderungen beschränken sich nicht auf personenbezogene Daten — sie betreffen alle KI-Systeme im Anwendungsbereich des AIMS.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Für Hochrisiko-KI-Systeme nach EU AI Act gilt ab August 2026 die vollständige Durchsetzung. Welche Maßnahmen sind im AIMS zwingend zu verankern?',
+    opts: ['Ein kontinuierliches Risikomanagementsystem (RMS), das den gesamten Lebenszyklus des KI-Systems abdeckt', 'Die vollständige Automatisierung aller Risikoentscheidungen ohne menschliche Aufsicht, um Reaktionszeiten zu minimieren', 'Die Beschränkung des Monitoring auf die Trainings- und Entwicklungsphase, da Risiken im Produktivbetrieb durch das Deployment-Team verantwortet werden', 'Die Sicherstellung menschlicher Aufsicht über KI-Systementscheidungen mit erheblicher Auswirkung — als Anforderung von ISO 42001 und EU AI Act gleichermaßen'],
+    correct: [0, 3],
+    exp: 'EU AI Act Artikel 9 und 14 verlangen für Hochrisiko-KI ein kontinuierliches Risikomanagement sowie wirksame menschliche Aufsicht. ISO 42001 spiegelt diese Anforderungen in Klausel 8 und der KI-Risikobehandlung wider. Die vollständige Automatisierung von Risikoentscheidungen ohne menschliche Kontrolle widerspricht beiden Regelwerken grundsätzlich.',
+    src: 'EU AI Act / ISO 42001', url: 'https://artificialintelligenceact.eu/'
+  }
+],
+
+b1: [
+  {
+    q: 'Sie führen ISO 42001 in einem bereits ISO-9001-zertifizierten Unternehmen ein. Welche Aussagen zur Integration in das bestehende QMS sind korrekt?',
+    opts: ['Da beide Normen die High Level Structure teilen, können bestehende Prozesse für Kontext, Führung und Planung als Basis genutzt und KI-spezifisch erweitert werden', 'ISO 9001 und ISO 42001 sind vollständig inkompatibel, da KI-Systeme andere Qualitätsprinzipien erfordern als Produkte und Dienstleistungen', 'Interne Auditprogramme, Dokumentensteuerung und Managementbewertung aus ISO 9001 können in das integrierte Managementsystem übernommen werden', 'Bei der Einführung von ISO 42001 müssen alle bestehenden ISO-9001-Prozesse vollständig neu geschrieben und auf KI ausgerichtet werden'],
+    correct: [0, 2],
+    exp: 'Die gemeinsame High Level Structure von ISO 9001 und ISO 42001 ermöglicht echte Synergien: Bestehende Governance-Strukturen, Auditprogramme und Dokumentationslogiken können als Fundament dienen und KI-spezifisch ergänzt werden. Eine vollständige Neuentwicklung ist nicht erforderlich — das reduziert den Einführungsaufwand für bereits zertifizierte Unternehmen erheblich.',
+    src: 'ISO 42001 / ISO 9001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'ISO 42001 stellt spezifische Dokumentationsanforderungen. Welche Dokumente sind im AIMS zwingend erforderlich?',
+    opts: ['Der festgelegte Anwendungsbereich (Scope) des AIMS mit Beschreibung der einbezogenen KI-Systeme', 'Eine KI-Risikobeurteilung mit dokumentierter Risikobehandlung für die im Scope enthaltenen KI-Systeme', 'Eine vollständige Veröffentlichung aller Algorithmen und Modellgewichte auf der Unternehmenswebseite', 'Aufzeichnungen über interne Audits, Managementbewertungen und eingeleitete Verbesserungsmaßnahmen'],
+    correct: [0, 1, 3],
+    exp: 'Scope, Risikobeurteilung und Auditaufzeichnungen gehören zu den Kerndokumenten des AIMS. Eine öffentliche Veröffentlichung von Algorithmen oder Modellgewichten ist nicht gefordert — die Norm unterscheidet klar zwischen interner Transparenz (Auditierbarkeit) und externer Offenlegung. Datenschutz und Schutz von Geschäftsgeheimnissen bleiben gewahrt.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Welche der folgenden Aussagen beschreibt die Aufgabe des KI-Auditors im AIMS am treffendsten?',
+    opts: ['Der KI-Auditor trägt die Gesamtverantwortung für Aufbau und Betrieb des AIMS und berichtet direkt an die Geschäftsführung', 'Der KI-Auditor prüft die Wirksamkeit und Konformität des AIMS unabhängig von der operativen Verantwortung der KI-Manager:in', 'Der KI-Auditor entwickelt und pflegt die KI-Strategie des Unternehmens und priorisiert KI-Projekte nach Geschäftswert', 'Die Rolle des KI-Auditors ist mit der des KI-Beauftragten identisch — beide übernehmen Governance- und Compliance-Aufgaben ohne Unterschied'],
+    correct: [1],
+    exp: 'Die Rollenabgrenzung ist prüfungsrelevant: Die KI-Manager:in verantwortet Aufbau und Betrieb des AIMS, der KI-Auditor prüft Wirksamkeit und Konformität unabhängig davon, der KI-Beauftragte hat eine unterstützende Governance- und Compliance-Rolle. Klare Trennungen verhindern Interessenskonflikte und sind Voraussetzung für ein glaubwürdiges AIMS.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Als QM-Leiterin führen Sie eine Gap-Analyse für die ISO-42001-Einführung durch. Welche KI-spezifischen Bereiche sind gegenüber ISO 9001 neu zu bewerten?',
+    opts: ['KI-spezifisches Risikomanagement: Bias, Modell-Drift, Erklärbarkeit und Robustheit sind Risikokategorien, die ISO 9001 nicht kennt', 'KI-Lebenszyklus-Management: Datenbeschaffung, Modelltraining, -validierung und Betriebsmonitoring erfordern eigene Prozesse im QMS', 'Menschliche Aufsicht über KI-Entscheidungen: ISO 42001 verankert explizit Anforderungen an Human Oversight, die im klassischen QMS nicht vorgesehen sind', 'Lieferantenaudits entfallen bei ISO 42001 vollständig, da KI-Systeme keine externen Lieferketten aufweisen'],
+    correct: [0, 1, 2],
+    exp: 'ISO 42001 ergänzt das klassische QMS um drei wesentliche Bereiche: KI-spezifische Risikokategorien (Bias, Drift, Erklärbarkeit), den gesamten KI-Lebenszyklus als Prozessgegenstand sowie explizite Human-Oversight-Anforderungen. Lieferantenmanagement bleibt relevant — Anbieter von KI-Plattformen, Trainingsdaten oder vortrainierten Modellen sind als externe Anbieter zu bewerten und in die Lieferantenbewertung einzubeziehen.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Welche Aussagen zur Verbindung zwischen ISO 42001 und dem EU AI Act sind aus QM-Perspektive relevant?',
+    opts: ['ISO 42001 deckt mit seinen Governance-Anforderungen wesentliche EU AI Act-Artikel ab: Risikomanagement (Art. 9), Daten-Governance (Art. 10) und Dokumentation (Art. 11)', 'Da das Unternehmen ISO 9001 zertifiziert ist, besteht automatisch Konformität mit dem EU AI Act für alle eingesetzten KI-Systeme', 'Der EU AI Act gilt nur für Hersteller von KI-Systemen und ist für Unternehmen, die KI lediglich einsetzen, rechtlich irrelevant', 'Ab August 2026 greift die vollständige EU AI Act-Durchsetzung — ISO-42001-Konformität reduziert das Compliance-Risiko, ersetzt aber nicht den gesetzlichen Konformitätsnachweis bei Hochrisiko-KI'],
+    correct: [0, 3],
+    exp: 'ISO 42001 und EU AI Act sind komplementär: Eine Zertifizierung demonstriert systematische Governance und reduziert Compliance-Risiken erheblich. Dennoch bleibt die gesetzliche Pflicht bestehen — insbesondere für Hochrisiko-KI-Systeme. Ab August 2026 beginnt die aktive Durchsetzung durch das EU AI Office. Weder ISO 9001 noch ein anderer Standard ersetzt die spezifischen EU AI Act-Konformitätsnachweise.',
+    src: 'EU AI Act / ISO 42001', url: 'https://artificialintelligenceact.eu/'
+  }
+],
+
+b2: [
+  {
+    q: 'Sie bereiten Ihr Unternehmen auf das Stage-1-Audit für ISO 42001 vor. Welche Nachweise sind für die Zertifizierungsstelle zwingend erforderlich?',
+    opts: ['Ein vollständig dokumentierter und genehmigter Scope des AIMS mit Beschreibung aller einbezogenen KI-Systeme', 'Nachweis einer durchgeführten KI-Risikobeurteilung mit dokumentierter Behandlung der identifizierten Risiken', 'Ein Nachweis, dass alle Mitarbeitenden eine mindestens 40-stündige ISO-42001-Schulung absolviert haben', 'Aufzeichnungen über mindestens ein durchgeführtes internes Audit und die daraus abgeleiteten Korrekturmaßnahmen'],
+    correct: [0, 1, 3],
+    exp: 'Das Stage-1-Audit bewertet die Vollständigkeit der AIMS-Dokumentation. Pflicht-Nachweise sind: Scope-Dokument, Risikobeurteilung mit Behandlungsmaßnahmen sowie Belege für interne Audits und Verbesserungsmaßnahmen. Eine vorgeschriebene Schulungsstundenzahl existiert nicht — die Norm fordert nachgewiesene Kompetenz, nicht einen bestimmten Schulungsumfang.',
+    src: 'ISO 42001 / TÜV Rheinland', url: 'https://certification.tuv.com/de/de/audits-zertifizierungen/zertifiziernugen-it-security-datenschutz/iso-42001/'
+  },
+  {
+    q: 'Die Managementbewertung ist ein Kernelement des AIMS nach ISO 42001. Welche Inputs sind zwingend zu berücksichtigen?',
+    opts: ['Ergebnisse interner Audits, Kennzahlen zur Systemleistung sowie der Status von Korrekturmaßnahmen und Verbesserungsinitiativen', 'Eine vollständige Neubewertung aller KI-Projekte nach Marktrelevanz, um Investitionsentscheidungen zu steuern', 'Veränderungen im externen und internen Kontext, die das AIMS betreffen — einschließlich regulatorischer Entwicklungen wie neuer EU AI Act-Durchsetzungsphasen', 'Individuelle Leistungsbeurteilungen aller Mitarbeitenden, die mit KI-Systemen arbeiten'],
+    correct: [0, 2],
+    exp: 'Die Managementbewertung nach ISO 42001 folgt den HLS-Vorgaben: Audit-Ergebnisse, Leistungskennzahlen, Korrekturmaßnahmen und Kontextveränderungen sind Pflicht-Inputs. Die Integration regulatorischer Entwicklungen — wie der EU AI Act-Vollzugsphase ab August 2026 und der neuen prEN 18286 (April 2026) — ist besonders relevant. Individuelle Leistungsbeurteilungen sind kein AIMS-Thema.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Als QM-Leiterin koordinieren Sie das interne Audit für ISO 42001. Welche Besonderheiten gegenüber einem ISO-9001-Audit sind zu beachten?',
+    opts: ['Auditoren müssen neben QM-Kompetenz auch ein grundlegendes Verständnis von KI-Technologien, Modelltypen und KI-spezifischen Risiken mitbringen', 'Das Audit muss den gesamten KI-Lebenszyklus abdecken: Datenbeschaffung, Training, Validierung, Deployment und Betriebsmonitoring', 'Erklärbarkeit (XAI) und menschliche Aufsicht sind KI-spezifische Auditkriterien ohne direkte Entsprechung in ISO 9001', 'KI-Audits müssen zwingend von externen Spezialisten durchgeführt werden, da interne Auditoren strukturell befangen sind'],
+    correct: [0, 1, 2],
+    exp: 'ISO-42001-Audits erweitern das klassische QM-Audit um KI-spezifische Kompetenzanforderungen und Prüfgegenstände: den gesamten KI-Lebenszyklus, Erklärbarkeit und Human Oversight. Interne Audits sind zulässig — die Norm fordert Unparteilichkeit und Kompetenz, nicht zwingend externe Auditoren.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Welche Maßnahmen zur kontinuierlichen Verbesserung (KVP) sind im AIMS nach ISO 42001 verankert?',
+    opts: ['Die jährliche Neuzertifizierung aller eingesetzten KI-Modelle durch eine akkreditierte Zertifizierungsstelle', 'Die systematische Behandlung von Nichtkonformitäten mit Ursachenanalyse und Dokumentation der Korrekturmaßnahmen', 'Die Nutzung von Audit-Ergebnissen, Leistungsindikatoren und Managementbewertungen als Grundlage für Verbesserungsinitiativen', 'Die vollständige Auslagerung des KVP-Prozesses an externe KI-Berater, um Betriebsblindheit zu vermeiden'],
+    correct: [1, 2],
+    exp: 'Kontinuierliche Verbesserung im AIMS folgt dem PDCA-Zyklus: Nichtkonformitäten werden mit Ursachenanalyse dokumentiert und korrigiert, Audit-Ergebnisse und Managementbewertungen liefern die Inputs für Verbesserungsinitiativen. Eine jährliche externe Rezertifizierung von KI-Modellen ist keine ISO-42001-Anforderung — Überwachungsaudits durch die Zertifizierungsstelle finden in der Regel jährlich statt, betreffen aber das AIMS, nicht einzelne Modelle.',
+    src: 'ISO 42001', url: 'https://www.iso.org/standard/81230.html'
+  },
+  {
+    q: 'Mit der prEN 18286 liegt seit April 2026 ein harmonisierter Standard zum EU AI Act für KI-Qualitätsmanagementsysteme vor. Welche Aussagen sind aus QM-Perspektive korrekt?',
+    opts: ['prEN 18286 operiert auf Ebene des einzelnen KI-Systems und ergänzt damit das organisationale AIMS der ISO 42001 um eine systemspezifische QMS-Schicht', 'Unternehmen mit Hochrisiko-KI, die beide Standards kombinieren, erzielen eine umfassende Abdeckung der EU AI Act-Anforderungen auf Organisations- und Systemebene', 'prEN 18286 gilt ausschließlich für Software-Hersteller und ist für Unternehmen, die KI-Systeme betreiben, nicht anwendbar', 'Für QM-Leitungen mit ISO-9001-Erfahrung bietet prEN 18286 bekannte Konzepte wie Prozesssteuerung, Validierung und Leistungsbewertung — angewandt auf KI-Systemebene'],
+    correct: [0, 1, 3],
+    exp: 'prEN 18286 (April 2026) ist als harmonisierter Standard unter dem EU AI Act konzipiert und adressiert die systemspezifische QMS-Ebene — komplementär zu ISO 42001 auf Organisationsebene. Die Kombination beider Standards ist der empfohlene Best-Practice-Ansatz für Hochrisiko-KI. QM-Leitungen finden in prEN 18286 vertraute Konzepte, angepasst auf KI-Systeme — was den Einführungsaufwand für bereits zertifizierte Unternehmen reduziert.',
+    src: 'Cloud Security Alliance / ISO 42001', url: 'https://cloudsecurityalliance.org/blog/2026/04/27/building-eu-ai-act-compliance-with-pren-18286-and-iso-42001'
+  }
+]
+};
+/* Ende QBANK */
+
+var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwTfP8ygOun58rmvY9hQXFmPEgVyxppQGEPYjar1e78N6uanaGHuzBNOyU5P4kgvmz7/exec';
+var selectedRole = null, selectedLevel = null, questions = [], userAnswers = [];
+var participantName = '';
+
+
+/* ═══════════════════════════════════════════════════════════════
+   ENGINE (unverändert aus dem Standard-Quiz-Template)
+═══════════════════════════════════════════════════════════════ */
+
+var selectedRole = null, selectedLevel = null, questions = [], userAnswers = [];
+var participantName = '';
+
+function selectRole(r) {
+  selectedRole = r;
+  document.getElementById('btn-role-a').className = 'sel-btn' + (r==='a' ? ' active-a' : '');
+  document.getElementById('btn-role-b').className = 'sel-btn' + (r==='b' ? ' active-b' : '');
+  checkReady();
+}
+function selectLevel(l) {
+  selectedLevel = l;
+  document.getElementById('btn-level-1').className = 'sel-btn' + (l==='1' ? ' active-1' : '');
+  document.getElementById('btn-level-2').className = 'sel-btn' + (l==='2' ? ' active-2' : '');
+  checkReady();
+}
+function checkReady() {
+  document.getElementById('btn-start').disabled = !(selectedRole && selectedLevel);
+}
+
+function shuffle(arr) {
+  var a = arr.slice(), i = a.length, j, t;
+  while (i--) { j = Math.floor(Math.random()*(i+1)); t=a[i]; a[i]=a[j]; a[j]=t; }
+  return a;
+}
+
+function startQuiz() {
+  var key = selectedRole + selectedLevel;
+  var pool = QBANK[key] || [];
+  questions = pool.map(function(q) {
+    var letters = ['A','B','C','D','E'];
+    var indices = q.opts.map(function(_,i){return i;});
+    var shuffled = shuffle(indices);
+    var newOpts = shuffled.map(function(i){return q.opts[i];});
+    var newCorrect = q.correct.map(function(c){return shuffled.indexOf(c);});
+    return {q: q.q, opts: newOpts, correct: newCorrect, exp: q.exp, src: q.src||''};
+  });
+  userAnswers = questions.map(function(){return [];});
+
+  document.getElementById('setup-section').style.display = 'none';
+  document.getElementById('quiz-section').style.display = 'block';
+
+  var roleLabels = {a:'KI-Manager:in', b:'Leiterin Qualitätsmanagement'};
+  var levelLabels = {1:'Anfänger', 2:'Fortgeschrittene'};
+  var name = document.getElementById('participant-name').value.trim() || 'Anonym';
+  participantName = name;
+  var strip = document.getElementById('quiz-header-strip');
+  strip.innerHTML =
+    '<span class="strip-tag strip-role-' + selectedRole + '">' + roleLabels[selectedRole] + '</span>' +
+    '<span class="strip-tag strip-level-' + selectedLevel + '">' + levelLabels[selectedLevel] + '</span>' +
+    '<span class="strip-name">' + name + '</span>';
+
+  document.getElementById('scenario-text').textContent = SCENARIOS[selectedRole];
+  renderQuestions();
+  updateProgress();
+}
+
+function renderQuestions() {
+  var container = document.getElementById('questions-container');
+  container.innerHTML = '';
+  var letters = ['A','B','C','D','E'];
+  questions.forEach(function(q, qi) {
+    var card = document.createElement('div');
+    card.className = 'q-card';
+    card.id = 'qcard-' + qi;
+    var html = '<div class="q-num">Frage ' + (qi+1) + ' von ' + questions.length + '</div>';
+    html += '<div class="q-text">' + q.q + '</div>';
+      html += '<div class="opt-list" id="opts-' + qi + '">';
+    q.opts.forEach(function(opt, oi) {
+      html += '<div class="opt" id="opt-' + qi + '-' + oi + '" onclick="toggleOpt(' + qi + ',' + oi + ')">' +
+        '<div class="opt-cb" id="cb-' + qi + '-' + oi + '"></div>' +
+        '<span class="opt-letter">' + letters[oi] + '.</span>' +
+        '<span class="opt-text">' + opt + '</span></div>';
+    });
+    html += '</div>';
+    card.innerHTML = html;
+    container.appendChild(card);
+  });
+}
+
+function toggleOpt(qi, oi) {
+  var idx = userAnswers[qi].indexOf(oi);
+  if (idx >= 0) {
+    userAnswers[qi].splice(idx, 1);
+    document.getElementById('opt-' + qi + '-' + oi).classList.remove('selected');
+    document.getElementById('cb-' + qi + '-' + oi).classList.remove('chk');
+  } else {
+    userAnswers[qi].push(oi);
+    document.getElementById('opt-' + qi + '-' + oi).classList.add('selected');
+    document.getElementById('cb-' + qi + '-' + oi).classList.add('chk');
+  }
+  updateSubmitBtn();
+  updateProgress();
+}
+
+function updateSubmitBtn() {
+  var answered = userAnswers.filter(function(a){return a.length>0;}).length;
+  document.getElementById('btn-submit').disabled = answered < questions.length;
+}
+
+function updateProgress() {
+  var answered = userAnswers.filter(function(a){return a.length>0;}).length;
+  var pct = questions.length ? (answered/questions.length*100) : 0;
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = answered + ' von ' + questions.length + ' Fragen beantwortet';
+}
+
+function submitQuiz() {
+  document.getElementById('quiz-section').style.display = 'none';
+  document.getElementById('results-section').style.display = 'block';
+
+  var score = 0;
+  questions.forEach(function(q, qi) {
+    var ua = userAnswers[qi].slice().sort();
+    var ca = q.correct.slice().sort();
+    if (JSON.stringify(ua) === JSON.stringify(ca)) score++;
+  });
+
+  var pct = Math.round(score/questions.length*100);
+  var grade, label;
+  if (pct >= 90) { grade = 'A'; label = 'Ausgezeichnet'; }
+  else if (pct >= 75) { grade = 'B'; label = 'Sehr gut'; }
+  else if (pct >= 60) { grade = 'C'; label = 'Gut'; }
+  else if (pct >= 45) { grade = 'D'; label = 'Befriedigend'; }
+  else { grade = 'E'; label = 'Wiederholen empfohlen'; }
+
+  document.getElementById('result-grade').textContent = grade;
+  document.getElementById('result-label').textContent = label + ' — ' + pct + ' %';
+  document.getElementById('result-sub').textContent = score + ' von ' + questions.length + ' Fragen vollständig richtig';
+
+  document.getElementById('stats-row').innerHTML =
+    '<div class="stat"><div class="stat-n">' + score + '</div><div class="stat-l">Richtig</div></div>' +
+    '<div class="stat"><div class="stat-n">' + (questions.length-score) + '</div><div class="stat-l">Falsch</div></div>' +
+    '<div class="stat"><div class="stat-n">' + pct + ' %</div><div class="stat-l">Trefferquote</div></div>';
+
+  document.getElementById('comp-bars').innerHTML =
+    '<div class="comp-row"><div class="comp-labels"><span>Richtig</span><span>' + score + '/' + questions.length + '</span></div>' +
+    '<div class="comp-track"><div class="comp-fill fill-ok" style="width:' + pct + '%"></div></div></div>' +
+    '<div class="comp-row"><div class="comp-labels"><span>Verbesserungspotenzial</span><span>' + (questions.length-score) + '/' + questions.length + '</span></div>' +
+    '<div class="comp-track"><div class="comp-fill fill-wrong" style="width:' + (100-pct) + '%"></div></div></div>';
+
+  var letters = ['A','B','C','D','E'];
+  var rev = document.getElementById('review-container');
+  rev.innerHTML = '';
+  questions.forEach(function(q, qi) {
+    var ua = userAnswers[qi].slice().sort();
+    var ca = q.correct.slice().sort();
+    var isOk = JSON.stringify(ua) === JSON.stringify(ca);
+    var card = document.createElement('div');
+    card.className = 'q-card';
+    var html = '<div class="q-num">Frage ' + (qi+1) + '</div>';
+    html += '<div class="q-text">' + q.q + '</div>';
+    html += '<div class="opt-list" style="margin-top:.7rem">';
+    q.opts.forEach(function(opt, oi) {
+      var sel = ua.indexOf(oi) >= 0;
+      var cor = ca.indexOf(oi) >= 0;
+      var cls = 'opt disabled ';
+      if (sel && cor) cls += 'correct-sel';
+      else if (sel && !cor) cls += 'wrong-sel';
+      else if (!sel && cor) cls += 'missed';
+      var cbCls = 'opt-cb';
+      var cbInner = '';
+      if (sel && cor) { cbCls += ' chk'; }
+      else if (sel && !cor) { cbCls += ' chk'; }
+      html += '<div class="' + cls + '"><div class="' + cbCls + '">' + cbInner + '</div>' +
+        '<span class="opt-letter">' + letters[oi] + '.</span><span class="opt-text">' + opt + '</span></div>';
+    });
+    html += '</div>';
+    if (q.exp) {
+      html += '<div class="feedback ' + (isOk ? 'fb-ok' : 'fb-wrong') + '">';
+      html += '<div class="fb-title">' + (isOk ? '✓ Richtig' : '✗ Nicht vollständig richtig') + '</div>';
+      html += '<div class="fb-text">' + q.exp + '</div>';
+      if (q.src) html += '<div class="fb-source">Quelle: ' + q.src + '</div>';
+      html += '</div>';
+    }
+    card.innerHTML = html;
+    rev.appendChild(card);
+  });
+
+  sendToSheets(score, questions.length - score);
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function sendToSheets(correct, wrong) {
+  if (!APPS_SCRIPT_URL) return;
+  var TAG_NR = 2;
+  var THEMA  = 'ISO 42001 & KI-Managementsystem';
+  var letters = ['A','B','C','D','E'];
+  var roleLabels = {a:'KI-Manager:in', b:'Leiterin Qualitätsmanagement'};
+  var levelLabels = {1:'Anfänger', 2:'Fortgeschrittene'};
+  var stufe = (roleLabels[selectedRole] || selectedRole) + ' / ' + (levelLabels[selectedLevel] || selectedLevel);
+
+  var status = document.getElementById('submit-status');
+  if (status) {
+    status.className = 'submit-status sending';
+    status.style.display = 'block';
+    status.textContent = 'Ergebnis wird übermittelt...';
+  }
+
+  var toSend = [];
+  questions.forEach(function(q, i) {
+    var selIndices  = userAnswers[i].slice().sort();
+    var corrIndices = q.correct.slice().sort();
+    var isFull      = selIndices.join(',') === corrIndices.join(',');
+    var gewaehlt    = selIndices.map(function(idx) { return letters[idx]; }).join(',') || '-';
+    var korrekt     = corrIndices.map(function(idx) { return letters[idx]; }).join(',');
+    var ergebnis    = isFull ? 'RICHTIG' : 'FALSCH';
+
+    toSend.push(
+      APPS_SCRIPT_URL
+      + '?tab='        + encodeURIComponent('KI-Manager')
+      + '&teilnehmer=' + encodeURIComponent(participantName)
+      + '&tag='        + TAG_NR
+      + '&thema='      + encodeURIComponent(THEMA)
+      + '&stufe='      + encodeURIComponent(stufe)
+      + '&frage_nr='   + (i + 1)
+      + '&frage_text=' + encodeURIComponent(q.q.substring(0, 80))
+      + '&gewaehlt='   + encodeURIComponent(gewaehlt)
+      + '&korrekt='    + encodeURIComponent(korrekt)
+      + '&ergebnis='   + encodeURIComponent(ergebnis)
+    );
+  });
+
+  toSend.forEach(function(url, i) {
+    setTimeout(function() {
+      fetch(url, { mode: 'no-cors' }).catch(function() {});
+    }, i * 300);
+  });
+  if (status) {
+    setTimeout(function() {
+      status.className = 'submit-status success';
+      status.textContent = '✓ ' + toSend.length + ' Antworten übermittelt ('
+        + new Date().toLocaleTimeString('de-DE') + ')';
+    }, toSend.length * 300 + 500);
+  }
+}
+</script>
+
+</body>
+</html>
